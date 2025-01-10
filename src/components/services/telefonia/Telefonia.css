@@ -1,0 +1,68 @@
+.telefonia-container {
+  padding: 40px 20px;
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  overflow: auto;
+}
+
+  
+  
+  .service-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 20px; 
+    margin-bottom: 30px;
+  }
+  
+  .service-item .service-text {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+  }
+  
+  .service-item .service-image {
+    flex: 1 1 300px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .service-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .service-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .service-item {
+      flex-direction: column;
+      text-align: center; 
+    }
+    .service-item .service-text,
+    .service-item .service-image {
+      flex: none;
+      width: 100%;
+    }
+  }
+  

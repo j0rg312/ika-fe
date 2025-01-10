@@ -1,0 +1,188 @@
+.support-container {
+    padding: 40px 20px;
+    background-color: transparent; /* Fondo claro profesional */
+    height: auto; /* Ajusta la altura al contenido */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: auto;
+}
+
+.text-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.support-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las características */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.feature {
+    flex: 1 1 300px; /* Ajuste de tamaño adaptable */
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin: 10px 0;
+    color: #222;
+}
+
+section h2, section h3, section h4 {
+    color: #000;
+    margin-bottom: 15px;
+    text-align: center; /* Centra los encabezados */
+}
+
+
+section ul {
+    margin-left: 20px;
+    list-style-type: disc;
+    text-align: left; /* Asegura alineación correcta para listas */
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center; /* Centra el texto en las tablas */
+}
+
+table th {
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.section-respaldos {
+    margin-top: 40px;
+    text-align: center; /* Centra el contenido */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-respaldos {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Asegura un diseño adaptable */
+    justify-content: center; /* Centra las columnas */
+    gap: 20px;
+}
+
+.column-left, .column-right {
+    flex: 1;
+    max-width: 600px; /* Limita el tamaño máximo */
+    text-align: center; /* Centra el contenido */
+}
+
+.image-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.benefits-list {
+    margin-top: 20px;
+    text-align: left; /* Asegura alineación izquierda */
+}
+
+.benefit-item {
+    margin-bottom: 15px;
+}
+
+.benefit-header {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.accordion-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-recuperacion {
+    margin-top: 40px;
+    text-align: center; /* Centra el contenido */
+}
+
+.title-recuperacion {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las columnas */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.column-left {
+    flex: 1;
+    max-width: 600px; /* Limita el tamaño máximo */
+    text-align: center; /* Centra el contenido */
+}
+
+.column-right {
+    flex: 2;
+    max-width: 800px; /* Limita el tamaño máximo */
+    text-align: left; /* Asegura alineación izquierda para texto */
+}
+
+.column-right p {
+    margin-bottom: 10px;
+}
+
+.column-right ul {
+    margin-left: 20px;
+}
+
+.column-right li {
+    margin-bottom: 5px;
+}

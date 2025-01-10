@@ -1,0 +1,63 @@
+.equipment-container {
+  padding: 40px 20px;
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  overflow: auto;
+}
+  
+  
+  
+  .service-section {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten mejor en pantallas pequeñas */
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .service-text h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .service-image {
+    flex: 1 1 ;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
+    height: auto;
+
+  }
+  
+  .service-image img {
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+    border-radius: 8px;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .service-section {
+      flex-direction: column; 
+      align-items: center;/
+    }
+  
+    .service-text,
+    .service-image {
+      width: 100%; /* Hace que tanto el texto como la imagen ocupen el 100% del ancho */
+      padding: 10px; /* Reduce el relleno en dispositivos pequeños */
+    }
+  
+    .service-image img {
+      max-width: 100%; /* Asegura que la imagen no se desborde */
+    }
+  }
+  

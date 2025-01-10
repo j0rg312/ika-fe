@@ -1,0 +1,30 @@
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-top: 60px;
+    padding-bottom:80px;
+    overflow-y: auto;
+    overflow: auto; 
+    width: 100%;
+    left:0;
+    height: 100vh;
+    width: 100%;
+  }
+  
+
+.callToaction {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  z-index: 100;
+}
+

@@ -1,0 +1,85 @@
+
+.contact {
+  padding: 40px 20px;
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  }
+  
+  /* Títulos */
+  .special-subtitle {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .special-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3498db;
+  }
+  
+  /* Diseño de la sección de información */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .col-12 {
+    width: 100%;
+  }
+  
+  .col-sm-5 {
+    width: 48%;
+  }
+  
+  /* Icon box */
+  .iconbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .iconbox-image {
+    font-size: 40px;
+    margin-right: 15px;
+  }
+  
+  .iconbox-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .iconbox-text {
+    font-size: 16px;
+  }
+  
+  .divider-space {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .space-10x {
+    height: 10px;
+  }
+  
+  .space-20x {
+    height: 20px;
+  }
+  
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
