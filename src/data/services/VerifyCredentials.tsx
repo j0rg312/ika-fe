@@ -8,10 +8,14 @@ try{
         password:password
     });
 
-    if(response.data.success ) {
-        return true;
+    if(!response.data.error) {
+        return {
+            success:true,
+            data:response.data.data
+        };
+    } else {
+        return { success: false};
     }
-    return false;
     } catch (error) {
     console.error("Error al verificar credenciales", error);
     return false;

@@ -1,3 +1,7 @@
+:root{
+    --border-color: #3e4194;
+}
+
 .login-container {
     position: fixed;
     top: 50%;
@@ -20,21 +24,20 @@
     padding: 10px 0;
     font-size: 16px;
     color: #000;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border: none;
-    border-bottom: 2px solid #3e4194;
+    border-bottom: 2px solid transparent;
     outline: none;
     background: transparent;
-    transition: border-bottom 0.3s ease-in-out;
-}
-
+    transition: border-bottom-color 0.3s ease-in-out;
+  }
 .modal-input:focus {
     -webkit-outline: none; 
     outline: none;
     -webkit-box-shadow:none;
     box-shadow: none;
-    border-bottom: 2px solid #3e9453;
 }
+
 
 @keyframes Fade-In {
     0% {
@@ -47,9 +50,15 @@
     }
 }
 
+.modal-input:focus,
+.modal-input:not(:placeholder-shown) {
+  border-bottom-color: var(--border-color);
+}
+
+
 .input-group{
     position: relative;
-    margin-bottom: 30px ;
+    margin-bottom: 10px ;
 }
 
 .floating-label{
@@ -60,6 +69,7 @@
     color: black;
     pointer-events: none;
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .modal-input:focus + .floating-label,
@@ -106,3 +116,7 @@
     width: 160%;
   }
   
+.message{
+    font-size: 12px;
+    
+}
