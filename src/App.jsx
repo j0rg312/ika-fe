@@ -14,6 +14,7 @@ import Footer from './components/footer/Footer';
 import OurWork from './components/ourWork/OurWork';
 import ECommers from './components/e-commers/E-commers';
 import Administrator from './components/administrator/Administrator';
+import AdminPanel from './components/adminPanel/AdminPanel';
 
 import './App.css';
 
@@ -25,6 +26,7 @@ const App = () => {
       <div className="app-container">
       <Header />
       <Administrator/>
+
       <div className="main-content">
       <Routes>
             <Route path="/home" element={<Home />} />
@@ -39,6 +41,7 @@ const App = () => {
             <Route path="/ourWork" element={<OurWork/>} />
             <Route path="/ecommers" element={<ECommers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path='/adminPanel' element={<AdminPanel/>}/>
             <Route path="*" element={<Navigate to="/home" />} />
           
           </Routes>

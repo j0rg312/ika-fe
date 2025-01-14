@@ -9,4 +9,4 @@ const API_USERS = {
         deleteUser: (id: number) => `${ENV.API_URL}/users/deleteBy/${id}`,
 }
 
-export default API_USERS
+export default API_USERS;

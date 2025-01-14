@@ -1,23 +1,26 @@
 import './AdminModal.css';
 import { useState, useEffect } from 'react';
-import VerifyCredentials from '../../../data/services/VerifyCredentials';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../../data/services/authService';
 
 const AdminModal = ({ onClose }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   // Usamos useEffect para verificar la autenticación solo cuando los valores cambian
   useEffect(() => {
     if (username && password) {
       const verifyLogin = async () => {
         console.log("Datos que se enviarán al backend:", username, password);
-        const isValid = await VerifyCredentials(username, password);
+        const isValid = await loginUser(username, password);
         if (isValid && isValid.success) {
           setIsAuthenticated(true);
-          setError('');
+          setError('Bienvenido!');
           console.log('Login exitoso!', isValid.data);
+          navigate('/adminPanel')
         } else {
           setIsAuthenticated(false);
           setError('Usuario o contraseña incorrectos');
@@ -27,7 +30,7 @@ const AdminModal = ({ onClose }) => {
 
       verifyLogin();
     }
-  }, [username, password]); // Se ejecuta solo cuando username o password cambian
+  }, [username, password, navigate]);
 
   const borderColor = isAuthenticated ? '#3e9453' : error ? '#e74c3c' : '#3e4194';
 
@@ -59,10 +62,6 @@ const AdminModal = ({ onClose }) => {
         />
         <label htmlFor="password" className="floating-label">Contraseña:</label>
       </div>
-
-      <p className="message">
-        {isAuthenticated ? <div className="success-message">¡Bienvenido!</div> : <div className="error-message">{error}</div>}
-      </p>
 
       <button className="close-button" onClick={onClose}>Cerrar</button>
     </div>
