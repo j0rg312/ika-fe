@@ -21,7 +21,7 @@ Instala las dependencias:
 
 Ejecuta el siguiente comando en la raíz del proyecto para instalar todas las dependencias necesarias:
 
-npm install Uso
+npm install 
 
 Una vez que las dependencias se han instalado correctamente, puedes ejecutar el proyecto en tu entorno local.
 
