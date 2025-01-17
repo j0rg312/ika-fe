@@ -2,11 +2,11 @@ import { ENV } from "../../enviroments/enviroments"
 
 
  const API_PRODUCT = {
-    getAll: `${ENV.API_URL}/product/getProducts`,
-    getByName: (name: string) => `${ENV.API_URL}/product/getBy/${name}`,
-    create: `${ENV.API_URL}/product/createProduct`,
-    updateByName: (name: string) => `${ENV.API_URL}/product/updateBy/${name}`,
-    deleteByName: (name: string) =>  `${ENV.API_URL}/product/deleteBy/${name}`
+    getAll: `${ENV.API_URL}/products/getproducts`,
+    getByName: (name: string) => `${ENV.API_URL}/products/getBy/${name}`,
+    create: `${ENV.API_URL}/products/createproduct`,
+    updateByName: (name: string) => `${ENV.API_URL}/products/updateBy/${name}`,
+    deleteByName: (name: string) =>  `${ENV.API_URL}/products/deleteBy/${name}`
 }
 
 export default API_PRODUCT;

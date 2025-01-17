@@ -59,6 +59,23 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+input, textarea, select {
+  background-color: #fff;
+  color: transparent; 
+  border: 1px solid #ccc;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  input, textarea, select {
+    background-color: transparent;
+    color: Black;
+    border: 1px solid #555;
+  }
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -101,4 +118,27 @@ p {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: transparent;
+    color: #ffffff;
+  }
+}
+h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+ ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  text-align: left; /* Asegura alineación correcta para listas */
+  color: black;
 }

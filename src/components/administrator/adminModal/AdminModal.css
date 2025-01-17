@@ -17,6 +17,8 @@
 
 .login-container h2 {
     margin-top: 0;
+    color: black;
+    border-bottom: 2px dashed var(--primary-color);
 }
 
 .modal-input {
@@ -93,6 +95,7 @@
     position: relative;
     transition: all 1s;
     overflow: hidden;
+    display: block;
   }
   
   .close-button:hover {
