@@ -1,10 +1,12 @@
 import axios from "axios";
 import API_AUTH from "../api-routes/api-auth.routes";
 
-export const logout = () => {
+
+
+export const logout = (navigate) => {
     localStorage.removeItem('token');
 
-    window.location.href = '/adminPanel'
+    navigate('/home');
     console.log('Hasta luego');
 }
 

@@ -4,7 +4,7 @@ import './ScrollableSection.css';
 const ScrollableSection = ({ children, className , index}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0.2,
   });
 
   const animationClass = index % 2 === 0 ? 'fade-in-right' : 'fade-in-left';
