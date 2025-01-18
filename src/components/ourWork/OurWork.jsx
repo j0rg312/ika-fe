@@ -13,6 +13,13 @@ const OurWork = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
 
+    const swiperElement = document.querySelector('.swiper');
+
+    useEffect(() => {
+if (swiperElement){
+  swiperElement.style.display = 'flex'
+  }
+    }, );
     useEffect(() => {
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768)
@@ -27,6 +34,7 @@ const OurWork = () => {
     }, []);
 
     const sliderConfig = {
+      debug: true ,
       modules: [Navigation, Pagination],
       spaceBetween:30,
       slidesPerView: isMobile ? 1 : 3,
@@ -52,8 +60,9 @@ const OurWork = () => {
    
    <section className="slider-container ">
     {allServices.map((service,i) =>(
- <ScrollableSection className="slider " key={i} index={i}>
+ <section className="slider " key={i} index={i}>
  <h3>{service.name}</h3>
+ {console.log('allServices:', allServices)}
 <Swiper
  {...sliderConfig}
 >
@@ -81,7 +90,7 @@ const OurWork = () => {
    </SwiperSlide>
  ))}
 </Swiper>
-</ScrollableSection>
+</section>
     ))}
    </section>
 

@@ -10,7 +10,7 @@ const AdminModal = ({ onClose }) => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Usamos useEffect para verificar la autenticación solo cuando los valores cambian
+
   useEffect(() => {
     if (username && password) {
       const verifyLogin = async () => {
@@ -19,7 +19,7 @@ const AdminModal = ({ onClose }) => {
         if (isValid && isValid.success) {
           setIsAuthenticated(true);
           setError('Bienvenido!');
-          console.log('Login exitoso!', isValid.data);
+          console.log('Login exitoso!');
           navigate('/adminPanel')
         } else {
           setIsAuthenticated(false);

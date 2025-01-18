@@ -4,7 +4,7 @@ import API_AUTH from "../api-routes/api-auth.routes";
 export const logout = () => {
     localStorage.removeItem('token');
 
-    window.location.href = '/adminPanel'
+    window.location.href = 'home';
     console.log('Hasta luego');
 }
 

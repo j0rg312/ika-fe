@@ -26,13 +26,15 @@ a:hover {
 }
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
   width: 100%;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: none !important;
 }
 
 h1 {
@@ -142,3 +144,4 @@ h2 {
   text-align: left; /* Asegura alineación correcta para listas */
   color: black;
 }
+

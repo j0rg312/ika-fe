@@ -1,48 +1,48 @@
-.admin-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    height:100% ;
-    border: 8px solid transparent;
-    border-radius: 30px;
-    background: linear-gradient(white, white) padding-box, 
-                linear-gradient(135deg, #6a11cb, #2575fc) border-box;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
+/* AdminPanel.css */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
 
+.notification.error {
+  background-color: red;
+  z-index:1000000000000000;
+}
 
-  .admin-panel h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+.product-list {
+  margin-top: 30px;
+}
+
+.product-list ul {
+  list-style-type: none;
+}
+
+.product-list li {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.product-list img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .admin-panel button {
-    padding: 10px 20px;
-    background-color: #3e9453;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  to {
+    opacity: 1;
   }
-  
-  .admin-panel button:hover {
-    background-color: #2e7c41;
-  }
-  
-  .aside {
-    width: 80%;
-    height: 300px;
-    background-color: #eaeaea;
-    border: 1px solid #ccc;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+}

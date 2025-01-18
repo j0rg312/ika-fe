@@ -5,6 +5,12 @@ import "./AdminPanel.css";
 
 const AdminPanel = () => {
   const [products, setProducts] = useState([]);
+  const [notification, setNotification] = useState({
+    visible: false,
+    message: '',
+    success: false,
+  });
+
   const productService = new ProductService();
 
   const nameRef = useRef();
@@ -13,19 +19,6 @@ const AdminPanel = () => {
   const descriptionRef = useRef();
   const imageRef = useRef();
 
-  // Fetch all products on mount
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const fetchProducts = async () => {
-    const response = await productService.getProducts();
-    if (response.success) {
-      setProducts(response.products);
-    } else {
-      console.error(response.message);
-    }
-  };
 
   const handleAddProduct = async () => {
     const formData = new FormData();
@@ -33,21 +26,38 @@ const AdminPanel = () => {
       alert("Por favor, llena todos los campos.");
       return;
     }
+
     formData.append("name", nameRef.current.value);
     formData.append("price", priceRef.current.value);
     formData.append("amount", amountRef.current.value);
     formData.append("description", descriptionRef.current.value);
     formData.append("image", imageRef.current.files[0]);
 
-    const response = await productService.addProduct(formData);
-    if (response.success) {
-      fetchProducts(); // Refresh product list
-      resetForm();
-    } else {
-      console.error(response.error);
+    try {
+      const response = await productService.addProduct(formData);
+      if (response.success) {
+        setNotification({
+          visible: true,
+          message: 'Producto agregado exitosamente.',
+          success: true,
+        });
+        // Refresh product list after adding a product
+        fetchProducts();
+        resetForm();
+      } else {
+        setNotification({
+          visible: true,
+          message: 'Hubo un error al agregar el producto.',
+          success: false,
+        });
+      }
+    } catch (error) {
+      setNotification({
+        visible: true,
+        message: 'Hubo un problema al agregar el producto.',
+        success: false,
+      });
     }
-    console.log('Datos que se envian al back', formData);
-    console.log('Nombre de la imagen', imageRef.current.files[0]?.name);
   };
 
   const resetForm = () => {
@@ -58,21 +68,18 @@ const AdminPanel = () => {
     imageRef.current.value = null;
   };
 
+  const handleCloseNotification = () => {
+    setNotification((prevState) => ({
+      ...prevState,
+      visible: false,
+    }));
+  };
+
   return (
     <div className="admin-panel">
       <h1>Configuración</h1>
       <button onClick={logout}>Cerrar Sesión</button>
       <div className="product-management">
-        <h2>Lista de Productos</h2>
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              {product.name} - ${product.price}{" "}
-              <button onClick={() => handleDeleteProduct(product.name)}>Eliminar</button>
-            </li>
-          ))}
-        </ul>
-
         <h2>Agregar Producto</h2>
         <input type="text" placeholder="Nombre del producto" ref={nameRef} />
         <input type="number" placeholder="Precio" ref={priceRef} />
@@ -81,6 +88,14 @@ const AdminPanel = () => {
         <input type="file" ref={imageRef} />
         <button onClick={handleAddProduct}>Agregar</button>
       </div>
+
+      {/* Notificación */}
+      {notification.visible && (
+        <div className={`notification ${notification.success ? 'success' : 'error'}`}>
+          <p>{notification.message}</p>
+          <button className="close-btn" onClick={handleCloseNotification}>X</button>
+        </div>
+      )}
     </div>
   );
 };
