@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import ProductService from "../../data/services/productService";
 import { logout } from "../../data/services/authService";
 import "./AdminPanel.css";
+import { useNavigate } from "react-router-dom";
 
 const AdminPanel = () => {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,12 @@ const AdminPanel = () => {
   const amountRef = useRef();
   const descriptionRef = useRef();
   const imageRef = useRef();
+  const navigate = useNavigate();
 
+
+  const handleLogout = async () => {
+    logout(navigate)
+  }
 
   const handleAddProduct = async () => {
     const formData = new FormData();
@@ -78,7 +84,7 @@ const AdminPanel = () => {
   return (
     <div className="admin-panel">
       <h1>Configuración</h1>
-      <button onClick={logout}>Cerrar Sesión</button>
+      <button onClick={handleLogout}>Cerrar Sesión</button>
       <div className="product-management">
         <h2>Agregar Producto</h2>
         <input type="text" placeholder="Nombre del producto" ref={nameRef} />
