@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import './OurWork.css';
 import {Swiper,SwiperSlide} from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -12,12 +12,12 @@ import TypingTitle from '../typingTitle/TypingTitle';
 const OurWork = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
+    const swiperRef = useRef(null);
 
-    const swiperElement = document.querySelector('.swiper');
 
     useEffect(() => {
-if (swiperElement){
-  swiperElement.style.display = 'flex'
+if (swiperRef.current) {
+  swiperRef.current.style.display = 'flex';
   }
     }, );
     useEffect(() => {
@@ -37,9 +37,10 @@ if (swiperElement){
       debug: true ,
       modules: [Navigation, Pagination],
       spaceBetween:30,
-      slidesPerView: isMobile ? 1 : 3,
+      slidesPerView: isMobile ? 1 : 5,
       navigation: true,
       pagination: {clickable: true},
+      loop: true,
       className: 'swiper-container'
     }
 
@@ -64,7 +65,8 @@ if (swiperElement){
  <h3>{service.name}</h3>
  {console.log('allServices:', allServices)}
 <Swiper
- {...sliderConfig}
+{...sliderConfig} 
+ref={swiperRef}
 >
  {service.service[0].content.map((s, i) => (
    <SwiperSlide key={i}>
