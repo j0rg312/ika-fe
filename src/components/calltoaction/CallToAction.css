@@ -1,4 +1,4 @@
-/* Botón */
+
 .callToAction {
     background-color:var(--primary-color);
     color: white;
@@ -16,7 +16,7 @@
     background-color: #0056b3;
   }
   
-  /* Modal */
+
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -41,26 +41,32 @@
     padding: clamp(10px, 3vw, 30px);
   }
   
-  /* Botón para cerrar */
+
   .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 34px;
     cursor: pointer;
   }
   
-  /* Estilo del formulario */
+
   .form-group {
     margin-bottom: 15px;
+  }
+
+  #email, #name {
+    color: black;
   }
   
   label {
     display: block;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 5px;
+    color: black !important;
+    -webkit-text-fill-color: #0056b3;
   }
   
   input,
