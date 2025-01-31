@@ -7,7 +7,8 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
+    overflow: auto;
+    scrollbar-width: none !important;
 }
 
 .security-header {

@@ -61,7 +61,7 @@ if (swiperRef.current) {
    
    <section className="slider-container ">
     {allServices.map((service,i) =>(
- <section className="slider " key={i} index={i}>
+ <ScrollableSection className="slider " key={i} index={i}>
  <h3>{service.name}</h3>
  {console.log('allServices:', allServices)}
 <Swiper
@@ -92,7 +92,7 @@ ref={swiperRef}
    </SwiperSlide>
  ))}
 </Swiper>
-</section>
+</ScrollableSection>
     ))}
    </section>
 

@@ -8,6 +8,7 @@
     align-items: center;
     font-family: 'Arial', sans-serif;
     overflow: auto;
+    scrollbar-width: none !important;
 }
 
 .text-container {

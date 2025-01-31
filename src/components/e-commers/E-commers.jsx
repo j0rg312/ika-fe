@@ -46,7 +46,7 @@ const ECommers = () => {
           products.map((product) => (
             <div key={product.id} className="product-card">
               <img
-                src={product.image_path ? `/path/to/images/${product.image_path}` : 'default-image.jpg'}
+                src={product.image_path ? `/uploads/${product.image_path}` : 'default-image.jpg'}
                 alt={product.name || 'Producto'}
                 className="product-image"
               />

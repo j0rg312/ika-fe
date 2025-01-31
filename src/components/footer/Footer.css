@@ -141,3 +141,37 @@ footer:hover .expanded-content {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
+
+  @media (orientation: landscape) {
+
+/*     
+    .compact-content p {
+      font-size:10px;
+    }
+
+    .social-icons a {
+      font-size: 16px
+
+    }
+    
+    .comercial-list li img{
+
+      width:40px
+
+    }
+
+    .expanded-content {
+      padding:0px
+    }
+    
+
+    .footer-text {
+      font-size:8px
+
+    }
+
+    .expanded-content h3{
+      color: #fff;
+      font-size: 10px
+    } */
+  }

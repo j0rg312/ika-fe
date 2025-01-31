@@ -1,23 +1,24 @@
 .our-work-section {
   padding: 40px 20px;
   background-color: transparent;
-  min-height: 100vh;
+  height: 100vh;
+  max-width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  overflow: auto;
   scrollbar-width: none !important;
 }
 
 .slider-container {
-
-  flex-wrap: wrap;
+  outline: red 1px solid;
   align-items: center;
-  max-width: 90vw;
+  max-width: 80vw;
   justify-content: center;
   gap: 40px;
+  box-sizing: border-box;
+
 }
 
 .slider h3 {
@@ -35,7 +36,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .service-card:hover {
