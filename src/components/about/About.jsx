@@ -1,9 +1,16 @@
-import ScrollableSection from '../scrollableSection/ScrollableSection';
+import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import './About.css';
-import TypingTitle from '../typingTitle/TypingTitle';
+import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import Section from '../ui/layouts/Section';
+import { Helmet } from 'react-helmet-async';
+
 const About = () => {
     return (
-        <section className="about">
+        <Section>
+           <Helmet>
+                <title>IKA -  Nosotros</title>
+                <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
+            </Helmet>
             <TypingTitle text="Quienes Somos" />
             <ScrollableSection index={0}>
             <p>
@@ -21,9 +28,9 @@ const About = () => {
             <ScrollableSection className="values" index={1}>
                 <h3>Nuestros Valores</h3>
                 <ul>
-                    <li><strong>Innovación:</strong> Buscamos constantemente nuevas formas de mejorar nuestros servicios.</li>
-                    <li><strong>Compromiso:</strong> Trabajamos codo a codo con nuestros clientes para garantizar el éxito de sus proyectos.</li>
-                    <li><strong>Calidad:</strong> Nos esforzamos por ofrecer soluciones que superen las expectativas.</li>
+                    <li><strong>💡 Innovación:</strong> Buscamos constantemente nuevas formas de mejorar nuestros servicios.</li>
+                    <li><strong>🤝 Compromiso:</strong> Trabajamos codo a codo con nuestros clientes para garantizar el éxito de sus proyectos.</li>
+                    <li><strong>⭐ Calidad:</strong> Nos esforzamos por ofrecer soluciones que superen las expectativas.</li>
                 </ul>
             </ScrollableSection>
 
@@ -37,7 +44,7 @@ const About = () => {
                     Convertirnos en el socio estratégico líder en innovación tecnológica para empresas de todos los tamaños.
                 </p>
             </ScrollableSection>
-        </section>
+        </Section>
     );
 };
 

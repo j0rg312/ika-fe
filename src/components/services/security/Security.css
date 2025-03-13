@@ -1,15 +1,3 @@
-.security-container {
-    padding: 40px 20px;
-    background-color: transparent;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-    overflow: auto;
-    scrollbar-width: none !important;
-}
 
 .security-header {
     text-align: center;
@@ -31,7 +19,7 @@
 
 .security-content {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 20px;
     width: 100%;
     justify-content: space-between;
@@ -45,17 +33,19 @@
 }
 
 .security-image {
-    flex: 1 1 300px; /* Mínimo 300px, el resto flexible */
+    flex: 1 1 300px;
     max-width: 600px;
     display: flex;
     justify-content: center;
 }
 
 .security-img {
+    background-color: #c0c0c0;
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Diseño responsivo */

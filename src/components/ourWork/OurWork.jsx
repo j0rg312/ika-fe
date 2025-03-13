@@ -6,8 +6,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import  {allServices} from '../../data/our-work.data';
-import ScrollableSection from '../scrollableSection/ScrollableSection';
-import TypingTitle from '../typingTitle/TypingTitle';
+import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import Section from '../ui/layouts/Section';
+import { Helmet } from 'react-helmet-async';
 
 const OurWork = () => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -56,14 +58,16 @@ if (swiperRef.current) {
 
 
     return (
-        <><section id="our-work" className="our-work-section">
+        <Section>
+            <Helmet>
+                <title>IKA - Nuestro Trabajo</title>
+                <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
+            </Helmet>
           <TypingTitle text="Nuestro Trabajo"/>
-   
    <section className="slider-container ">
     {allServices.map((service,i) =>(
  <ScrollableSection className="slider " key={i} index={i}>
- <h3>{service.name}</h3>
- {console.log('allServices:', allServices)}
+ <h3 className='area-title'>{service.name}</h3>
 <Swiper
 {...sliderConfig} 
 ref={swiperRef}
@@ -71,10 +75,11 @@ ref={swiperRef}
  {service.service[0].content.map((s, i) => (
    <SwiperSlide key={i}>
      <div
-       className="service-card"
+       className="services-card"
        onClick={() => s.imagen && handleImageClick(s.imagen)}
      >
-       <div
+           <h4 className="card-title">{s.servicio}</h4>
+           <div
          className="card__background"
          style={{
            backgroundImage: `url(${s.imagen && !s.imagen.endsWith(".mp4")
@@ -83,11 +88,9 @@ ref={swiperRef}
            })`,
          }}
        >
-         <div className="card-content">
-           <h4 className="card-title">{s.servicio}</h4>
-           <p className="card-description">{s.descripcion}</p>
-         </div>
        </div>
+           <p className="card-description">{s.descripcion}</p>
+
      </div>
    </SwiperSlide>
  ))}
@@ -116,10 +119,7 @@ ref={swiperRef}
             </button>
           </div>
         )}
-      </section>
-
-  </>
-
+      </Section>
     )
 }
 

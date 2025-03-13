@@ -1,29 +1,13 @@
 
-.callToAction {
-    background-color:var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
+  .call-to-action:hover{
     cursor: pointer;
-    font-size: clamp(8px,3vw,16px);
-    transition: background-color 0.3s ease;
-    left: 0;
-    bottom:0;
-    padding: clamp(8px, 2vw, 20px) clamp(15px, 5vw, 40px);
   }
-  
-  .callToAction:hover {
-    background-color: #0056b3;
-  }
-  
-
   .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +60,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    color: black;
   }
+  
   
   input:focus,
   textarea:focus {

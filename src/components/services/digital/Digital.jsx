@@ -1,14 +1,16 @@
 import './Digital.css';
-import ScrollableSection from '../../scrollableSection/ScrollableSection';
-import TypingTitle from '../../typingTitle/TypingTitle';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import Section from '../../ui/layouts/Section';
 
 const Digital = () => {
   return (
-    <div className="digital-container">
+    <Section>
       <TypingTitle text="Internet" />
-      <section className="service-section">
+      <Section >
         <ScrollableSection className="service-item" index={0}>
-          <div className="service-text">
+            <div className="content">
+            <div className="service-text">
             <h3 className="service-title">Correo Electrónico</h3>
             <p>El correo electrónico se ha convertido en un canal de comunicación muy utilizado y con una gran aceptación general. Estas son algunas de las utilidades más destacadas que tiene:</p>
             <ul>
@@ -24,8 +26,10 @@ const Digital = () => {
           <div className="service-image">
             <img src="https://www.ika.mx/wp-content/uploads/2016/11/correo-570x380.jpg" alt="Correo Electrónico" width="570" height="380" />
           </div>
+            </div>
         </ScrollableSection>
         <ScrollableSection className="service-item" index={1}>
+          <div className="content">
           <div className="service-image">
             <img src="https://www.ika.mx/wp-content/uploads/2016/11/estrategia-empresarial-cloud-computing-681x454-1-570x380.jpg" alt="Cloud Computing" width="570" height="380" />
           </div>
@@ -35,8 +39,14 @@ const Digital = () => {
             <p>El proceso de migración a la nube de una organización a menudo implica fusionar una infraestructura de TI en el sitio con una solución de nube híbrida, a la que se puede acceder a través de Internet por una tarifa. Las soluciones de nube híbrida hacen la transición entre uno o más proveedores de nube y, por lo general, proporcionan servicios, aplicaciones y espacio de servidor aprovisionados y bajo demanda.</p>
             <p>En IKA nos preocupamos por la seguridad, integridad y disponibilidad de la información y servicios digitales de tu organización, por lo que ponemos a tu disposición estrategias efectivas y los mejores proveedores Cloud Services, para que inicies tu proceso de migración y actualización a la nube, ya sea de manera privada, pública o híbrida.</p>
           </div>
+
+          </div>
+
         </ScrollableSection>
         <ScrollableSection className="service-item" index={2}>
+          <div className="content">
+
+
           <div className="service-text">
             <h3 className="service-title">Diseño E-commerce</h3>
             <p>El comercio electrónico (E-commerce) es un modelo de negocio que ha tomado gran auge en los últimos años y que consiste en la compra, venta y comercialización de productos y servicios a través de medios digitales por Internet (páginas web, redes sociales, entre otros.)</p>
@@ -52,12 +62,13 @@ const Digital = () => {
             </ul>
             <p>IKA te apoya y te asesora en el proceso de diseño y construcción de tu página o tienda en línea para que tu negocio dé ese salto tecnológico y se desarrolle de una forma rápida, económica y exponencial.</p>
           </div>
+          </div>
           <div className="service-image">
             <img src="https://www.ika.mx/wp-content/uploads/2016/11/ecommerce-570x380.webp" alt="E-commerce" width="570" height="380" />
-          </div>
+          </div> 
         </ScrollableSection>
-      </section>
-    </div>
+      </Section>
+    </Section>
   );
 }
 

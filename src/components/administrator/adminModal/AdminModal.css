@@ -96,6 +96,7 @@
     transition: all 1s;
     overflow: hidden;
     display: block;
+    width: 100%;
   }
   
   .close-button:hover {

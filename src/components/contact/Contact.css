@@ -1,15 +1,5 @@
 
-.contact {
-  padding: 40px 20px;
-  background-color: transparent;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  }
-  
+
   /* Títulos */
   .special-subtitle {
     font-size: 24px;

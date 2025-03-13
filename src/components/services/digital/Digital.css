@@ -1,16 +1,4 @@
-.digital-container {
-  padding: 40px 20px;
-  background-color: transparent;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  overflow: auto;
-  scrollbar-width: none !important;
-  }
-  
+
   .service-section {
     display: flex;
     flex-direction: column;

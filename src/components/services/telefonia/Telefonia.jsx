@@ -1,10 +1,11 @@
 import './Telefonia.css';
-import ScrollableSection from '../../scrollableSection/ScrollableSection';
-import TypingTitle from '../../typingTitle/TypingTitle';
+import Section from '../../ui/layouts/Section';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
 
 const Telefonía = () => {
     return (
-        <div className="telefonia-container">
+        <Section>
             <TypingTitle text="Telefonia" />
             <ScrollableSection className="service-ScrollableSection " index={0}>
                 <div className="service-item">
@@ -21,17 +22,18 @@ const Telefonía = () => {
             </ScrollableSection>
             <ScrollableSection className="service-ScrollableSection " index={1}>
                 <div className="service-item">
+                <div className="service-image">
+                        <img src="https://www.ika.mx/wp-content/uploads/2016/11/videoconferencia-570x380.jpeg" alt="videoconferencia" width="570" height="380" />
+                    </div>
                     <div className="service-text">
                         <h2>Sistemas de Videoconferencia</h2>
                         <p>En la actualidad los medios y las necesidades de comunicación han cambiado y evolucionado por lo que la necesidad de estar en constante contacto o realizar reuniones con nuestro personal no siempre es posible lograrlo de manera presencial, por lo que las organizaciones tienen que buscar la manera de seguir con la operativa diaria ya sea presencialmente o remota mediante la tecnología de Internet. Tener un sistema confiable de videoconferencia profesional brinda a tu organización de una herramienta indispensable para optimizar las comunicaciones a distancia en tu organización.</p>
                         <p>En <strong>IKA</strong> tenemos los mejores productos para que tus reuniones virtuales evolucionen profesionalmente y tu organización afronte los nuevos retos que la comunicación post Covid-19 plantea.</p>
                     </div>
-                    <div className="service-image">
-                        <img src="https://www.ika.mx/wp-content/uploads/2016/11/videoconferencia-570x380.jpeg" alt="videoconferencia" width="570" height="380" />
-                    </div>
+ 
                 </div>
             </ScrollableSection>
-        </div>
+        </Section>
     );
 };
 

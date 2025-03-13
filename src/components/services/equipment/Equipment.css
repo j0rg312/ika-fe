@@ -1,22 +1,10 @@
-.equipment-container {
-  padding: 40px 20px;
-  background-color: transparent;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  overflow: auto;
-  scrollbar-width: none !important;
-}
-  
-  
+
   
   .service-section {
     display: flex;
     flex-direction:row;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten mejor en pantallas pequeñas */
+    align-items: center;
+    flex-wrap: wrap; 
     justify-content: space-between;
     margin-bottom: 30px;
   }
@@ -53,8 +41,8 @@
   
     .service-text,
     .service-image {
-      width: 100%; /* Hace que tanto el texto como la imagen ocupen el 100% del ancho */
-      padding: 10px; /* Reduce el relleno en dispositivos pequeños */
+      width: 100%; 
+      padding: 10px; 
     }
   
     .service-image img {

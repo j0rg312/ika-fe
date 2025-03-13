@@ -1,10 +1,11 @@
 import './Security.css';
-import ScrollableSection from '../../scrollableSection/ScrollableSection';
-import TypingTitle from '../../typingTitle/TypingTitle';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import Section from '../../ui/layouts/Section';
 
 const Security = () => {
     return (
-        <div className="security-container">
+        <Section> 
             <TypingTitle text="Seguridad"/>
 
             <ScrollableSection className="security-section" index={0}>
@@ -35,7 +36,13 @@ const Security = () => {
             <ScrollableSection className="security-section" index={1}>
                 <div className="security-content">
                  
-
+                <div className="security-image">
+                        <img 
+                            src="https://www.ika.mx/wp-content/uploads/2016/11/videovigilancia-570x380.jpg" 
+                            alt="Video vigilancia" 
+                            className="security-img"
+                        />
+                    </div>
                     <div className="security-text">
                         <h2 className="security-title">Video vigilancia</h2>
                         <p className="security-paragraph">
@@ -51,16 +58,11 @@ const Security = () => {
                             El monitoreo remoto mediante internet permite a nuestros clientes desde su teléfono móvil o computadora estar pendiente en cualquier momento de cualquier actividad sospechosa sin arriesgar su integridad o la de los suyos, en <strong>IKA</strong> te asesoramos para que aproveches de la mejor manera la tecnología para tu seguridad y la de tu patrimonio.
                         </p>
                     </div>
+  
                 </div>
-                <div className="security-image">
-                        <img 
-                            src="https://www.ika.mx/wp-content/uploads/2016/11/videovigilancia-570x380.jpg" 
-                            alt="Video vigilancia" 
-                            className="security-img"
-                        />
-                    </div>
+
             </ScrollableSection>
-        </div>
+        </Section>
     );
 }
 

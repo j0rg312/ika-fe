@@ -61,9 +61,9 @@ async getByName(name: string) {
   }
 }
 
- async updateByName(name: string, product){
-  try{
-    const response = await axios.put(API_PRODUCT.updateByName(name), product);
+async updateProduct(id: string, product) {
+  try {
+    const response = await axios.put(API_PRODUCT.update(id), product);
     return {
       success: true,
       data: response.data,
@@ -73,9 +73,9 @@ async getByName(name: string) {
     return {
       success: false,
       error: err,
-    }
+    };
   }
- }
+}
 
  async deleteByName(name: string) {
   try {

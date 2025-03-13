@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './CallToAction.css';
 
-const CallToAction = () => {
+const CallToAction = ({content}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -43,9 +43,9 @@ const CallToAction = () => {
 
   return (
     <>
-      <button className="callToAction" onClick={handleOpenModal}>
-        Solicita una consulta
-      </button>
+      <div className="callToAction" onClick={handleOpenModal}>
+        {content}
+      </div>
 
       {isModalOpen && (
         <div className="modal-overlay">

@@ -1,10 +1,11 @@
 import './Support.css';
 import { FaTools, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
-import ScrollableSection from '../../scrollableSection/ScrollableSection';
-import TypingTitle from '../../typingTitle/TypingTitle';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import Section from '../../ui/layouts/Section';
 const Support = () => {
     return (
-        <section className="support-container">
+        <Section>
             <TypingTitle text="Soporte Técnico"/>
 
             <ScrollableSection className="section-soporte-empresarial " index={0}>
@@ -222,7 +223,7 @@ const Support = () => {
     </ScrollableSection>
                 </div>
             </ScrollableSection>
-        </section>
+        </Section>
     );
 };
 

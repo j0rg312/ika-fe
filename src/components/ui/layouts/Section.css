@@ -1,0 +1,10 @@
+.section-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    padding:40px 20px;
+}
+.section-container > *{
+    margin-bottom: 20px;
+}

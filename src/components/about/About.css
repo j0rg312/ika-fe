@@ -1,15 +1,4 @@
 
-.about {
-    padding: 40px 20px;
-    background-color: transparent;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-}
-
 
 
 
@@ -21,18 +10,11 @@
     padding: 20px 30px;
 }
 
-.values h3, .mission-vision h3 {
-    font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #f39c12;
-    display: inline-block;
-    padding-bottom: 5px;
-}
+
 
 /* List in Values section */
 .values ul {
-    list-style: disc;
+    list-style: none;
     margin-left: 40px;
     color: #444;
 }
@@ -40,16 +22,8 @@
 .values li {
     margin-bottom: 10px;
     font-size: 1rem;
+    list-style: none;
 }
-
-/* Mission and Vision paragraphs */
-.mission-vision p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    text-align: justify;
-}
-
 
 
 /* Responsive Design */

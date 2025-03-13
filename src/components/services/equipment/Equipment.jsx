@@ -1,13 +1,15 @@
 import './Equipment.css';
-import ScrollableSection from '../../scrollableSection/ScrollableSection';
-import TypingTitle from '../../typingTitle/TypingTitle';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import Section from '../../ui/layouts/Section';
 
 const Equipment = () => {
   return (
-    <div className="equipment-container">
+    <Section>
       <TypingTitle text="Equipos y Servicios"/>
 
       <ScrollableSection className="service-section" index={0}>
+        <div className="content">
         <div className="service-text">
           <h2>Arrendamiento de equipo de cómputo</h2>
           <p>
@@ -37,9 +39,19 @@ const Equipment = () => {
             height="380"
           />
         </div>
+        </div>
       </ScrollableSection>
 
       <ScrollableSection className="service-section" index={1}>
+        <div className="content">
+        <div className="service-image">
+          <img
+            src="https://www.ika.mx/wp-content/uploads/2016/11/impresora-570x380.jpeg"
+            alt="Administración de impresoras"
+            width="570"
+            height="380"
+          />
+        </div>
         <div className="service-text">
           <h2>Servicio de administración de impresoras</h2>
           <p>
@@ -61,16 +73,10 @@ const Equipment = () => {
             shankle beef jerky capicola doner meatloaf.
           </p>
         </div>
-        <div className="service-image">
-          <img
-            src="https://www.ika.mx/wp-content/uploads/2016/11/impresora-570x380.jpeg"
-            alt="Administración de impresoras"
-            width="570"
-            height="380"
-          />
+       
         </div>
       </ScrollableSection>
-    </div>
+    </Section>
   );
 };
 

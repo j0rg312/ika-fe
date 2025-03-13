@@ -1,10 +1,17 @@
 
-import './Contact.css'; // Asegúrate de que los estilos estén aquí
-import ScrollableSection from '../scrollableSection/ScrollableSection';
-import TypingTitle from '../typingTitle/TypingTitle';
+import './Contact.css';
+import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import Section from '../ui/layouts/Section';
+import { Helmet } from 'react-helmet-async';
+
 const Contact = () => {
   return (
-    <section className="contact">
+    <Section>
+            <Helmet>
+                <title>IKA - Contacto</title>
+                <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
+            </Helmet>
         <TypingTitle text="Contactanos"/>
               <ScrollableSection index={0}>
               <p className="fade-in">Transformamos el futuro con tecnología innovadora.</p>
@@ -94,7 +101,7 @@ const Contact = () => {
       </div>
               </ScrollableSection>
              
-    </section>
+    </Section>
   );
 };
 

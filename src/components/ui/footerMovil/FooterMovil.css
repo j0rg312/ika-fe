@@ -1,0 +1,21 @@
+.footer-movil-content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: clamp(50px, 7vw, 90px);
+    background-image:url('../../../assets/w.svg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1000;
+    filter: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.5));
+    display: flex;
+}
+
+.essencial-information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+} 
+

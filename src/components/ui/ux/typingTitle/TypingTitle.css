@@ -1,0 +1,38 @@
+.typing-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid #2c3e50;
+  animation: typing-animation var(--typing-duration) steps(var(--text-length), end), blink-caret 0.5s step-end infinite;
+  color:var(--primary-color);
+  z-index: 1000;
+  border-bottom: 2px solid var(--primary-color);
+}
+.text-container {
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  flex-direction: column;
+}
+
+
+@keyframes typing-animation {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: calc(var(--text-length)* 1ch);
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+      border-right-color: transparent;
+  }
+  50% {
+      border-right-color: var(--primary-color);
+  }
+}

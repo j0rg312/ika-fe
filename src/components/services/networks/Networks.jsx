@@ -1,10 +1,11 @@
 import './Networks.css';
-import ScrollableSection from '../../scrollableSection/ScrollableSection';
-import TypingTitle from '../../typingTitle/TypingTitle';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import Section from '../../ui/layouts/Section';
 
 const Networks = () => {
     return (
-        <div className="networks-container">
+        <Section>
             <TypingTitle text="Redes"/>
 
             <ScrollableSection className="network-section" index={0}>
@@ -12,7 +13,8 @@ const Networks = () => {
                     <h2>Cableado estructurado</h2>
                 </div>
 
-                    <div className="text-content">
+            <div className="content">
+            <div className="text-content">
                         <p>
                             En IKA contamos con vasta experiencia en la asesoría, planeación e instalación de cableado estructurado
                             apegados siempre a las normas actuales de calidad tanto en los materiales como en procesos y normativas
@@ -38,6 +40,7 @@ const Networks = () => {
                             height="380"
                         />
                     </div>
+            </div>
             </ScrollableSection>
 
             <ScrollableSection className="network-section" index={1}> 
@@ -102,7 +105,7 @@ const Networks = () => {
                     </div>
                 </div>
             </ScrollableSection>
-        </div>
+        </Section>
     );
 }
 

@@ -1,7 +1,10 @@
 import './Services.css';
+import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import { FaTools, FaNetworkWired, FaPhone, FaDesktop, FaWifi, FaShieldAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
-import TypingTitle from '../typingTitle/TypingTitle';
+import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import Section from '../ui/layouts/Section';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
   const services = [
@@ -44,8 +47,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services">
+    <Section>
+                    <Helmet>
+                <title>IKA - Soluciones</title>
+                <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
+            </Helmet>
       <TypingTitle text="Servicios"/>
+<ScrollableSection id="services">
       <div className="services-grid">
         {services.map((service, index) => (
             <Link to={service.path} key={index} className="service-card">
@@ -57,7 +65,9 @@ const Services = () => {
             </Link>
         ))}
       </div>
-    </section>
+    </ScrollableSection>
+    </Section>
+   
   );
 };
 
