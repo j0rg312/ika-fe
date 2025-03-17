@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    overflow: hidden auto;
+    overflow-y: auto; 
 
 }
 
@@ -48,8 +48,45 @@
   z-index: 100;
 }
 
-@media ( max-width:768px ){
-.main-content{
-  margin: 5rem 1rem;
+@media (max-width: 1024px) {
+  .main-content {
+      margin: 10rem 2rem;
+      max-width: 95%;
+
+  }
 }
+
+@media (max-width: 768px) {
+  .main-content {
+      margin: 5rem 1rem;
+      min-height: 60vh;
+  }
+}
+@media (max-width: 1024px) and (orientation: landscape) {
+  .main-content {
+    margin: 0rem 0rem; 
+    height: auto;
+    min-height: 50vh;
+    max-width: 95%;
+    overflow-y: auto; 
+  }
+  
+  .callToaction {
+    bottom: 20px;
+    right: 10px; 
+  }
+}
+
+@media (max-height: 768px) and (orientation: landscape) {
+  .main-content {
+    margin: 0rem 1rem;
+    min-height: 50vh; 
+    height: auto;
+    max-width: 100%;
+  }
+
+  .callToaction {
+    bottom: 10px;
+    right: 5px;
+  }
 }

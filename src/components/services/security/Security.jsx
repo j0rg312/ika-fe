@@ -11,7 +11,7 @@ const Security = () => {
             <ScrollableSection className="security-section" index={0}>
                 <div className="security-content">
                     <div className="security-text">
-                        <h2 className="security-title">Seguridad perimetral</h2>
+                        <h2 className="security-title text-center" >Seguridad perimetral</h2>
                         <p className="security-paragraph">
                             La seguridad perimetral informática es la protección de los sistemas informáticos de una organización contra amenazas externas, como ataques maliciosos, intrusiones y malware.
                         </p>
@@ -44,7 +44,7 @@ const Security = () => {
                         />
                     </div>
                     <div className="security-text">
-                        <h2 className="security-title">Video vigilancia</h2>
+                        <h2 className="security-title text-center">Video vigilancia</h2>
                         <p className="security-paragraph">
                             En la actualidad tanto en los hogares como en las empresas se deben proteger los recursos, tanto materiales como humanos, por lo que implementar un buen sistema de videovigilancia es una de las mejores decisiones que pueden tomar al respecto.
                         </p>

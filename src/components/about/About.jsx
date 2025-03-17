@@ -26,7 +26,7 @@ const About = () => {
             
             
             <ScrollableSection className="values" index={1}>
-                <h3>Nuestros Valores</h3>
+                <h3 className='text-center'>Nuestros Valores</h3>
                 <ul>
                     <li><strong>💡 Innovación:</strong> Buscamos constantemente nuevas formas de mejorar nuestros servicios.</li>
                     <li><strong>🤝 Compromiso:</strong> Trabajamos codo a codo con nuestros clientes para garantizar el éxito de sus proyectos.</li>
@@ -35,7 +35,7 @@ const About = () => {
             </ScrollableSection>
 
             <ScrollableSection className="mission-vision" index={2}>
-                <h3>Misión</h3>
+                <h3 className='text-center'>Misión</h3>
                 <p>
                     Proveer soluciones tecnológicas personalizadas que impulsen el crecimiento y la eficiencia de nuestros clientes.
                 </p>

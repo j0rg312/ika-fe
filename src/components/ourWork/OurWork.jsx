@@ -18,11 +18,6 @@ const OurWork = () => {
 
 
     useEffect(() => {
-if (swiperRef.current) {
-  swiperRef.current.style.display = 'flex';
-  }
-    }, );
-    useEffect(() => {
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768)
     }
@@ -38,7 +33,7 @@ if (swiperRef.current) {
     const sliderConfig = {
       debug: true ,
       modules: [Navigation, Pagination],
-      spaceBetween:30,
+      spaceBetween:20,
       slidesPerView: isMobile ? 1 : 5,
       navigation: true,
       pagination: {clickable: true},

@@ -50,7 +50,7 @@ const CallToAction = ({content}) => {
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-button" onClick={handleCloseModal}>
+            <button className="close" onClick={handleCloseModal}>
               &times;
             </button>
             <h2>Formulario de Consulta</h2>

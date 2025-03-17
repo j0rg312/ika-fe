@@ -1,5 +1,5 @@
 .typing-title {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;

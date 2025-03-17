@@ -28,7 +28,7 @@
     color: #000;
     margin-bottom: 20px;
     border: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid var(--primary-color);
     outline: none;
     background: transparent;
     transition: border-bottom-color 0.3s ease-in-out;
@@ -54,7 +54,7 @@
 
 .modal-input:focus,
 .modal-input:not(:placeholder-shown) {
-  border-bottom-color: var(--border-color);
+  border-bottom-color: #ff2222;
 }
 
 
@@ -81,12 +81,47 @@
     color:black;
 }
 
-/* From Uiverse.io by SujitAdroja */ 
+.login-button{
+  color: var(--primary-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.login-button:hover {
+  color: white;
+}
+
+.login-button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: var(--primary-color);
+  z-index: -1;
+  transition: all 1s;
+}
+.login-button:hover::before {
+  width: 160%;
+}
 .close-button {
-    color: var(--primary-color);
+    color: #ff2222;
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid var(--primary-color);
+    border: 2px solid #ff2222;
     padding: 10px 20px;
     font-size: 17px;
     cursor: pointer;
@@ -111,7 +146,7 @@
     top: 0;
     left: -40px;
     transform: skewX(45deg);
-    background-color: var(--primary-color);
+    background-color: #ff2222;
     z-index: -1;
     transition: all 1s;
   }

@@ -26,16 +26,20 @@
   }
   
 
-  .close-button {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background: none;
-    border: none;
-    font-size: 34px;
-    cursor: pointer;
+  .close{
+    display: block;
+    border-color: red;
+    color: red;
+    background-color: transparent;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in, border-color 0.3s ease-in;
   }
   
+  .close:hover{
+    background-color: red;
+    color: #fff;
+    border-color: red;
+  }
 
   .form-group {
     margin-bottom: 15px;

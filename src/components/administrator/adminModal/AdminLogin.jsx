@@ -17,11 +17,10 @@ const AdminModal = ({ onClose }) => {
       const response = await loginUser(username, password);
       console.log("Respuesta del backend:", response);
 
-      if (response && response.success) {  // Asegurar que `success` existe
-        setIsAuthenticated(true);
+      if (response && response.success) { 
         setError('Bienvenido!');
         console.log('Login exitoso!');
-        navigate('/adminPanel');  // 🚀 Redirigir
+        navigate('/adminPanel'); 
       } else {
         setIsAuthenticated(false);
         setError('Usuario o contraseña incorrectos');
@@ -60,7 +59,7 @@ const AdminModal = ({ onClose }) => {
         <label htmlFor="password" className="floating-label">Contraseña:</label>
       </div>
 
-      <button onClick={handleLogin}>Iniciar Sesión</button>
+      <button onClick={handleLogin} className='login-button'>Iniciar Sesión</button>
       <button className="close-button" onClick={onClose}>Cerrar</button>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}

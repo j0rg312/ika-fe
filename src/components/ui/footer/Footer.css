@@ -81,7 +81,7 @@ footer:hover .expanded-content {
 }
 
 .compact-content p {
-  font-size: clamp(6px, 2vw, 16px);
+  font-size: clamp(6px, 4vw, 16px);
   font-weight: 800;
   color:white;
 }
@@ -146,40 +146,7 @@ footer:hover .expanded-content {
     gap: 50px;
   }
 
-  @media (orientation: landscape) {
-
-/*     
-    .compact-content p {
-      font-size:10px;
-    }
-
-    .social-icons a {
-      font-size: 16px
-
-    }
-    
-    .comercial-list li img{
-
-      width:40px
-
-    }
-
-    .expanded-content {
-      padding:0px
-    }
-    
-
-    .footer-text {
-      font-size:8px
-
-    }
-
-    .expanded-content h3{
-      color: #fff;
-      font-size: 10px
-    } */
-  }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px ) {
     footer {
       pointer-events: none;
     }

@@ -1,11 +1,12 @@
 
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  flex-wrap: wrap;
     gap: 20px;
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    justify-content: center;
+
   }
   
 

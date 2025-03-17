@@ -5,7 +5,7 @@ import { ENV } from "../../enviroments/enviroments"
     getAll: `${ENV.API_URL}/products/getproducts`,
     getByName: (name: string) => `${ENV.API_URL}/products/getBy/${name}`,
     create: `${ENV.API_URL}/products/createproduct`,
-    update: (id: string) => `${ENV.API_URL}/products/update/${id}`,
+    update: (id: Number) => `${ENV.API_URL}/products/update/${id}`,
     deleteByName: (name: string) =>  `${ENV.API_URL}/products/deleteBy/${name}`
 }
 

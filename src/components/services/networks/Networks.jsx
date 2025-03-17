@@ -10,7 +10,7 @@ const Networks = () => {
 
             <ScrollableSection className="network-section" index={0}>
                 <div className="section-header">
-                    <h2>Cableado estructurado</h2>
+                    <h2 className='text-center'>Cableado estructurado</h2>
                 </div>
 
             <div className="content">
@@ -45,7 +45,7 @@ const Networks = () => {
 
             <ScrollableSection className="network-section" index={1}> 
                 <div className="section-header">
-                    <h2>Infraestructura de red</h2>
+                    <h2 className='text-center'>Infraestructura de red</h2>
                 </div>
                 <div className="content">
                     <div className="image-content">
@@ -79,7 +79,7 @@ const Networks = () => {
 
             <ScrollableSection className="network-section" index={2}>  
                 <div className="section-header">
-                    <h2>Dispositivos de comunicación</h2>
+                    <h2 className='text-center'>Dispositivos de comunicación</h2>
                 </div>
                 <div className="content">
                     <div className="text-content">

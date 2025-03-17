@@ -9,7 +9,7 @@ const Support = () => {
             <TypingTitle text="Soporte Técnico"/>
 
             <ScrollableSection className="section-soporte-empresarial " index={0}>
-                <h2>Soporte técnico empresarial</h2>
+                <h2 className='text-center'>Soporte técnico empresarial</h2>
                 <p>
                     En <strong>IKA</strong>, el soporte técnico TI está centrado en generar valor dentro de tu compañía a través de la detección y resolución de cualquier incidente en software o hardware.
                 </p>
@@ -22,7 +22,7 @@ const Support = () => {
             </ScrollableSection>
 
             <ScrollableSection className="section-videoconferencia " index={1}>
-                <h2>Sistemas de Videoconferencia</h2>
+                <h2 className='text-center'>Sistemas de Videoconferencia</h2>
                 <p>
                     En la actualidad, los medios y las necesidades de comunicación han cambiado y evolucionado, por lo que la necesidad de estar en constante contacto o realizar reuniones con nuestro personal no siempre es posible lograrlo de manera presencial. Las organizaciones tienen que buscar la manera de seguir con la operativa diaria ya sea presencialmente o remota mediante la tecnología de Internet.
                 </p>
@@ -34,31 +34,31 @@ const Support = () => {
             <ScrollableSection className="support-features " index={2}>
                 <div className="feature">
                     <FaChalkboardTeacher className="feature-icon" />
-                    <h3>Help Desk</h3>
+                    <h3 className='text-center'>Help Desk</h3>
                     <p>Proporcionamos asesoría y asistencia de forma eficaz con un apoyo intermedio y seguro.</p>
                 </div>
 
                 <div className="feature">
                     <FaChalkboardTeacher className="feature-icon" />
-                    <h3>Coaching TI</h3>
+                    <h3 className='text-center'>Coaching TI</h3>
                     <p>Capacitamos a tu personal para un uso correcto de la tecnología en tu empresa.</p>
                 </div>
 
                 <div className="feature">
                     <FaTools className="feature-icon" />
-                    <h3>Mantenimiento</h3>
+                    <h3 className='text-center'>Mantenimiento</h3>
                     <p>Realizamos mantenimientos preventivos y correctivos.</p>
                 </div>
 
                 <div className="feature">
                     <FaShieldAlt className="feature-icon" />
-                    <h3>Monitoreo</h3>
+                    <h3 className='text-center'>Monitoreo</h3>
                     <p>Monitoreamos tu infraestructura tecnológica, identificando vulnerabilidades y solucionándolas.</p>
                 </div>
             </ScrollableSection>
 
             <ScrollableSection index={3}> 
-                <h3>Póliza de Soporte y Consultoría</h3>
+                <h3 className='text-center'>Póliza de Soporte y Consultoría</h3>
                 <h4>¿Por qué tener una póliza de soporte?</h4>
                 <p>
                     Tener una Póliza de soporte y mantenimiento con <strong>IKA</strong> es la mejor forma de proteger y extender la vida útil de su infraestructura, ya que gestionamos los tickets personalmente con el fabricante de forma transparente, ágil y rápida.
@@ -159,7 +159,7 @@ const Support = () => {
             <ScrollableSection className="section-respaldos" index={5}>
                 <div className="section-content">
                     <div className="section-header">
-                        <h3 className="title-respaldos">Respaldos</h3>
+                        <h3 className="title-respaldos text-center">Respaldos</h3>
                     </div>
                     <div className="row">
                         <div className="column-left">
@@ -176,7 +176,7 @@ const Support = () => {
                     </div>
                     <ScrollableSection className="row section-animation" index={6}>
                         <div className="column-full">
-                            <h3 className="accordion-title">Beneficios de un sistema de respaldos</h3>
+                            <h3 className="accordion-title text-center">Beneficios de un sistema de respaldos</h3>
                             <div className="benefits-list">
                                 <div className="benefit-item">
                                     <h4 className="benefit-header">Seguridad de los archivos</h4>
@@ -196,7 +196,7 @@ const Support = () => {
                     <ScrollableSection className="section-recuperacion" index={7}>
         <div className="section-content">
             <div className="section-header">
-                <h3 className="title-recuperacion">Recuperación de Información</h3>
+                <h3 className="title-recuperacion text-center">Recuperación de Información</h3>
             </div>
             <div className="row">
                 <div className="column-left">

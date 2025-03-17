@@ -11,7 +11,7 @@ const Equipment = () => {
       <ScrollableSection className="service-section" index={0}>
         <div className="content">
         <div className="service-text">
-          <h2>Arrendamiento de equipo de cómputo</h2>
+          <h2 className='text-center'>Arrendamiento de equipo de cómputo</h2>
           <p>
             Cow prosciutto andouille, pork loin pastrami frankfurter chuck shank.
             Biltong pork t-bone shankle pig. Sirloin frankfurter bresaola sausage
@@ -53,7 +53,7 @@ const Equipment = () => {
           />
         </div>
         <div className="service-text">
-          <h2>Servicio de administración de impresoras</h2>
+          <h2 className='text-center'>Servicio de administración de impresoras</h2>
           <p>
             Cow prosciutto andouille, pork loin pastrami frankfurter chuck shank.
             Biltong pork t-bone shankle pig. Sirloin frankfurter bresaola sausage
