@@ -35,17 +35,6 @@
 
 }
 
-.header-movil {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: clamp(50px, 7vw, 90px);
-  background-color: var(--primary-color);
-  z-index: 1000;
-  filter: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.5));
-  display: flex;
-}
 
 .logo-header {
   display: flex;
@@ -100,6 +89,21 @@
   font-weight: 750;
   position: relative;
   padding: 10px 0;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; 
+  background-color: #ffffff;
+  transition: width 0.3s ease; 
+}
+
+.nav-link:hover::after,
+.nav-link:active::after {
+  width: 100%; 
 }
 
 

@@ -10,7 +10,15 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 
 const ECommers = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Laptop', price: 1200, amount: 10, description: 'Laptop de alto rendimiento', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
+    { id: 2, name: 'Smartphone', price: 600, amount: 5, description: 'Smartphone de última generación', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
+    { id: 3, name: 'Tablet', price: 300, amount: 8, description: 'Tablet con gran rendimiento', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
+    { id: 4, name: 'Monitor', price: 250, amount: 12, description: 'Monitor de alta resolución', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
+    { id: 5, name: 'Teclado', price: 50, amount: 15, description: 'Teclado mecánico', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
+    { id: 6, name: 'Mouse', price: 30, amount: 20, description: 'Mouse ergonómico', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
+    { id: 7, name: 'Auriculares', price: 80, amount: 6, description: 'Auriculares con cancelación de ruido', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' }
+   ]);
   const [cart, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);

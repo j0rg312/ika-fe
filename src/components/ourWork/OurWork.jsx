@@ -16,11 +16,18 @@ const OurWork = () => {
     const [isMobile, setIsMobile] = useState(false);
     const swiperRef = useRef(null);
 
+    const getSlidePerview =() => {
+      if(window.innerWidth < 768) return 1;
+      if(window.innerWidth < 1024) return 2;
+      return 5;
+    }
+
+    const [slidesPerView , setSlidesPerview] = useState(getSlidePerview())
 
     useEffect(() => {
       const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768)
-    }
+       setSlidesPerview(getSlidePerview())
+;    }
 
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -34,7 +41,7 @@ const OurWork = () => {
       debug: true ,
       modules: [Navigation, Pagination],
       spaceBetween:20,
-      slidesPerView: isMobile ? 1 : 5,
+      slidesPerView,
       navigation: true,
       pagination: {clickable: true},
       loop: true,

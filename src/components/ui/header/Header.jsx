@@ -28,7 +28,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 950); // Simplifiqué la lógica para que dependa solo del ancho
+      setIsMobile(window.innerWidth <= 950); 
     };
 
     window.addEventListener("resize", handleResize);

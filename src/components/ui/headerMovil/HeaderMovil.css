@@ -1,4 +1,15 @@
 
+.header-movil {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: clamp(50px, 7vw, 90px);
+  background-color: var(--primary-color);
+  z-index: 1000;
+ box-shadow: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.5));
+  display: flex;
+}
 
   
   .hamburger .bar {

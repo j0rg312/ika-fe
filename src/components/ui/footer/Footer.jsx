@@ -11,21 +11,23 @@ import FooterMovil from '../footerMovil/FooterMovil';
 
 
 const Footer = () => {
-  const [isMobile, setIsMobile] = useState(window.innerHeight< 900)
+  const [isMobile, setIsMobile] = useState(window.innerHeight< 920)
   const currentYear = new Date().getFullYear();
 
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerHeight < 900);
+      setIsMobile(window.innerHeight < 920);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   })
 
   return (
+    <>
+     { isMobile ? <FooterMovil/> : 
     <footer>
- { isMobile ? <FooterMovil/> :    <div className="footer-content">
+    <div className="footer-content">
         {/* Contenido completo del footer */}
         <div className="expanded-content">
           <div className="contact-info">
@@ -77,9 +79,10 @@ const Footer = () => {
             <p className="footer-text">Horario: Lunes - Viernes 9:00 - 18:00, Sábados 9:00 - 14:00</p>
           </div>
         </div>
-      </div>}
+      </div>
 
-    </footer>
+    </footer>}</>
+   
   );
 };
 

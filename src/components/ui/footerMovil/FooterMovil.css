@@ -8,12 +8,38 @@
     z-index: 1000;
     filter: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.5));
     display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
-.essencial-information{
+.essencial-information {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-} 
+}
 
+
+@media (orientation: landscape) {
+    .footer-movil-content {
+        height: clamp(40px, 6vw, 70px); /* Ajusta el tamaño cuando está en modo horizontal */
+    }
+
+    .essencial-information {
+        flex-direction: row; /* Asegura que los elementos se alineen en fila */
+    }
+}
+
+/* Media query para pantallas más pequeñas (como teléfonos) */
+@media (max-width: 767px) {
+    .footer-movil-content {
+        height: clamp(40px, 6vw, 70px); /* Ajuste específico para pantallas pequeñas */
+    }
+}
+
+/* Media query para pantallas más grandes o tabletas en modo horizontal */
+@media (min-width: 768px) and (orientation: landscape) {
+    .footer-movil-content {
+        height: clamp(50px, 7vw, 90px); /* Ajuste en pantallas más grandes */
+    }
+}

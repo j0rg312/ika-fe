@@ -39,10 +39,10 @@ footer:hover {
 .footer-text {
   margin: 0px;
   text-align: left;
-  font-size: clamp(10px, 2vw, 14px);
+  font-size: clamp(6px, 2vw, 14px);
   line-height: 1.5;
   color: #fff;
-  padding: 0.5px;
+  padding: clamp(0.5px,1vw,1px);
 }
 
 .expanded-content {
@@ -81,7 +81,7 @@ footer:hover .expanded-content {
 }
 
 .compact-content p {
-  font-size: clamp(6px, 4vw, 16px);
+  font-size: clamp(4px, 4vw, 16px);
   font-weight: 800;
   color:white;
 }
