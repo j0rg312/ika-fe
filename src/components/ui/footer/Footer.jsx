@@ -11,13 +11,13 @@ import FooterMovil from '../footerMovil/FooterMovil';
 
 
 const Footer = () => {
-  const [isMobile, setIsMobile] = useState(window.innerHeight< 920)
+  const [isMobile, setIsMobile] = useState(window.innerHeight< 850)
   const currentYear = new Date().getFullYear();
 
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerHeight < 920);
+      setIsMobile(window.innerWidth < 951);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);

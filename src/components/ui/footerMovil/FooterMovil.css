@@ -22,24 +22,22 @@
 
 @media (orientation: landscape) {
     .footer-movil-content {
-        height: clamp(40px, 6vw, 70px); /* Ajusta el tamaño cuando está en modo horizontal */
+        height: clamp(40px, 6vw, 70px);
     }
 
     .essencial-information {
-        flex-direction: row; /* Asegura que los elementos se alineen en fila */
+        flex-direction: row;
     }
 }
 
-/* Media query para pantallas más pequeñas (como teléfonos) */
 @media (max-width: 767px) {
     .footer-movil-content {
-        height: clamp(40px, 6vw, 70px); /* Ajuste específico para pantallas pequeñas */
+        height: clamp(40px, 6vw, 70px);
     }
 }
 
-/* Media query para pantallas más grandes o tabletas en modo horizontal */
 @media (min-width: 768px) and (orientation: landscape) {
     .footer-movil-content {
-        height: clamp(50px, 7vw, 90px); /* Ajuste en pantallas más grandes */
+        height: clamp(50px, 7vw, 90px);
     }
 }

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 75vh;
+    max-height: 75vh;
     margin:2rem 12rem;
     border-radius: 15px ;
     box-shadow: 0 5px 10px rgba(255, 205, 240, 0.3),
@@ -48,26 +48,13 @@
   z-index: 100;
 }
 
-@media (max-width: 1024px) {
-  .main-content {
-      margin: 10rem 2rem;
-      max-width: 95%;
 
-  }
-}
-
-@media (max-width: 768px) {
-  .main-content {
-      margin: 5rem 1rem;
-      min-height: 60px;
-  }
-}
  @media (orientation: landscape) and (max-width: 1024px) {
   .main-content {
-    margin: 0rem 1rem ; 
+    margin: 0rem 2rem ; 
 
     max-height:50vh;
-    max-width: 95%;
+
     overflow-y: auto; 
   }
   
@@ -76,3 +63,66 @@
     right: 10px; 
   }
 }
+
+@media (orientation: landscape) and (max-width: 768px) {
+  .main-content {
+    margin: 0rem 0rem ; 
+
+    min-height:50vh;
+
+    overflow-y: auto; 
+  }
+  
+  .callToaction {
+    bottom: 20px;
+    right: 10px; 
+  }
+}
+
+@media (orientation: landscape) and (max-height: 368px) {
+  .main-content {
+    margin: 0rem 5rem ; 
+
+    min-height:50vh;
+
+    overflow-y: auto; 
+  }
+  
+  .callToaction {
+    bottom: 20px;
+    right: 10px; 
+  }
+}
+/* 📱 Para teléfonos en modo horizontal (landscape) */
+@media (max-width: 820px) and (orientation: landscape) {
+  .main-content {
+      margin: 1rem auto;
+      min-width: 85vw;
+      min-width: 70vw;
+      overflow-y: auto;
+  }
+}
+
+
+
+
+  @media (max-width: 1024px) {
+    .main-content {
+        margin: 7rem 2rem;
+        min-height: 75vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+        margin: 5rem 1rem;
+        min-height: 80vh;
+    }
+  }
+  @media (max-width:369px){
+    .main-content {
+      margin: 0rem 1rem; 
+      max-height:80vh;        
+      overflow-y: auto; 
+    }
+  }

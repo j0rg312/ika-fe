@@ -18,7 +18,7 @@ const ECommers = () => {
     { id: 5, name: 'Teclado', price: 50, amount: 15, description: 'Teclado mecánico', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
     { id: 6, name: 'Mouse', price: 30, amount: 20, description: 'Mouse ergonómico', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' },
     { id: 7, name: 'Auriculares', price: 80, amount: 6, description: 'Auriculares con cancelación de ruido', image: 'https://www.itsitio.com/wp-content/uploads/2020/07/G531-1-scaled.jpg' }
-   ]);
+    ]);
   const [cart, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
