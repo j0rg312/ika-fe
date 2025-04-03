@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/ui/header/Header';
 import About from './components/about/About';
 import Services from './components/services/Services';
@@ -20,41 +20,36 @@ import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 
 const App = () => {
-
   return (
+    <HelmetProvider>
+      <Router>
+        <div className="app-container">
+          <Header />
+          <Administrator />
 
-<HelmetProvider>
-<Router>
-      <div className="app-container">
-      <Header />
-      <Administrator/>
+          <div className="main-content">
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/networks" element={<Networks />} />
+              <Route path="/services/support" element={<Support />} />
+              <Route path="/services/security" element={<Security />} />
+              <Route path="/services/digital" element={<Digital />} />
+              <Route path="/services/telefonia" element={<Telefonia />} />
+              <Route path="/services/equipment" element={<Equipment />} />
+              <Route path="/ourWork" element={<OurWork />} />
+              <Route path="/ecommers" element={<ECommers />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/adminPanel" element={<AdminPanel />} />
+              <Route path="*" element={<Navigate to="/home" />} />
+            </Routes>
+          </div>
 
-      <div className="main-content">
-        <div className="main-content-header">
-          
-        </div>
-        <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/networks" element={<Networks/>} />
-            <Route path="/services/support" element={<Support />} />
-            <Route path="/services/security" element={<Security />} />
-            <Route path="/services/digital" element={<Digital />} /> *
-            <Route path="/services/telefonia" element={<Telefonia />} />
-            <Route path="/services/equipment" element={<Equipment />} />
-            <Route path="/ourWork" element={<OurWork/>} />
-            <Route path="/ecommers" element={<ECommers />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path='/adminPanel' element={<AdminPanel/>}/>
-            <Route path="*" element={<Navigate to="/home" />} />
-          </Routes>
-      </div>
           <Footer />
-      </div>
-          
-    </Router>
-</HelmetProvider>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 };
 
