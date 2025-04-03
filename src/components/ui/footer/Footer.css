@@ -3,25 +3,15 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: clamp(50px, 7vw, 90px);
+  height: clamp(2rem, 1vw, 4rem);
   background-color: transparent;
   z-index: 1000;
   overflow: hidden;
   transition: height 0.3s ease;
-  filter: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.5));
+
+
 }
 
-footer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 140%;
-  height: 100%;
-  background-color: var(--primary-color);
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
-  z-index: -1;
-}
 
 footer:hover {
   height: clamp(200px, 50vh, 350px);
@@ -41,7 +31,7 @@ footer:hover {
   text-align: left;
   font-size: clamp(6px, 2vw, 14px);
   line-height: 1.5;
-  color: #fff;
+  color: var(--primary-color) !important;
   padding: clamp(0.5px,1vw,1px);
 }
 
@@ -49,7 +39,7 @@ footer:hover {
   opacity: 0;
   transform: translateY(-10px); 
   transition: opacity 0.3s ease, transform 0.3s ease;
-
+  background-color:var(  --secondary-color);
   display: flex; 
   flex-direction: row;
   justify-content: space-between; 
@@ -64,7 +54,7 @@ footer:hover {
 
 
 .expanded-content h3{
-  color: #fff;
+  color: #030f2e;
 }
 
 footer:hover .expanded-content {
@@ -94,7 +84,7 @@ footer:hover .expanded-content {
 
 .social-icons a {
   font-size: clamp(8px, 4vw, 24px);
-  color: white;
+  color: var(--primary-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 

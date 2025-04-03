@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Servicios", path: "/services", isDropdown: true },
   { name: "Nuestro Trabajo", path: "/OurWork" },
   { name: "Tienda", path: "/ECommers", className: "store" },
-  { name: "Contacto", path: "/contact" },
+  { name: "Contacto", path: "/contact", className: "contact" }
 ];
 
 const services = [
@@ -23,12 +23,12 @@ const services = [
 ];
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 950); 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 950); 
+      setIsMobile(window.innerWidth <= 800);
     };
 
     window.addEventListener("resize", handleResize);
@@ -36,51 +36,51 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isMobile ? 'header-movil' : ''}`}>
-      <Link to="/home">
-        <div className="logo-header">
-          <img src={logo} alt="IKA logo" className="logo" />
-        </div>
-      </Link>
-
+    <>
       {isMobile ? (
         <HeaderMovil />
       ) : (
-        <nav className="nav">
-         <ul className="nav-list">
-  {navLinks.map((link, index) => (
-    link.isDropdown ? (
-      <li
-        key={index}
-        className="dropdown"
-        onMouseEnter={() => setDropdownVisible(true)}
-        onMouseLeave={() => setDropdownVisible(false)}
-      >
-        <Link to={link.path} className="nav-link">Servicios</Link>
-        {isDropdownVisible && (
-          <ul className="dropdown-menu">
-            {services.map((service, i) => (
-              <li key={i} className="dropdown-item">
-                <Link to={service.path} className="dropdown-link">
-                  {service.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </li>
-    ) : (
-      <li key={index}>
-        <Link to={link.path} className={`nav-link ${link.className || ""}`}>
-          {link.name}
-        </Link>
-      </li>
-    )
-  ))}
-</ul>
-        </nav>
+        <header className="header">
+          <Link to="/home">
+            <div className="logo-header">
+              <img src={logo} alt="IKA logo" className="logo" />
+            </div>
+          </Link>
+
+          <nav className="nav">
+            <ul className="nav-list">
+              {navLinks.map((link, index) =>
+                link.isDropdown ? (
+                  <li
+                    key={index}
+                    className="dropdown"
+                    onMouseEnter={() => setDropdownVisible(true)}
+                    onMouseLeave={() => setDropdownVisible(false)}
+                  >
+                    <Link to={link.path} className="nav-link">Servicios</Link>
+                    <ul className={`dropdown-menu ${isDropdownVisible ? "visible" : ""}`}>
+                      {services.map((service, i) => (
+                        <li key={i} className="dropdown-item">
+                          <Link to={service.path} className="dropdown-link">
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={index}>
+                    <Link to={link.path} className={`nav-link ${link.className || ""}`}>
+                      {link.name}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
+        </header>
       )}
-    </header>
+    </>
   );
 };
 

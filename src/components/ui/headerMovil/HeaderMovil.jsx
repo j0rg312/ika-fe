@@ -22,44 +22,56 @@ const services = [
 
 const HeaderMovil = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const location = useLocation();
 
+  // Cierra el menú cuando se cambia de página
   useEffect(() => {
-    setMobileMenuOpen(false); 
+    setMobileMenuOpen(false);
+    setDropdownOpen(false);
   }, [location.pathname]);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(prevState => !prevState);
-  };
 
   return (
     <div className="header-movil">
-      <Link to="/home">
-        <div className="logo-header">
-          <img src={logo} alt="IKA logo" className="logo" />
-        </div>
+      {/* Logo */}
+      <Link to="/home" className="logo-container">
+        <img src={logo} alt="IKA logo" className="logo" />
       </Link>
 
-      <div className={`hamburger ${isMobileMenuOpen ? "open" : ""}`} onClick={toggleMobileMenu}>
+      {/* Botón menú hamburguesa */}
+      <button
+        className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
+        onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+        aria-label="Toggle navigation"
+      >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
-      </div>
+      </button>
 
+      {/* Menú de navegación móvil */}
       <nav className={`mobile-nav ${isMobileMenuOpen ? "active" : ""}`}>
         <ul className="mobile-nav-list">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link to={link.path} className="mobile-nav-link">{link.name}</Link>
+              <Link to={link.path} className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+                {link.name}
+              </Link>
             </li>
           ))}
 
+          {/* Dropdown de servicios */}
           <li className="mobile-dropdown">
-            <Link to="/services" className="mobile-nav-link">Servicios</Link>
-            <ul className="mobile-dropdown-menu">
+            <button
+              className="dropdown-toggle"
+              onClick={() => setDropdownOpen(!isDropdownOpen)}
+            >
+              Servicios
+            </button>
+            <ul className={`mobile-dropdown-menu ${isDropdownOpen ? "open" : ""}`}>
               {services.map((service, index) => (
                 <li key={index}>
-                  <Link to={service.path} className="mobile-dropdown-link">
+                  <Link to={service.path} className="mobile-dropdown-link" onClick={() => setMobileMenuOpen(false)}>
                     {service.name}
                   </Link>
                 </li>

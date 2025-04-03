@@ -14,12 +14,6 @@
     align-items: flex-start;
     max-height: 75vh;
     margin:2rem 12rem;
-    border-radius: 15px ;
-    box-shadow: 0 5px 10px rgba(255, 205, 240, 0.3),
-    0 5px 10px rgba(0, 0, 0, 0.3);
-    background-image: url('./assets/B.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
     overflow-y: auto; 
 
@@ -49,7 +43,7 @@
 }
 
 
- @media (orientation: landscape) and (max-width: 1024px) {
+ @media  (max-width: 1024px) {
   .main-content {
     margin: 0rem 2rem ; 
 

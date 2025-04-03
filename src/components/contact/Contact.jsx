@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="container">
           <p className="fade-in">Transformamos el futuro con tecnología innovadora.</p>
 
-          <h3 className="special-title text-center">
+          <h3 className="special-title">
             <span>Contacto</span>
           </h3>
 

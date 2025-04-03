@@ -8,7 +8,6 @@
 bottom: 80px;
 right: 20px;
 z-index: 1000;
-  
 }
 
 .ika{
@@ -24,8 +23,9 @@ z-index: 1000;
    display: block;
    width: 100%;
    transition: background-color 0.4s ease, color 0.4s ease-in ;
-   border-radius: 10px;
+   border-radius: none !important;
    padding: 20px;
+   box-shadow: rgba(23, 31, 114, 0.2) 0px 16px 30px;
 }
 
 .request:hover{

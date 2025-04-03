@@ -31,7 +31,7 @@ const Footer = () => {
         {/* Contenido completo del footer */}
         <div className="expanded-content">
           <div className="contact-info">
-            <h3><strong style={{color: '#fff'}}>Contáctanos</strong></h3>
+            <h2 style={{color: '#010a1f'}}>Contáctanos</h2>
             <p className="footer-text">Antílope y Cebra #3700</p>
             <p className="footer-text">Col. Lomas del Sol</p>
             <p className="footer-text">Teléfono: +52 (614) 3880755</p>
@@ -49,7 +49,7 @@ const Footer = () => {
               </p>
           </div>
           <div className="comercial-aliance">
-            <h2 style={{textAlign: 'center', color: '#fff'}}>Alianzas Comerciales</h2>
+            <h2 style={{textAlign: 'center', color: '#010a1f'}}>Alianzas Comerciales</h2>
             <ul className='comercial-list'>
               <li><img src={aws} alt="" /></li>
               <li><img src={cloud} alt="" /></li>
