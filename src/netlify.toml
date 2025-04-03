@@ -1,0 +1,13 @@
+[build]
+  # La carpeta donde se encuentra el build generado
+  publish = "dist"
+
+  # El comando de build para crear la aplicación
+  command = "npm run build"
+
+[[redirects]]
+  # Redirigir todas las rutas a index.html
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
