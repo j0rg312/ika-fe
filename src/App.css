@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: flex-start;
     max-height: 75vh;
-    margin:2rem 12rem;
+/*     margin:2rem 12rem; */
     position: relative;
     overflow-y: auto; 
 
@@ -45,17 +45,9 @@
 
  @media  (max-width: 1024px) {
   .main-content {
-    margin: 0rem 2rem ; 
-
-    max-height:50vh;
-
-    overflow-y: auto; 
+    margin: 2rem 2rem ; 
   }
   
-  .callToaction {
-    bottom: 20px;
-    right: 10px; 
-  }
 }
 
 @media (orientation: landscape) and (max-width: 768px) {
@@ -63,14 +55,9 @@
     margin: 0rem 0rem ; 
 
     min-height:50vh;
-
-    overflow-y: auto; 
   }
   
-  .callToaction {
-    bottom: 20px;
-    right: 10px; 
-  }
+
 }
 
 @media (orientation: landscape) and (max-height: 368px) {
@@ -99,23 +86,16 @@
 
 
 
-
-  @media (max-width: 1024px) {
-    .main-content {
-        margin: 7rem 2rem;
-        min-height: 75vh;
-    }
-  }
   
   @media (max-width: 768px) {
     .main-content {
-        margin: 5rem 1rem;
+        margin: 2rem 1rem;
         min-height: 80vh;
     }
   }
   @media (max-width:369px){
     .main-content {
-      margin: 0rem 1rem; 
+      margin: 2em 1rem; 
       max-height:80vh;        
       overflow-y: auto; 
     }

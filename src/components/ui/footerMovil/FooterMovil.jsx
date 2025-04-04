@@ -1,10 +1,10 @@
 
 
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import aws from '../../../assets/aws_logo_smile_1200x630.png';
+/* import aws from '../../../assets/aws_logo_smile_1200x630.png';
 import cloud from '../../../assets/cloundLoginLogo.png';
 import google from '../../../assets/google-workspace-logo.svg'
-import phone from '../../../assets/net2phone-logo.svg'
+import phone from '../../../assets/net2phone-logo.svg' */
 import './FooterMovil.css'
 const FooterMovil = () => {
 

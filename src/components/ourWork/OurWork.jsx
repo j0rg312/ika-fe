@@ -13,7 +13,6 @@ import { Helmet } from 'react-helmet-async';
 
 const OurWork = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-    const [isMobile, setIsMobile] = useState(false);
     const swiperRef = useRef(null);
 
     const getSlidePerview =() => {
