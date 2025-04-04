@@ -149,7 +149,6 @@
   transform: translateX(5px);
 }
 
-/* --- OCULTAR HEADER EN ESCRITORIO --- */
 @media (min-width: 801px) {
   .header-movil {
     display: none;
