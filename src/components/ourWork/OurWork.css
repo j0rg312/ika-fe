@@ -2,9 +2,7 @@
 
 .slider-container {
   height: 100%;
-  align-items: center;
-  max-width: 80vw; 
-  justify-content: center;
+  max-width: 80vw;
   gap: 40px;
   box-sizing: border-box;
   padding: 50px auto;
@@ -20,54 +18,53 @@
 }
 
 .services-card {
-  background-color: transparent !important;
-  border-radius: 20px;
+  border: 2px solid var(--primary-color);
   padding: 20px;
   width: 300px;
   height: 100%;
-  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
   overflow: hidden;
-  transition: transform 0.5s ease-in, box-shadow 0.5 ease-out ;
+  transition: transform 0.3s ease-in;
+}
+.overlay{
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 
 .services-card:hover {
-  transform: scale(1.01);
+  transform: scaleY(0.98);
 }
 
-.card__background {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.card__img {
+
   height: 10rem;
-/*   background:#c0c0c0; */
   background-size: cover;
   background-position: center;
-  margin-bottom: 20px;
-  border-radius: 15px;
 }
 
-.card-content {
-  padding: 40px;
-  text-align: left;
-}
 
 .card-title {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
   padding: 15px;
-  border-radius: 15px;
-/*   background-color: #f4f4f4; */
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  word-wrap: break-word;
+  overflow-y: auto;
+
 }
 
+
 .card-description {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-/*   background-color: #f4f4f4; */
-  border-radius: 15px;
+
+  border-radius: 0 0 15px 15px;
   font-size: 14px;
-  color: #666;
+  color: #000;
+  position: relative;
 }
+
 
 .swiper-container {
   width: 100%;

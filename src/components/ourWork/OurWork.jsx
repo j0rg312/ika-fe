@@ -18,7 +18,8 @@ const OurWork = () => {
     const getSlidePerview =() => {
       if(window.innerWidth < 768) return 1;
       if(window.innerWidth < 1024) return 2;
-      return 5;
+      if(window.innerWidth < 1300) return 3;
+      return 4;
     }
 
     const [slidesPerView , setSlidesPerview] = useState(getSlidePerview())
@@ -81,7 +82,7 @@ ref={swiperRef}
      >
            <h4 className="card-title">{s.servicio}</h4>
            <div
-         className="card__background"
+         className="card__img"
          style={{
            backgroundImage: `url(${s.imagen && !s.imagen.endsWith(".mp4")
              ? s.imagen
