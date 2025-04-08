@@ -30,9 +30,6 @@ const App = () => {
       <Administrator/>
 
       <div className="main-content">
-        <div className="main-content-header">
-          
-        </div>
         <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -51,8 +48,7 @@ const App = () => {
           </Routes>
       </div>
           <Footer />
-      </div>
-          
+      </div> 
     </Router>
 </HelmetProvider>
   );
