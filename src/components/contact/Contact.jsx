@@ -1,7 +1,7 @@
 import './Contact.css';
 import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import { useState } from 'react';
-import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
 
@@ -42,7 +42,7 @@ const Contact = () => {
         <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
       </Helmet>
 
-      <TypingTitle text="Contáctanos" />
+      <MainTitle text="Contáctanos" />
 
       <ScrollableSection index={0}>
         <div className="container">

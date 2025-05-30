@@ -1,12 +1,12 @@
 import './Support.css';
 import { FaTools, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
 const Support = () => {
     return (
         <Section>
-            <TypingTitle text="Soporte Técnico"/>
+            <MainTitle text="Soporte Técnico"/>
 
             <ScrollableSection className="section-soporte-empresarial " index={0}>
                 <h2 className='text-center'>Soporte técnico empresarial</h2>

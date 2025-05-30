@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../../../assets/logo.png";
@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Nosotros", path: "/about" },
   { name: "Servicios", path: "/services", isDropdown: true },
   { name: "Nuestro Trabajo", path: "/OurWork" },
-  { name: "Tienda", path: "/ECommers", className: "store" },
+/*   { name: "Tienda", path: "/ECommers", className: "store" }, */
   { name: "Contacto", path: "/contact", className: "contact" }
 ];
 
@@ -25,6 +25,7 @@ const services = [
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+ 
 
   useEffect(() => {
     const handleResize = () => {

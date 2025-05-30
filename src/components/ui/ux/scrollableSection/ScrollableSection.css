@@ -12,6 +12,9 @@
     animation: slide-in-left 1.5s ease-out forwards;
   }
   
+  .fade-in-up{
+    animation: slide-in-up 1s ease-out forwards;
+  }
   @keyframes slide-in-right {
     0% {
       transform: translateX(100%);
@@ -41,4 +44,17 @@
       opacity: 1;
     }
   }
+
+    @keyframes slide-in-up {
+    from {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+  }
+  
   

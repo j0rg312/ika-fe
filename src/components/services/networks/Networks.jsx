@@ -1,12 +1,12 @@
 import './Networks.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
 
 const Networks = () => {
     return (
         <Section>
-            <TypingTitle text="Redes"/>
+            <MainTitle text="Redes"/>
 
             <ScrollableSection className="network-section" index={0}>
                 <div className="section-header">

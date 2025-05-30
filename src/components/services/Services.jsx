@@ -2,7 +2,7 @@ import './Services.css';
 import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import { FaTools, FaNetworkWired, FaPhone, FaDesktop, FaWifi, FaShieldAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
-import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
 
@@ -52,7 +52,7 @@ const Services = () => {
                 <title>IKA - Soluciones</title>
                 <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
             </Helmet>
-      <TypingTitle text="Servicios"/>
+      <MainTitle text="Servicios"/>
 <ScrollableSection id="services">
       <div className="services-grid">
         {services.map((service, index) => (

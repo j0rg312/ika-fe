@@ -1,12 +1,12 @@
 import './Digital.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
 
 const Digital = () => {
   return (
     <Section>
-      <TypingTitle text="Internet" />
+      <MainTitle text="Internet" />
       <Section >
         <ScrollableSection className="service-item" index={0}>
             <div className="content">

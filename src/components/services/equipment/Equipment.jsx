@@ -1,12 +1,12 @@
 import './Equipment.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
 
 const Equipment = () => {
   return (
     <Section>
-      <TypingTitle text="Equipos y Servicios"/>
+      <MainTitle text="Equipos y Servicios"/>
 
       <ScrollableSection className="service-section" index={0}>
         <div className="content">

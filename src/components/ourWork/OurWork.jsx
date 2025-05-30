@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { allServices } from '../../data/our-work.data';
 import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
 
@@ -61,7 +61,7 @@ const OurWork = () => {
         />
       </Helmet>
 
-      <TypingTitle text="Nuestro Trabajo" />
+      <MainTitle text="Nuestro Trabajo" />
 
       <section className="slider-container">
         {allServices.map((service, i) => (

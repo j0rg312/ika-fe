@@ -1,12 +1,12 @@
 import './Telefonia.css';
 import Section from '../../ui/layouts/Section';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 
 const Telefonía = () => {
     return (
         <Section>
-            <TypingTitle text="Telefonia" />
+            <MainTitle text="Telefonia" />
             <ScrollableSection className="service-ScrollableSection " index={0}>
                 <div className="service-item">
                     <div className="service-text">

@@ -1,18 +1,20 @@
 import './Home.css';
 import CallToAction from '../calltoaction/CallToAction'
 import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
-import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
+
 const Home = () => {
     return (
         
-        <Section>
+        <Section >
               <Helmet defer={false}>
                 <title>IKA - Home</title>
                 <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
             </Helmet>
-              <TypingTitle text="Bienvenidos a IKA" className="typing-title"/>
+
+              <MainTitle text="Bienvenidos a IKA" className="typing-title"/>
           
         <ScrollableSection className="home-container" index={0}>
           

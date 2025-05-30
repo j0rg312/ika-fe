@@ -7,7 +7,15 @@ const ScrollableSection = ({ children, index}) => {
     threshold: 0.2,
   });
 
-  const animationClass = index % 2 === 0 ? 'fade-in-right' : 'fade-in-left';
+  let animationClass = 'fade-in';
+  if (index % 3 == 0){
+    animationClass = 'fade-in-up'
+  } else if (index % 2 == 0) {
+    animationClass = 'fade-in-right'
+  }else {
+    animationClass = 'fade-in-left'
+  }
+
   return (
     <div
       ref={ref}

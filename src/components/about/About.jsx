@@ -1,6 +1,6 @@
 import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import './About.css';
-import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
 
@@ -11,7 +11,7 @@ const About = () => {
                 <title>IKA -  Nosotros</title>
                 <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
             </Helmet>
-            <TypingTitle text="Quienes Somos" />
+            <MainTitle text="Quienes Somos" />
             <ScrollableSection index={0}>
             <p>
                <strong>IKA</strong>  es una empresa mexicana que nace en 2001, con la idea de prestar servicios de consultoría y soporte a las empresas de la ciudad de Chihuahua. Está conformada por un grupo de profesionales con más de 20 años de experiencia en distintas áreas de la Tecnología de la Información, con una visión enfocada a apoyar y fomentar el uso de tecnologías libres.

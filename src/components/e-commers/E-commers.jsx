@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './E-commers.css';
-import TypingTitle from '../ui/ux/typingTitle/TypingTitle';
+import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import ProductService from '../../data/services/productService';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
@@ -85,7 +85,7 @@ const ECommers = () => {
         <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
       </Helmet>
       <div className="ecommers-header">
-        <TypingTitle text="Nuestra Tienda" className="typing-title" speed={100} />
+        <MainTitle text="Nuestra Tienda" className="typing-title" speed={100} />
         <p>Compra los mejores equipos de cómputo a precios competitivos.</p>
       </div>
 

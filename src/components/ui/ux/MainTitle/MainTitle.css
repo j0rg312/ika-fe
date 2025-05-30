@@ -1,0 +1,16 @@
+.main-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--primary-color, #0057a3);
+  padding-bottom: 4px;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}

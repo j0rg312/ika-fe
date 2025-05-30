@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import './TypingTitle.css';
+import './MainTitle.css';
 
-const TypingTitle = ({ text, className = '' }) => {
+const MainTitle = ({ text, className = '' }) => {
   const titleRef = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const TypingTitle = ({ text, className = '' }) => {
 
   return (
     <div className="text-container">
-      <h1 ref={titleRef} className={`typing-title ${className}`}>
+      <h1 ref={titleRef} className={`main-title ${className}`}>
       {text}
     </h1>
     </div>
@@ -23,4 +23,4 @@ const TypingTitle = ({ text, className = '' }) => {
   );
 };
 
-export default TypingTitle;
+export default MainTitle;
