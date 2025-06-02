@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/lyr.jpg";
 import HeaderMovil from "../headerMovil/HeaderMovil";
 
 const navLinks = [

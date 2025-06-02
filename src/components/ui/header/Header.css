@@ -51,6 +51,7 @@
   justify-content: center;
   align-items: center;
   margin:5px;
+    filter: brightness(1.2);
 }
 
 .logo:hover {
