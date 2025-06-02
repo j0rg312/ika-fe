@@ -4,7 +4,7 @@ footer {
   left: 0;
   width: 100%;
   height: clamp(2rem, 1vw, 4rem);
-  background-color: transparent;
+  background-color: #faecec;
   z-index: 1000;
   overflow: hidden;
   transition: height 0.3s ease;
@@ -39,7 +39,7 @@ footer:hover {
   opacity: 0;
   transform: translateY(-10px); 
   transition: opacity 0.3s ease, transform 0.3s ease;
-  background-color:#fff;
+  background-color: #faecec;
   display: flex; 
   flex-direction: row;
   justify-content: space-between; 
