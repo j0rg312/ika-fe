@@ -16,6 +16,7 @@
     "@stripe/react-stripe-js": "^3.4.0",
     "@stripe/stripe-js": "^6.0.0",
     "axios": "^1.8.2",
+    "lucide-react": "^0.513.0",
     "npm-check-updates": "^17.1.15",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.3",

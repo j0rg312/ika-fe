@@ -1,65 +1,63 @@
+/* Agregar estos estilos a tu Home.css existente */
 
-.name{
-  color:#3e4194;
-}
-
-.call-to-action{
-
-bottom: 80px;
-right: 20px;
-z-index: 1000;
-}
-
-.ika{
-  color: #3e4194;
-  font-weight: 800;
-  font-size: 30px;
-}
-
-.request{
-  content: "Solicita una consulta";
-   background-color: var(--primary-color);
-   color: #ffff;;
-   display: block;
-   width: 50%;
-   transition: background-color 0.4s ease, color 0.4s ease-in ;
-   border-radius: none !important;
-   padding: 20px;
-   box-shadow: rgba(23, 31, 114, 0.2) 0px 16px 30px;
-}
-
-.request:hover{
-  background-color: #ffff;
-  color:var(--primary-color)
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-.typing-title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-
-.content-columns {
-  display: grid;
-  grid-template-columns: 1fr; /* Por defecto una columna (responsive) */
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* En pantallas medianas y grandes: usar 2 columnas */
-@media (min-width: 768px) {
-  .content-columns {
-    grid-template-columns: 1fr 1fr;
+/* Animaciones para el slider */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.request {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* Mejoras visuales adicionales */
+.content-columns {
+  animation: fadeInUp 1s ease-out;
+}
+
+.ika {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* Efectos hover para las tarjetas */
+.bg-gradient-to-br:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-fadeInUp h2 {
+    font-size: 2rem;
+  }
+  
+  .animate-fadeInUp p {
+    font-size: 1rem;
+  }
 }

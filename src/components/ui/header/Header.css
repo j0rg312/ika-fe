@@ -10,7 +10,9 @@
   background-color: var(--bg-color);
   border-bottom: 1px solid #e0e0e0;
   z-index: 1000;
-  padding: 0 1vw;
+  padding: 0 1vh;
+  background-color: #fff;
+  
 }
 
 .logo-header {
@@ -35,9 +37,7 @@
   transition: box-shadow 0.3s ease;
 }
 
-.navbar-shadow {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+
 
 .nav-list {
   list-style: none;

@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import './CallToAction.css';
 
-const CallToAction = ({content}) => {
+const CallToAction = ({ content = "Solicita una consulta" }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +15,6 @@ const CallToAction = ({content}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch('http://localhost:3000/api/form/send', {
         method: 'POST',
@@ -42,10 +36,18 @@ const CallToAction = ({content}) => {
   };
 
   return (
-    <>
-      <div className="callToAction" onClick={handleOpenModal}>
-        {content}
-      </div>
+    <div className="cta-container">
+      <button className="cta-button primary lg" onClick={handleOpenModal}>
+        <span className="cta-content">{content}</span>
+        <svg
+          className="cta-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
 
       {isModalOpen && (
         <div className="modal-overlay">
@@ -95,7 +97,7 @@ const CallToAction = ({content}) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

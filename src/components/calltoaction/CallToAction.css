@@ -1,103 +1,123 @@
+.cta-container {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
 
-  .callToAction{
-    background-color: var(--primary-color);
-    display: inline-block;
-    color: #fff;
-    border-radius: 15px;
-    padding:0.5rem;
-    transition: background-color 0.5s ease, color 0.5s ease;
-  }
-  .callToAction:hover{
-    cursor: pointer;
-    background-color: #fff;
-    color: var(--primary-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  }
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: clamp(300px, 50vw, 600px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    padding: clamp(10px, 3vw, 30px);
-  }
-  
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .close{
-    display: block;
-    border-color: red;
-    color: red;
-    background-color: transparent;
-    border-radius: 15px;
-    transition: background-color 0.3s ease-in, color 0.3s ease-in, border-color 0.3s ease-in;
-  }
-  
-  .close:hover{
-    background-color: red;
-    color: #fff;
-    border-color: red;
-  }
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
 
-  .form-group {
-    margin-bottom: 15px;
-  }
+.cta-button .cta-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
 
-  #email, #name {
-    color: black;
+.cta-button:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+.cta-button.primary {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  color: white;
+}
+
+.cta-button.lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}
+
+.submit-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #1e40af;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-  
-  label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: black !important;
-    -webkit-text-fill-color: #0056b3;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    color: black;
-  }
-  
-  
-  input:focus,
-  textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .submit-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size:clamp(8px,4vw,14px);
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    padding: clamp(8px, 2vw, 20px) clamp(10px, 3vw, 30px);
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
+}

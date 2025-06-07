@@ -56,13 +56,21 @@ const Services = () => {
 <ScrollableSection id="services">
       <div className="services-grid">
         {services.map((service, index) => (
-            <Link to={service.path} key={index} className="service-card">
-            <img src={service.icon} alt={service.title} className="service-icon" />
-            <div className="service-info">
-              <p>{service.description}</p>
+        <Link to={service.path} key={index} className="service-card">
+          <div className="card-inner">
+            <div className="card-front">
               <div className="service-icon">{service.icon}</div>
+              <h3 className="service-title">{service.title}</h3>
+              <p>{service.description}</p>
             </div>
-            </Link>
+            <div className="card-back">
+              <h4>{service.title}</h4>
+              <p>Descubre más sobre este servicio.</p>
+              <button className="btn-see-more">Ver más</button>
+            </div>
+          </div>
+        </Link>
+
         ))}
       </div>
     </ScrollableSection>
