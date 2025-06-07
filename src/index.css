@@ -103,7 +103,7 @@ input, textarea, select {
   body {
     flex-direction: column-reverse;
     align-items: flex-start;
-    margin-top: 100px;
+    margin-top: 70px;
     max-width: 100vw;
   }
 }
@@ -119,7 +119,7 @@ p {
   text-align: justify;
   margin-bottom: clamp(12px,1vw,22px);
   max-width: 800px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
   padding:10px
 }
 strong {
