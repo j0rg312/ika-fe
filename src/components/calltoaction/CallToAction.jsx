@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './CallToAction.css';
+import { CiMail } from 'react-icons/ci';
+import { RiMailSendLine } from "react-icons/ri";
 
-const CallToAction = ({ content = "Solicita una consulta" }) => {
+const CallToAction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -37,16 +39,13 @@ const CallToAction = ({ content = "Solicita una consulta" }) => {
 
   return (
     <div className="cta-container">
-      <button className="cta-button primary lg" onClick={handleOpenModal}>
-        <span className="cta-content">{content}</span>
-        <svg
-          className="cta-icon"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
+      <button 
+      className="cta-button" 
+      onClick={handleOpenModal}
+      ><div className='cta-icon' style={{fontSize: '2.5rem'}}>
+        <CiMail />
+      </div>
+
       </button>
 
       {isModalOpen && (

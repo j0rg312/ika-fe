@@ -9,7 +9,6 @@ const Home = () => {
     <>
     <HeroSlider/>
     <CompanyIntro/>
-    <CallToAction/>
     </>
 
   );

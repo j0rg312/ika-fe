@@ -4,18 +4,16 @@ footer {
   left: 0;
   width: 100%;
   height: clamp(2rem, 1vw, 4rem);
-  background-color: #faecec;
+  background-color: #fff;
   z-index: 1000;
   overflow: hidden;
   transition: height 0.3s ease;
-
-
 }
 
-
+/* Al hacer hover se expande el footer */
 footer:hover {
   height: clamp(200px, 50vh, 400px);
-} 
+}
 
 .footer-content {
   display: flex;
@@ -23,37 +21,23 @@ footer:hover {
   justify-content: flex-end;
   align-items: center;
   height: 100%;
-  padding:0;
+  padding: 0;
 }
 
-.footer-text {
-  margin: 0px;
-  text-align: left;
-  font-size: clamp(6px, 2vw, 14px);
-  line-height: 1.5;
-  color: var(--primary-color) !important;
-  padding: clamp(0.5px,1vw,1px);
-}
-
+/* Contenido que aparece al expandirse */
 .expanded-content {
   opacity: 0;
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  background-color: #faecec;
-  display: flex; 
+  background-color: #fff;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: flex-start;
-  text-align: left;
-  width: 100%; 
-  padding: clamp(6px, 2vw, 0px); 
-  margin-left: 0; 
+  width: 100%;
+  flex-wrap: wrap;
+  padding: clamp(6px, 2vw, 0px);
   gap: 10px;
-}
-
-
-.expanded-content h3{
-  color: #030f2e;
 }
 
 footer:hover .expanded-content {
@@ -61,20 +45,50 @@ footer:hover .expanded-content {
   transform: translateY(0);
 }
 
+.contact-info,
+.company-info,
+.comercial-aliance {
+  flex: 1;
+  min-width: 250px;
+  padding: 0 10px;
+}
+
+.contact-info {
+  justify-content: center;
+  text-align: center;
+}
+
+.expanded-content h2,
+.expanded-content h3 {
+  color: #010a1f;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  margin: 0;
+  font-size: clamp(6px, 2vw, 14px);
+  line-height: 1.5;
+  color: var(--primary-color) !important;
+  padding: clamp(2px, 1vw, 6px) 0;
+  text-align: left;
+}
+
+/* Estilo del contenido compacto */
 .compact-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: clamp(-10px,2vh,-4px);
+  margin-bottom: clamp(-10px, 2vh, -4px);
 }
 
 .compact-content p {
   font-size: clamp(4px, 4vw, 16px);
   font-weight: 800;
-  color:white;
+  color: white;
 }
 
+/* Redes sociales */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -92,52 +106,37 @@ footer:hover .expanded-content {
   transform: scale(1.1);
 }
 
+/* Horarios */
 .schedule {
   text-align: right;
   font-size: clamp(10px, 2vw, 14px);
   color: white;
 }
 
-.contact-info {
-  flex: 1; 
-  max-width: 65%;
-}
-
-.comercial-alinace{
-  flex:1;
-  text-align: start;
+/* Imágenes de alianzas comerciales */
+.comercial-list {
   display: flex;
-  justify-content: flex-start;
-  color: #fff;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.comercial-list li img{
+.comercial-list li img {
+  width: clamp(30px, 5vw, 60px);
   height: auto;
-  width: clamp(30px,5vw,60px);
   object-fit: contain;
 }
-  
-  .comercial-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; 
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    gap:30px;
-  }
-    
 
-.container-info{
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+/* En pantallas menores a 1000px se desactiva el hover */
+@media (max-width: 1000px) {
+  footer {
+    pointer-events: none;
   }
 
-  @media (max-width: 1000px ) {
-    footer {
-      pointer-events: none;
-    }
+  .expanded-content {
+    display: none; /* Oculta el contenido expandido */
   }
-  
+}

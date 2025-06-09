@@ -1,44 +1,45 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { navLinks, services } from "../../../data/header.data";
 import "./HeaderMovil.css";
 import logo from "../../../assets/logo.png";
 
-const navLinks = [
-  { name: "Home", path: "/home" },
-  { name: "Nosotros", path: "/about" },
-  { name: "Nuestro Trabajo", path: "/OurWork" },
-  { name: "Tienda", path: "/ECommers" },
-  { name: "Contacto", path: "/contact" },
-];
-
-const services = [
-  { name: "Redes", path: "/services/networks" },
-  { name: "Soporte Técnico", path: "/services/support" },
-  { name: "Seguridad", path: "/services/security" },
-  { name: "Transformación Digital", path: "/services/digital" },
-  { name: "Telefonía", path: "/services/telefonia" },
-  { name: "Equipos y Servicios", path: "/services/equipment" },
-];
 
 const HeaderMovil = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isDropdownOpen, mainContent] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Cierra el menú cuando se cambia de página
+
   useEffect(() => {
     setMobileMenuOpen(false);
-    setDropdownOpen(false);
+    mainContent(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const mainContent = document.querySelector(".main-content");
+
+    if(!mainContent) return;
+
+
+    const handleScroll = () => {
+      setIsScrolled(mainContent.scrollTop > 1);
+    };
+
+    mainContent.addEventListener("scroll", handleScroll);
+
+    return () => {
+      mainContent.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
-    <div className="header-movil">
+    <div className={`header-movil ${isScrolled ? 'scrolled' : ''}`}>
       {/* Logo */}
       <Link to="/home" className="logo-container">
         <img src={logo} alt="IKA logo" className="logo" />
       </Link>
-
-      {/* Botón menú hamburguesa */}
       <button
         className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
         onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
@@ -49,7 +50,6 @@ const HeaderMovil = () => {
         <div className="bar"></div>
       </button>
 
-      {/* Menú de navegación móvil */}
       <nav className={`mobile-nav ${isMobileMenuOpen ? "active" : ""}`}>
         <ul className="mobile-nav-list">
           {navLinks.map((link, index) => (
@@ -60,11 +60,10 @@ const HeaderMovil = () => {
             </li>
           ))}
 
-          {/* Dropdown de servicios */}
           <li className="mobile-dropdown">
             <button
               className="dropdown-toggle"
-              onClick={() => setDropdownOpen(!isDropdownOpen)}
+              onClick={() => mainContent(!isDropdownOpen)}
             >
               Servicios
             </button>

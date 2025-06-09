@@ -14,6 +14,7 @@ import Footer from './components/ui/footer/Footer';
 import OurWork from './components/ourWork/OurWork';
 import ECommers from './components/e-commers/E-commers';
 import Administrator from './components/administrator/Administrator';
+import CallToAction from './components/calltoaction/CallToAction';
 import AdminPanel from './components/adminPanel/AdminPanel';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -47,6 +48,7 @@ const App = () => {
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
       </div>
+          <CallToAction/>
           <Footer />
       </div> 
     </Router>

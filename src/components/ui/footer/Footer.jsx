@@ -41,6 +41,7 @@ const Footer = () => {
             <p className="footer-text">
               Email: <a href="mailto:soporte@ika.mx">soporte@ika.mx</a>
             </p>
+            </div>
             <div className="container-info">
             <div className="company-info">
               <h3>Internet Knowledge Applied</h3>
@@ -48,6 +49,7 @@ const Footer = () => {
                 Nuestra compañía está integrada por un grupo de profesionistas con amplia experiencia en el manejo de información, respaldos, soporte técnico, administración de servidores y venta y renta de equipo de cómputo.
               </p>
           </div>
+             </div>
           <div className="comercial-aliance">
             <h2 style={{textAlign: 'center', color: '#010a1f'}}>Alianzas Comerciales</h2>
             <ul className='comercial-list'>
@@ -57,9 +59,9 @@ const Footer = () => {
               <li><img src={phone} alt="" /></li>
             </ul>
             </div>
-            </div>
+         
           
-          </div>
+     
         </div>  
 
         <div className="compact-content">
