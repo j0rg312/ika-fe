@@ -1,15 +1,13 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { navLinks, services } from "../../../data/header.data";
+import { navLinks, services } from "../../../data/header.data"; // Asegúrate que esta ruta es correcta
 import "./Header.css";
 import logo from "../../../assets/logo.png";
 import HeaderMovil from "../headerMovil/HeaderMovil";
 
-
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
- 
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,16 +32,19 @@ const Header = () => {
 
           <nav className="nav">
             <ul className="nav-list">
-              {navLinks.map((link, index) =>
-                link.isDropdown ? (
-                  <li
-                    key={index}
-                    className="dropdown"
-                    onMouseEnter={() => setDropdownVisible(true)}
-                    onMouseLeave={() => setDropdownVisible(false)}
-                  >
-                    <Link to={link.path} className="nav-link">Servicios</Link>
-                    <ul className={`dropdown-menu ${isDropdownVisible ? "visible" : ""}`}>
+              {navLinks.map((link, index) => (
+                <li
+                  key={index}
+                  className={link.name === "Soluciones" ? "dropdown" : ""}
+                  onMouseEnter={() => link.name === "Soluciones" && setActiveDropdown(index)}
+                  onMouseLeave={() => link.name === "Soluciones" && setActiveDropdown(null)}
+                >
+                  <Link to={link.path} className={`nav-link ${link.className || ""}`}>
+                    {link.name}
+                  </Link>
+                  
+                  {link.name === "Soluciones" && (
+                    <ul className={`dropdown-menu ${activeDropdown === index ? "visible" : ""}`}>
                       {services.map((service, i) => (
                         <li key={i} className="dropdown-item">
                           <Link to={service.path} className="dropdown-link">
@@ -52,15 +53,9 @@ const Header = () => {
                         </li>
                       ))}
                     </ul>
-                  </li>
-                ) : (
-                  <li key={index}>
-                    <Link to={link.path} className={`nav-link ${link.className || ""}`}>
-                      {link.name}
-                    </Link>
-                  </li>
-                )
-              )}
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
         </header>

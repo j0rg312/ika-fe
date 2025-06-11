@@ -60,7 +60,7 @@ const HeaderMovil = () => {
             </li>
           ))}
 
-          <li className="mobile-dropdown">
+{/*           <li className="mobile-dropdown">
             <button
               className="dropdown-toggle"
               onClick={() => mainContent(!isDropdownOpen)}
@@ -76,7 +76,7 @@ const HeaderMovil = () => {
                 </li>
               ))}
             </ul>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

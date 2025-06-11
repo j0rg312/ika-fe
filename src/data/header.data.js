@@ -5,7 +5,9 @@ import { classNames } from "primereact/utils";
 export const navLinks = [
   { name: "Home", path: "/home" },
   { name: "Nosotros", path: "/about" },
-  { name: "Soluciones", path: "/services"},
+  { name: "Soluciones",
+    path: "/services",
+    isDropdown: true },
   { name: "Nuestro Trabajo", path: "/OurWork" },
   { name: "Contacto", path: "/contact", className: "contact"},
 ];

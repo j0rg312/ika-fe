@@ -10,12 +10,12 @@ const Networks = () => {
 
             <ScrollableSection className="network-section" index={0}>
                 <div className="section-header">
-                    <h2 className='text-center'>Cableado estructurado</h2>
+                    <h2 >Cableado estructurado</h2>
                 </div>
 
             <div className="content">
             <div className="text-content">
-                        <p>
+                        <p className='service-text'>
                             En IKA contamos con vasta experiencia en la asesoría, planeación e instalación de cableado estructurado
                             apegados siempre a las normas actuales de calidad tanto en los materiales como en procesos y normativas
                             de instalación y configuración de todos los componentes de la red. Siempre con la consigna de que tu
@@ -32,7 +32,7 @@ const Networks = () => {
                             <li>Implementación de proyectos diversos de redes.</li>
                         </ul>
                     </div>
-                    <div className="image-content">
+                    <div className="service-image">
                         <img
                             src="https://www.ika.mx/wp-content/uploads/2016/11/cable-rack-1-570x380.png"
                             alt="Cableado estructurado"
@@ -45,10 +45,10 @@ const Networks = () => {
 
             <ScrollableSection className="network-section" index={1}> 
                 <div className="section-header">
-                    <h2 className='text-center'>Infraestructura de red</h2>
+                    <h2 >Infraestructura de red</h2>
                 </div>
                 <div className="content">
-                    <div className="image-content">
+                    <div className="service-image">
                         <img
                             src="https://www.ika.mx/wp-content/uploads/2016/11/redes-1140x430-2289575453-570x380.jpeg"
                             alt="Infraestructura de red"
@@ -57,12 +57,12 @@ const Networks = () => {
                         />
                     </div>
                     <div className="text-content">
-                        <p>
+                        <p className='service-text'>
                             El equipo de IKA entiende la importancia de contar con una Infraestructura de Red sólida y segura, buscando
                             siempre las mejores soluciones para cada tipo de cliente. Brindamos a nuestros clientes las herramientas
                             necesarias para que su infraestructura cuente con servicios de telefonía, red e internet confiables.
                         </p>
-                        <p>
+                        <p className='service-text'>
                             <strong>Servicios:</strong>
                             <ul>
                                 <li>Instalación y administración de servidores MS Windows y/o GNU/Linux.</li>
@@ -83,7 +83,7 @@ const Networks = () => {
                 </div>
                 <div className="content">
                     <div className="text-content">
-                        <p>
+                        <p className='service-text'>
                             Los dispositivos tales como routers, switches, conmutadores, firewalls, acces points, antenas para enlace
                             inalámbrico punto a punto y multipunto, entre otros, son la pieza clave para contar con una infraestructura
                             de red adecuada que permita comunicar y conformar la red de tu organización.
@@ -95,7 +95,7 @@ const Networks = () => {
                             <li>Hikvision, Epcom e IDIS.</li>
                         </ul>
                     </div>
-                    <div className="image-content">
+                    <div className="service-image">
                         <img
                             src="https://www.ika.mx/wp-content/uploads/2016/11/network-net-ethernet-hub-switch-570x380.webp"
                             alt="Dispositivos de comunicación"

@@ -15,7 +15,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch('http://localhost:3000/api/form/send', {
         method: 'POST',
@@ -46,7 +45,9 @@ const Contact = () => {
 
       <ScrollableSection index={0}>
         <div className="container">
-          <p className="fade-in">Transformamos el futuro con tecnología innovadora.</p>
+          <p className="fade-in">
+            Transformamos el futuro con tecnología innovadora.
+          </p>
 
           <h3 className="special-title">
             <span>Contacto</span>
@@ -55,26 +56,26 @@ const Contact = () => {
           <div className="info-grid">
             <div className="info-box">
               <i className="flaticon-placeholder"></i>
-              <h3 className='text-center'>Oficinas</h3>
+              <h3>Oficinas</h3>
               <p>C. Cebra #3700 int 26a, Col. Colinas del Sol I y II</p>
               <p>CP. 31110, Chihuahua, Chihuahua</p>
             </div>
 
             <div className="info-box">
               <i className="flaticon-phone-call"></i>
-              <h3 className='text-center'>Llámanos</h3>
+              <h3>Llámanos</h3>
               <p>Oficina: (614) 388-0755</p>
             </div>
 
             <div className="info-box">
               <i className="flaticon-mail"></i>
-              <h3 className='text-center'>Correos</h3>
+              <h3>Correos</h3>
               <p><a href="mailto:contacto@ika.mx">contacto@ika.mx</a></p>
             </div>
           </div>
 
           <div className="form-container">
-            <h2 className='text-center'>Formulario de Consulta</h2>
+            <h2>Formulario de Consulta</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Nombre:</label>
@@ -85,8 +86,11 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  placeholder="Tu nombre completo"
+                  aria-label="Nombre"
                 />
               </div>
+
               <div className="form-group">
                 <label htmlFor="email">Correo Electrónico:</label>
                 <input
@@ -96,8 +100,11 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  placeholder="ejemplo@correo.com"
+                  aria-label="Correo Electrónico"
                 />
               </div>
+
               <div className="form-group">
                 <label htmlFor="message">Mensaje:</label>
                 <textarea
@@ -107,8 +114,11 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                ></textarea>
+                  placeholder="Escribe tu mensaje aquí..."
+                  aria-label="Mensaje"
+                />
               </div>
+
               <button type="submit" className="submit-button">
                 Enviar
               </button>

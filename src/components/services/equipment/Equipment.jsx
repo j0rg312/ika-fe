@@ -8,22 +8,22 @@ const Equipment = () => {
     <Section>
       <MainTitle text="Equipos y Servicios"/>
 
-      <ScrollableSection className="service-section" index={0}>
+      <ScrollableSection  index={0}>
         <div className="content">
         <div className="service-text">
           <h2 className='text-center'>Arrendamiento de equipo de cómputo</h2>
-          <p>
+          <p className='service-text'>
             Cow prosciutto andouille, pork loin pastrami frankfurter chuck shank.
             Biltong pork t-bone shankle pig. Sirloin frankfurter bresaola sausage
             andouille. Ground round strip steak doner, kevin short loin turducken
             jowl biltong meatball bresaola. Drumstick tongue pig frankfu fatback,
             brisket ground round jerky.
           </p>
-          <p>
+          <p className='service-text'>
             1569% salami picanha pan12/12/164 enderloin265 biltong landjaeger16
             landjaeger cow rump
           </p>
-          <p>
+          <p className='service-text'>
             Andouille flank leberkas beef ribs. Prosciutto cupim turkey, ham hock
             tail hamburger t-bone shank shoulder pork belly chicken ribeye ham.
             Hamburger ball tip short ribs drumstick salami. Fatback meatloaf pork loin
@@ -61,11 +61,11 @@ const Equipment = () => {
             jowl biltong meatball bresaola. Drumstick tongue pig frankfu fatback,
             brisket ground round jerky.
           </p>
-          <p>
+          <p className='service-text'>
             1569% salami picanha pan12/12/164 enderloin265 biltong landjaeger16
             landjaeger cow rump
           </p>
-          <p>
+          <p className='service-text'>
             Andouille flank leberkas beef ribs. Prosciutto cupim turkey, ham hock
             tail hamburger t-bone shank shoulder pork belly chicken ribeye ham.
             Hamburger ball tip short ribs drumstick salami. Fatback meatloaf pork loin

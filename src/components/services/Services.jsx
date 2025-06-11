@@ -53,27 +53,27 @@ const Services = () => {
                 <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
             </Helmet>
       <MainTitle text="Servicios"/>
-<ScrollableSection id="services">
+<Section id="services">
       <div className="services-grid">
         {services.map((service, index) => (
-        <Link to={service.path} key={index} className="service-card">
+        <div key={index} className="service-card">
           <div className="card-inner">
             <div className="card-front">
               <div className="service-icon">{service.icon}</div>
               <h3 className="service-title">{service.title}</h3>
-              <p>{service.description}</p>
+              <p className='service-text'>{service.description}</p>
             </div>
             <div className="card-back">
-              <h4>{service.title}</h4>
-              <p>Descubre más sobre este servicio.</p>
-              <button className="btn-see-more">Ver más</button>
+              <h4 className='title-back'>{service.title}</h4>
+              <p className='text-back'>Descubre más sobre este servicio.</p>
+                <Link to={service.path} className="btn-see-more">Vér más</Link>
             </div>
           </div>
-        </Link>
+        </div>
 
         ))}
       </div>
-    </ScrollableSection>
+    </Section>
     </Section>
    
   );

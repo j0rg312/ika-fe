@@ -10,9 +10,8 @@ footer {
   transition: height 0.3s ease;
 }
 
-/* Al hacer hover se expande el footer */
 footer:hover {
-  height: clamp(200px, 50vh, 400px);
+  height:auto;
 }
 
 .footer-content {
@@ -24,7 +23,7 @@ footer:hover {
   padding: 0;
 }
 
-/* Contenido que aparece al expandirse */
+
 .expanded-content {
   opacity: 0;
   transform: translateY(-10px);
@@ -54,8 +53,8 @@ footer:hover .expanded-content {
 }
 
 .contact-info {
-  justify-content: center;
-  text-align: center;
+  justify-content: left;
+  text-align:left;
 }
 
 .expanded-content h2,

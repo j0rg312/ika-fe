@@ -8,32 +8,41 @@ import Soporte from '../../../assets/soporte.png';
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  const slides = [
-    {
-      id: 1,
-      bgImage: StarLink,
-      subtitle: 'Soluciones tecnológicas innovadoras',
-      title: 'El equipo adecuado para tu empresa',
-      description: 'Más de 20 años de experiencia en consultoría y soporte de TI en Chihuahua',
-      alignment: 'left'
-    },
-    {
-      id: 2,
-      bgImage: Consultoria,
-      subtitle: 'Consultoría especializada',
-      title: 'Capital humano de vanguardia',
-      description: 'Profesionales capacitados en tecnologías libres y desarrollo de proyectos',
-      alignment: 'right'
-    },
-    {
-      id: 3,
-      bgImage: Soporte,
-      subtitle: 'Soporte integral de TI',
-      title: 'Servicios completos para tu negocio',
-      description: 'Desde consultoría hasta venta y renta de equipo de cómputo',
-      alignment: 'center'
+const slides = [
+  {
+    id: 1,
+    bgImage: StarLink,
+    subtitle: 'Soluciones tecnológicas innovadoras',
+    title: 'El equipo adecuado para tu empresa',
+    description: 'Más de 20 años de experiencia en consultoría y soporte de TI en Chihuahua',
+    alignment: 'left',
+    button: {
+      text: 'Ver servicios',
+      link: '../services/'
     }
-  ];
+  },
+  {
+    id: 2,
+    bgImage: Consultoria,
+    subtitle: 'Consultoría especializada',
+    title: 'Capital humano de vanguardia',
+    description: 'Profesionales capacitados en tecnologías libres y desarrollo de proyectos',
+    alignment: 'right'
+  },
+  {
+    id: 3,
+    bgImage: Soporte,
+    subtitle: 'Soporte integral de TI',
+    title: 'Servicios completos para tu negocio',
+    description: 'Desde consultoría hasta venta y renta de equipo de cómputo',
+    alignment: 'center',
+    button: {
+      text: 'Contáctanos',
+      link: '../contact'
+    }
+  }
+];
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -57,7 +66,7 @@ const HeroSlider = () => {
             key={slide.id}
             className="slide"
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(${slide.bgImage})`,
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(${slide.bgImage})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -69,10 +78,15 @@ const HeroSlider = () => {
                 <h2 className="title">{slide.title}</h2>
                 <p className="description">{slide.description}</p>
                 <div className={`buttons ${slide.alignment === 'center' ? 'center' : ''}`}>
-                  <a href="#servicios" className="btn primary">Ver todos los servicios</a>
-                  <a href="#como-trabajamos" className="btn secondary">
-                    <Play className="icon" /> Cómo trabajamos
-                  </a>
+                  {slide.button ? (
+                    <a href={slide.button.link} className={`btn primary align-${slide.alignment}`}>
+                      {slide.button.text}
+                    </a>
+                  ) : (
+                    <a href="#como-trabajamos" className={`btn secondary align-${slide.alignment}`}>
+                      <Play className="icon" /> Cómo trabajamos
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
