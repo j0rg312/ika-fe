@@ -6,19 +6,7 @@
     max-height: 100vh;
     overflow: hidden;
   }
-  
-/*   .main-content {
-    flex-grow: 1;
-    display: flex;
-    margin:0;
-    padding: 0;
-    justify-content: center;
-    align-items: flex-start;
-    max-height: 85vh;
-    position: relative;
-    overflow-y: auto; 
 
-} */
 
 .main-content {
   overflow-y: auto;
@@ -26,6 +14,7 @@
   display: 0;
   padding: 0;
   max-height: 90vh;
+  height: 100%;
 }
 
 

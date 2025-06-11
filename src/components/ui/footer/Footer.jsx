@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
             <div className="container-info">
             <div className="company-info">
-              <h3>Internet Knowledge Applied</h3>
+              <h2>Internet Knowledge Applied</h2>
               <p className="footer-text">
                 Nuestra compañía está integrada por un grupo de profesionistas con amplia experiencia en el manejo de información, respaldos, soporte técnico, administración de servidores y venta y renta de equipo de cómputo.
               </p>

@@ -4,6 +4,7 @@ import './HeroSlider.css';
 import Consultoria from '../../../assets/consultoria.png';
 import StarLink from '../../../assets/starlink.webp';
 import Soporte from '../../../assets/soporte.png';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

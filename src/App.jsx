@@ -19,6 +19,7 @@ import AdminPanel from './components/adminPanel/AdminPanel';
 import { HelmetProvider } from 'react-helmet-async';
 
 import './App.css';
+import ScrollToTop from './components/ui/ux/scrollToTop/SccrollTop';
 
 const App = () => {
 
@@ -26,12 +27,14 @@ const App = () => {
 
 <HelmetProvider>
 <Router>
+  <ScrollToTop/>
       <div className="app-container">
       <Header />
-{/*       <Administrator/> */}
+      
 
       <div className="main-content">
         <Routes>
+
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />

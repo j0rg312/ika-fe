@@ -2,11 +2,13 @@ import React from 'react';
 import Section from '../../ui/layouts/Section';
 import { History, Monitor, Users, CheckCircle } from 'lucide-react';
 import './CompanyIntro.css';
+import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 
 const CompanyIntro = () => {
   return (
     <Section>
-      <div className="intro-header">
+      <ScrollableSection index={0}>
+<div className="intro-header">
         <h1 className="intro-title">
           Bienvenidos a <span className="highlight">IKA</span>
         </h1>
@@ -69,6 +71,8 @@ const CompanyIntro = () => {
           </div>
         </div>
       </div>
+      </ScrollableSection>
+      
     </Section>
   );
 };
