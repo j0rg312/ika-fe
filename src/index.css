@@ -88,15 +88,7 @@ html {
   background: var(--bg-color) !important;
 }
 
-body {
-  width: 100%;
-  min-width: 320px;
-  min-height: 100vh;
-  overflow: hidden;
-  place-items: center;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
+
 
 a {
   font-weight: 500;

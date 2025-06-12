@@ -1,51 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './CallToAction.css';
-import { CiMail } from 'react-icons/ci';
-import { RiMailSendLine } from "react-icons/ri";
+import { IoChatbubbleSharp } from 'react-icons/io5';
+import { io } from 'socket.io-client';
+
+const socket = io('http://localhost:3000'); // Ajusta el puerto si es necesario
 
 const CallToAction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const sendMessage = () => {
+    if (input.trim() === '') return;
+
+    socket.emit('mensaje', input); // Enviar al servidor
+    setMessages((prev) => [...prev, { sender: 'yo', text: input }]);
+    setInput('');
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:3000/api/form/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  useEffect(() => {
+    socket.on('mensaje', (msg) => {
+      setMessages((prev) => [...prev, { sender: 'agente', text: msg }]);
+    });
 
-      if (response.ok) {
-        alert('Correo enviado con éxito.');
-        setFormData({ name: '', email: '', message: '' });
-        setIsModalOpen(false);
-      } else {
-        alert('Hubo un problema al enviar el correo.');
-      }
-    } catch (error) {
-      console.error('Error al enviar el correo:', error);
-      alert('Ocurrió un error al enviar el correo.');
-    }
-  };
+    return () => {
+      socket.off('mensaje');
+    };
+  }, []);
 
   return (
     <div className="cta-container">
-      <button 
-      className="cta-button" 
-      onClick={handleOpenModal}
-      ><div className='cta-icon' style={{fontSize: '2.5rem'}}>
-        <CiMail />
-      </div>
-
+      <button className="cta-button" onClick={handleOpenModal}>
+        <div className="cta-icon" style={{ fontSize: '2.5rem' }}>
+          <IoChatbubbleSharp />
+        </div>
       </button>
 
       {isModalOpen && (
@@ -54,45 +45,35 @@ const CallToAction = () => {
             <button className="close" onClick={handleCloseModal}>
               &times;
             </button>
-            <h2>Formulario de Consulta</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Nombre:</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Correo Electrónico:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Mensaje:</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="submit-button">
-                Enviar
-              </button>
-            </form>
+            <h2>Chat de Consulta</h2>
+
+            <div style={{ height: 200, overflowY: 'auto', background: '#f9f9f9', padding: '10px', marginBottom: 10 }}>
+              {messages.map((msg, idx) => (
+                <div key={idx} style={{ textAlign: msg.sender === 'yo' ? 'right' : 'left' }}>
+                  <span style={{
+                    background: msg.sender === 'yo' ? '#d1e7dd' : '#cfe2ff',
+                    padding: '5px 10px',
+                    borderRadius: 8,
+                    display: 'inline-block',
+                    marginBottom: '5px'
+                  }}>
+                    {msg.text}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <input
+              type="text"
+              placeholder="Escribe tu mensaje..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+              style={{ width: '80%', padding: '6px' }}
+            />
+            <button onClick={sendMessage} style={{ width: '18%', marginLeft: '2%' }}>
+              Enviar
+            </button>
           </div>
         </div>
       )}

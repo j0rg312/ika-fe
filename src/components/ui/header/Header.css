@@ -98,7 +98,7 @@
   position: absolute;
   top: 30px;
   left: 0;
-  background-color: var(--bg-color);
+  background-color: var(--color-white);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   padding: 10px 0;

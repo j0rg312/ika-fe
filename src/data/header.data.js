@@ -8,7 +8,7 @@ export const navLinks = [
   { name: "Soluciones",
     path: "/services",
     isDropdown: true },
-  { name: "Nuestro Trabajo", path: "/OurWork" },
+ /*  { name: "Nuestro Trabajo", path: "/OurWork" }, */
   { name: "Contacto", path: "/contact", className: "contact"},
 ];
 

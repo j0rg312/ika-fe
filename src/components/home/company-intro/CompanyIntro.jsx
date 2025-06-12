@@ -1,4 +1,5 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 import Section from '../../ui/layouts/Section';
 import { History, Monitor, Users, CheckCircle } from 'lucide-react';
 import './CompanyIntro.css';
@@ -21,9 +22,12 @@ const CompanyIntro = () => {
       <div className="intro-content">
         <div className="intro-card historia-card">
           <div className="card-icon-header">
-            <div className="icon-wrapper history-icon">
+            <Link to="../about">
+              <div className="icon-wrapper history-icon">
               <History className='icons'/>
             </div>
+            </Link>
+
             <h3 className="intro-subtitle">Nuestra Historia</h3>
           </div>
           <p className="intro-paragraph">
@@ -34,9 +38,11 @@ const CompanyIntro = () => {
         <div className="intro-grid">
           <div className="grid-card blue">
             <div className="card-header">
-              <div className="icon blue-bg">
-                <Monitor className='icons'/>
+              <Link to="../services">
+                <div className="icon blue-bg">
+                 <Monitor className='icons'/>
               </div>
+              </Link>
               <h4 className="card-title blue-text">Nuestros Servicios</h4>
             </div>
             <p className="card-description">
@@ -64,9 +70,10 @@ const CompanyIntro = () => {
             </div>
           </div>
           <div className="mission-content">
-            <h4>Nuestro Compromiso</h4>
+            <h4>Nuestra Filosofía</h4>
             <p>
-              Participamos activamente en los proyectos de nuestros clientes...
+             Como empresa nos interesa formar alianzas estratégicas con nuestros clientes que les permita desarrollar y optimizar su crecimineto tecnológico y operativo,
+             teniendo siempre en cuenta sus necesidades y garantizando su satisfacción.
             </p>
           </div>
         </div>

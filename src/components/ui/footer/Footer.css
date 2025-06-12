@@ -83,7 +83,7 @@ footer:hover .expanded-content {
 
 .compact-content p {
   font-size: clamp(4px, 4vw, 16px);
-  font-weight: 800;
+  font-weight: 600;
   color: white;
 }
 

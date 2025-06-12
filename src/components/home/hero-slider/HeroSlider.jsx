@@ -75,8 +75,8 @@ const slides = [
           >
             <div className="slide-content-wrapper">
               <div className={`slide-content align-${slide.alignment}`}>
-                <h6 className="subtitle">{slide.subtitle}</h6>
-                <h2 className="title">{slide.title}</h2>
+                <h6 className="slider-subtitle">{slide.subtitle}</h6>
+                <h2 className="slider-title">{slide.title}</h2>
                 <p className="description">{slide.description}</p>
                 <div className={`buttons ${slide.alignment === 'center' ? 'center' : ''}`}>
                   {slide.button ? (

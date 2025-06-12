@@ -1,0 +1,195 @@
+.client-slider {
+  overflow: hidden;
+  width: 99vw;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary-color) 100%);
+  padding: var(--space-2xl) 0;
+  position: relative;
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.client-slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--primary-color-light) 50%, 
+    transparent 100%);
+}
+
+.slider-track {
+  display: flex;
+  align-items: center;
+  width: calc(240px * 15); /* 5 logos originales + 10 duplicados más para flujo continuo */
+  animation: slideInfinite 30s linear infinite;
+  gap: var(--space-2xl);
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
+.client-logo-card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  margin: 0 var(--space-lg);
+}
+
+.client-logo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    var(--primary-gradient-start) 0%, 
+    var(--primary-gradient-end) 100%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.client-logo-card:hover::before {
+  opacity: 0.05;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.client-logo-image {
+  height: 80px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: var(--transition);
+  filter: grayscale(0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.client-logo-card:hover .client-logo-image {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+/* Keyframes para la animación infinita perfecta */
+@keyframes slideInfinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-240px * 5)); /* Solo mueve 5 logos para loop perfecto */
+  }
+}
+
+/* Indicadores de progreso eliminados */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .client-slider {
+    padding: var(--space-xl) 0;
+  }
+  
+  .slider-track {
+    width: calc(200px * 15);
+    animation: slideInfiniteTablet 25s linear infinite;
+  }
+  
+  .client-logo-card {
+    width: 160px;
+    height: 100px;
+    padding: var(--space-md);
+    margin: 0 var(--space-md);
+  }
+  
+  .client-logo-image {
+    height: 60px;
+    max-width: 100px;
+  }
+  
+  @keyframes slideInfiniteTablet {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-200px * 5));
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-track {
+    width: calc(160px * 15);
+    animation: slideInfiniteMobile 20s linear infinite;
+  }
+  
+  .client-logo-card {
+    width: 120px;
+    height: 80px;
+    padding: var(--space-sm);
+    margin: 0 var(--space-sm);
+  }
+  
+  .client-logo-image {
+    height: 50px;
+    max-width: 80px;
+  }
+  
+  @keyframes slideInfiniteMobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-160px * 5));
+    }
+  }
+}
+
+/* Hover para pausar solo la animación principal */
+
+/* Fade in inicial */
+.client-slider {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

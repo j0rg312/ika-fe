@@ -1,21 +1,21 @@
 import './Services.css';
-import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import { FaTools, FaNetworkWired, FaPhone, FaDesktop, FaWifi, FaShieldAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
 
+
 const Services = () => {
   const services = [
     {
-      title: 'Soporte Técnico',
+      title: 'Soporte Técnico Empresarial',
       description: 'Soluciones rápidas y efectivas para tus problemas técnicos.',
       icon: <FaTools />, 
       path: '/services/support'
     },
     {
-      title: 'Redes',
+      title: 'Redes y Seguridad',
       description: 'Diseño e instalación de redes para garantizar conectividad.',
       icon: <FaNetworkWired />, 
       path: '/services/networks'

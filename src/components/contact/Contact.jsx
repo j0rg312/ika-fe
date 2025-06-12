@@ -48,11 +48,6 @@ const Contact = () => {
           <p className="fade-in">
             Transformamos el futuro con tecnología innovadora.
           </p>
-
-          <h3 className="special-title">
-            <span>Contacto</span>
-          </h3>
-
           <div className="info-grid">
             <div className="info-box">
               <i className="flaticon-placeholder"></i>

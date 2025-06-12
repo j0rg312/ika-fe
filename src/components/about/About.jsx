@@ -3,7 +3,9 @@ import './About.css';
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
-import { Lightbulb, Handshake, Star, Target, Rocket,  Wrench, Laptop, Hammer } from 'lucide-react';
+import { Lightbulb, Handshake, Star, Target, Rocket, Wrench, Laptop, Hammer, Award } from 'lucide-react';
+import Security from '../../assets/certificates/Security.png'
+import Data from '../../assets/certificates/Data.png'
 
 const About = () => {
   return (
@@ -61,7 +63,7 @@ const About = () => {
         </div>
       </ScrollableSection>
 
-      <ScrollableSection className="values-section" index={1}>
+      <ScrollableSection  index={1}>
         <div className="section-header">
           <h3>Nuestros Valores</h3>
           <p className="section-subtitle">Los principios que guían nuestro trabajo</p>
@@ -94,7 +96,32 @@ const About = () => {
         </div>
       </ScrollableSection>
 
-      <ScrollableSection className="mission-vision-section" index={2}>
+      <ScrollableSection  index={2}>
+        <div className="section-header">
+          <h3>Nuestras Certificaciones</h3>
+          <p className="section-subtitle">Respaldo profesional y técnico especializado</p>
+        </div>
+        
+        <div className="certifications-grid">
+          <div className="certification-card">
+            <div className="certification-icon">
+                <img src={Data} alt="Respaldo Profesional y Técnico Especializado" />
+            </div>
+            <h4>Recuperación Avanzada de Datos</h4>
+            <p>Certified Data Recovery Professional (CDRP) de la Asociación ARDA e IACRB</p>
+          </div>
+          
+          <div className="certification-card">
+            <div className="certification-icon">
+                <img src={Security} alt="Recuperación Avanzada de Datos" />
+            </div>
+            <h4>Seguridad en Cómputo</h4>
+            <p>Certificación Práctica Avanzada de Seguridad en Computo (HAURI Latinoamérica)</p>
+          </div>
+        </div>
+      </ScrollableSection>
+
+      <ScrollableSection  index={3}>
         <div className="mission-vision-container">
           <div className="mission-card">
             <div className="card-header">
@@ -118,21 +145,6 @@ const About = () => {
             <p>
               Ser reconocidos como el socio estratégico líder en innovación tecnológica para empresas de todos los tamaños, expandiendo nuestra presencia a nivel nacional e internacional.
             </p>
-          </div>
-        </div>
-        
-        <div className="stats-section">
-          <div className="stat-item">
-            <div className="stat-number">20+</div>
-            <div className="stat-label">Años de experiencia</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">100+</div>
-            <div className="stat-label">Proyectos exitosos</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">50+</div>
-            <div className="stat-label">Clientes satisfechos</div>
           </div>
         </div>
       </ScrollableSection>

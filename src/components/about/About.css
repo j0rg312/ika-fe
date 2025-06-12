@@ -142,13 +142,6 @@
 }
 
 
-.values-section {
-  background: linear-gradient(135deg, var(--bg-light) 0%, var(--color-white) 100%);
-  border-radius: var(--border-radius-lg);
-  padding: var(--space-2xl);
-  margin-top: var(--space-2xl);
-}
-
 .section-header {
   text-align: center;
   margin-bottom: var(--space-2xl);
@@ -169,7 +162,7 @@
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-xl);
   margin-top: var(--space-2xl);
 }
@@ -226,10 +219,6 @@
   margin: 0;
 }
 
-/* Sección Misión y Visión */
-.mission-vision-section {
-  margin-top: var(--space-2xl);
-}
 
 .mission-vision-container {
   display: grid;
@@ -314,42 +303,148 @@
   margin: 0;
 }
 
-/* Sección de estadísticas */
-.stats-section {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-2xl);
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-light));
-  border-radius: var(--border-radius-lg);
-  padding: var(--space-2xl);
-  color: var(--color-white);
-  margin-top: var(--space-2xl);
-}
 
-.stat-item {
+
+
+.section-header {
   text-align: center;
-  flex: 1;
-  max-width: 150px;
+  margin-bottom: 3rem;
 }
 
-.stat-number {
+.section-header h3 {
   font-size: 2.5rem;
   font-weight: 700;
-  display: block;
-  margin-bottom: var(--space-xs);
-  background: linear-gradient(45deg, var(--color-white), rgba(255, 255, 255, 0.8));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
+ .section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
   font-weight: 300;
 }
 
-/* Responsive Design */
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.certification-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+}
+
+.certification-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.certification-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.certification-icon img {
+  width: 40px;
+  height: 40px;
+
+  object-fit: contain;
+}
+
+
+.certification-card h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+
+.certification-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .certifications-section {
+    padding: 1.5rem 0;
+  }
+
+  .certifications-section .section-header h3 {
+    font-size: 2rem;
+  }
+
+  .certifications-section .section-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .certification-card {
+    padding: 1.5rem;
+  }
+
+  .certification-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .certification-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .certification-card h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-section .section-header h3 {
+    font-size: 1.8rem;
+  }
+
+  .certification-card {
+    padding: 1.2rem;
+  }
+
+  .certification-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .certification-icon img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .company-name {
     font-size: 2.5rem;
@@ -374,10 +469,7 @@
     gap: var(--space-lg);
   }
   
-  .stats-section {
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
+
   
   .stat-item {
     max-width: none;
@@ -414,9 +506,7 @@
     padding: var(--space-lg);
   }
   
-  .stats-section {
-    padding: var(--space-xl);
-  }
+
   
   .intro-paragraph {
     font-size: 1rem;
