@@ -3,7 +3,8 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import './HeroSlider.css';
 import Consultoria from '../../../assets/consultoria.png';
 import StarLink from '../../../assets/starlink.webp';
-import Soporte from '../../../assets/soporte.png';
+import Soporte from '../../../assets/services/soporte2.jpeg';
+import Impresora from '../../../assets/services/impresora.jpeg'
 import Home from '../../../assets/home.jpeg'
 import QuotationModal from '../quotationModal/QuotationModal';
 
@@ -14,7 +15,7 @@ const HeroSlider = () => {
 const slides = [
   {
     id: 1,
-    bgImage: StarLink,
+    bgImage: Soporte,
     subtitle: 'Soluciones tecnológicas innovadoras',
     title: 'El equipo adecuado para tu empresa',
     description: 'Más de 20 años de experiencia en consultoría y soporte de TI en Chihuahua',
@@ -34,9 +35,9 @@ const slides = [
   },
   {
     id: 3,
-    bgImage: Home,
-    subtitle: 'Soporte integral de TI',
-    title: 'Servicios completos para tu negocio',
+    bgImage: Impresora,
+    subtitle: 'Contamos con las mejors marcas para tu empresa',
+    title: 'Arrendamiento de impresoras',
     description: 'Desde consultoría hasta venta y renta de equipo de cómputo',
     alignment: 'center',
     button: {
