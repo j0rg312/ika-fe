@@ -11,7 +11,7 @@ const About = () => {
   return (
     <Section>
       <Helmet>
-        <title>IKA - Nosotros</title>
+        <title>IKA - Nosotrooos</title>
         <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI con más de 20 años de experiencia." />
       </Helmet>
       
