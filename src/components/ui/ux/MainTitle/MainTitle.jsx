@@ -4,8 +4,8 @@ import './MainTitle.css';
 const MainTitle = ({ 
   text, 
   className = '', 
-  variant = 'primary', // primary, gradient, accent
-  size = 'large', // small, medium, large, xl
+  variant = 'primary', 
+  size = 'large', 
   animated = true,
   subtitle = '',
   centered = true,
@@ -15,7 +15,7 @@ const MainTitle = ({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Intersection Observer para animaciones cuando el elemento entra en viewport
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

@@ -1,5 +1,5 @@
 import './Services.css';
-import { FaTools, FaNetworkWired, FaPhone, FaDesktop, FaWifi, FaShieldAlt } from 'react-icons/fa';
+import { FaTools, FaNetworkWired, FaPhone, FaDesktop, FaWifi, FaShieldAlt, FaPrint } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
@@ -30,7 +30,7 @@ const Services = () => {
       title: 'Equipos y Servicios',
       description: 'Venta y renta de equipos de cómputo y soluciones tecnológicas.',
       icon: <FaDesktop />, 
-      path: '/services/equipment'
+      path: '/services/leasing'
     },
     {
       title: 'Internet',
@@ -44,6 +44,12 @@ const Services = () => {
       icon: <FaShieldAlt />, 
       path:'/services/security'
     },
+    {
+      title: 'Arrendamiento de Impresoras',
+      description: '',
+      icon: <FaPrint/>,
+      path: '/services/printer'
+    }
   ];
 
   return (

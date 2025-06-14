@@ -3,6 +3,7 @@ import { FaTools, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
+import respaldos from '../../../assets/services/soporte.jpeg'
 const Support = () => {
     return (
         <Section>
@@ -83,7 +84,7 @@ const Support = () => {
                     <li>Solución a sus problemas a tiempo.</li>
                 </ul>
             </ScrollableSection>
-
+{/* 
             <ScrollableSection index={4}>
                 <table>className="section-respaldos"
                     <thead>
@@ -161,9 +162,9 @@ const Support = () => {
                         </tr>
                     </tbody>
                 </table>
-            </ScrollableSection>
+            </ScrollableSection> */}
 
-            <ScrollableSection  index={5}>
+            <ScrollableSection  index={4}>
                 <div className="section-content">
                         <div className="service-text">
                                 <h2 >Respaldos</h2>
@@ -188,7 +189,7 @@ const Support = () => {
                     
                  
                    
-                    <ScrollableSection index={6}>
+                    <ScrollableSection index={5}>
                         <div className="column-full">
                             <div className="service-text">
                             <h2 >Beneficios de un sistema de respaldos</h2>
@@ -218,7 +219,7 @@ const Support = () => {
             <div className="row">
                 <div className="column-left">
                     <div className="service-image">
-                          <img src="https://www.ika.mx/wp-content/uploads/2016/11/backup-570x380.png" alt="Backup"/>
+                          <img src={respaldos} alt="Backup"/>
                     </div>
                   
                 </div>

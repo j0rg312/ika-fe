@@ -4,10 +4,12 @@ import './HeroSlider.css';
 import Consultoria from '../../../assets/consultoria.png';
 import StarLink from '../../../assets/starlink.webp';
 import Soporte from '../../../assets/soporte.png';
-import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
+import Home from '../../../assets/home.jpeg'
+import QuotationModal from '../quotationModal/QuotationModal';
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
 const slides = [
   {
@@ -32,14 +34,14 @@ const slides = [
   },
   {
     id: 3,
-    bgImage: Soporte,
+    bgImage: Home,
     subtitle: 'Soporte integral de TI',
     title: 'Servicios completos para tu negocio',
     description: 'Desde consultoría hasta venta y renta de equipo de cómputo',
     alignment: 'center',
     button: {
-      text: 'Contáctanos',
-      link: '../contact'
+      text: 'Cotiza sin compromiso',
+      className: 'cot'
     }
   }
 ];
@@ -50,11 +52,14 @@ const slides = [
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [currentSlide,slides.length]);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   const goToSlide = (index) => setCurrentSlide(index);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="hero-slider">
@@ -78,11 +83,23 @@ const slides = [
                 <h6 className="slider-subtitle">{slide.subtitle}</h6>
                 <h2 className="slider-title">{slide.title}</h2>
                 <p className="description">{slide.description}</p>
-                <div className={`buttons ${slide.alignment === 'center' ? 'center' : ''}`}>
+               <div className={`buttons ${slide.alignment === 'center' ? 'center' : ''}`}>
                   {slide.button ? (
-                    <a href={slide.button.link} className={`btn primary align-${slide.alignment}`}>
-                      {slide.button.text}
-                    </a>
+                    slide.button.className === 'cot' ? (
+                      <button
+                        className={`btn primary ${slide.button.className}`}
+                        onClick={openModal}
+                      >
+                        {slide.button.text}
+                      </button>
+                    ) : (
+                      <a
+                        href={slide.button.link}
+                        className={`btn primary ${slide.button.className || ''}`}
+                      >
+                        {slide.button.text}
+                      </a>
+                    )
                   ) : (
                     <a href="#como-trabajamos" className={`btn secondary align-${slide.alignment}`}>
                       <Play className="icon" /> Cómo trabajamos
@@ -114,6 +131,12 @@ const slides = [
           style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
         />
       </div>
+      <QuotationModal
+      isOpen={isModalOpen}
+      onClose={closeModal}
+      productName="Cotización general"
+      productDetails="Solicitó cotización desde el Hero Slider"
+    />
     </div>
   );
 };

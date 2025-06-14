@@ -70,7 +70,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/InternetKnowledgeApplied" target="_blank" rel="noopener noreferrer">
               <FaFacebook />
             </a>
-            <a href="https://www.instagram.com/InternetKnowledgeApplied" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/ikachihuahua/?hl=es" target="_blank" rel="noopener noreferrer">
               <FaInstagram title='Instagram'/>
             </a>
           </div>

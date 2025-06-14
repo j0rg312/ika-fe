@@ -3,7 +3,7 @@ import './About.css';
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
-import { Lightbulb, Handshake, Star, Target, Rocket, Wrench, Laptop, Hammer, Award } from 'lucide-react';
+import { Lightbulb, Handshake, Star, Target, Rocket, Wrench, Laptop, Hammer, ShieldCheck, Users, TrendingUp} from 'lucide-react';
 import Security from '../../assets/certificates/Security.png'
 import Data from '../../assets/certificates/Data.png'
 
@@ -92,6 +92,29 @@ const About = () => {
             </div>
             <h4>Excelencia</h4>
             <p>Nos esforzamos por superar expectativas en cada entrega, manteniendo los más altos estándares de calidad en todos nuestros servicios.</p>
+          </div>
+          <div className="value-card">
+            <div className="value-icon">
+              <ShieldCheck color="black" size={36} />
+            </div>
+            <h4>Confianza</h4>
+            <p>Construimos relaciones sólidas y duraderas basadas en la confianza mutua, la responsabilidad y la transparencia.</p>
+          </div>
+
+          <div className="value-card">
+            <div className="value-icon">
+              <Users color="black" size={36} />
+            </div>
+            <h4>Colaboración</h4>
+            <p>Fomentamos un entorno de trabajo en equipo donde el conocimiento y la creatividad se combinan para lograr resultados impactantes.</p>
+          </div>
+
+          <div className="value-card">
+            <div className="value-icon">
+              <TrendingUp color="black" size={36} />
+            </div>
+            <h4>Crecimiento</h4>
+            <p>Promovemos el desarrollo continuo tanto de nuestro equipo como de nuestros clientes, impulsando el progreso conjunto.</p>
           </div>
         </div>
       </ScrollableSection>

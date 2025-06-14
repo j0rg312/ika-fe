@@ -6,8 +6,8 @@ import Support from './components/services/support/Support';
 import Security from './components/services/security/Security';
 import Digital from './components/services/digital/Digital'; 
 import Telefonia from './components/services/telefonia/Telefonia';
-import Equipment from './components/services/equipment/Equipment';
 import Networks from './components/services/networks/Networks';
+import Printer from './components/services/printer/Printer';
 import Contact from './components/contact/Contact';
 import Home from './components/home/Home';
 import Footer from './components/ui/footer/Footer';
@@ -20,6 +20,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 import './App.css';
 import ScrollToTop from './components/ui/ux/scrollToTop/SccrollTop';
+import Leasing from './components/services/leasing/Leasing';
 
 const App = () => {
 
@@ -43,7 +44,8 @@ const App = () => {
             <Route path="/services/security" element={<Security />} />
             <Route path="/services/digital" element={<Digital />} /> *
             <Route path="/services/telefonia" element={<Telefonia />} />
-            <Route path="/services/equipment" element={<Equipment />} />
+            <Route path="/services/leasing" element={<Leasing />} />
+            <Route path="/services/printer" element={<Printer/>}/>
            {/*  <Route path="/ourWork" element={<OurWork/>} /> */}
  {/*            <Route path="/ecommers" element={<ECommers />} /> */}
             <Route path="/contact" element={<Contact />} />

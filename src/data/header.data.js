@@ -18,5 +18,6 @@ export const services = [
   { name: "Seguridad", path: "/services/security" },
   { name: "Transformación Digital", path: "/services/digital" },
   { name: "Telefonía", path: "/services/telefonia" },
-  { name: "Equipos y Servicios", path: "/services/equipment" },
+  { name: "Equipos y Servicios", path: "/services/leasing" },
+  { name: "Arrendamiento de Impresoras", path: "/services/printer"}
 ];

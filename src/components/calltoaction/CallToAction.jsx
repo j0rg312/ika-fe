@@ -16,7 +16,7 @@ const CallToAction = () => {
   const sendMessage = () => {
     if (input.trim() === '') return;
 
-    socket.emit('mensaje', input); // Enviar al servidor
+    socket.emit('mensaje', input); 
     setMessages((prev) => [...prev, { sender: 'yo', text: input }]);
     setInput('');
   };

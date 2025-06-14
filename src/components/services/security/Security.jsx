@@ -2,6 +2,7 @@ import './Security.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
+import Seguridad from '../../../assets/services/vigilancia.jpeg'
 
 const Security = () => {
     return (
@@ -38,25 +39,28 @@ const Security = () => {
                  
                 <div className="service-image">
                         <img 
-                            src="https://www.ika.mx/wp-content/uploads/2016/11/videovigilancia-570x380.jpg" 
+                            src={Seguridad}
                             alt="Video vigilancia" 
                             className="security-img"
                         />
                     </div>
                     <div className="service-text">
                         <h2>Video vigilancia</h2>
-                        <p>
-                            En la actualidad tanto en los hogares como en las empresas se deben proteger los recursos, tanto materiales como humanos, por lo que implementar un buen sistema de videovigilancia es una de las mejores decisiones que pueden tomar al respecto.
-                        </p>
-                        <p>
-                            Este tipo de sistemas son ideales para controlar perímetros y accesos, evitar robos, monitorear personal y/o para disuadir a delincuentes y maleantes, entre otros.
-                        </p>
-                        <p>
-                            En el mercado podemos encontrar diversas marcas, modelos y tipos de dispositivos de video vigilancia de diversas características y precios, así como servicios de monitoreo costosos y no siempre tan efectivos. En <strong>IKA</strong> nos preocupamos por la seguridad de nuestros clientes por lo que nos empeñamos en brindar la solución que se adapte mejor a las necesidades técnicas, espacios y presupuesto sin sacrificar la calidad de los productos y materiales con los que realizamos cada uno de nuestros proyectos.
-                        </p>
-                        <p>
-                            El monitoreo remoto mediante internet permite a nuestros clientes desde su teléfono móvil o computadora estar pendiente en cualquier momento de cualquier actividad sospechosa sin arriesgar su integridad o la de los suyos, en <strong>IKA</strong> te asesoramos para que aproveches de la mejor manera la tecnología para tu seguridad y la de tu patrimonio.
-                        </p>
+                            <p>
+                                La instalación de cámaras de seguridad es una de las medidas más demandadas para proteger tanto hogares como negocios. Un sistema de vigilancia brinda la tranquilidad de poder monitorear en todo momento qué ocurre en nuestra propiedad.
+                            </p>
+                            <p>
+                                En la actualidad, tanto en los hogares como en las empresas es fundamental proteger los recursos, tanto materiales como humanos. Implementar un buen sistema de videovigilancia es una de las decisiones más efectivas en este sentido.
+                            </p>
+                            <p>
+                                Este tipo de sistemas son ideales para controlar perímetros y accesos, evitar robos, monitorear al personal y disuadir a delincuentes, entre otras funciones clave.
+                            </p>
+                            <p>
+                                En el mercado existen diversas marcas, modelos y dispositivos de videovigilancia con distintas características y precios. Sin embargo, no todos los servicios de monitoreo son realmente efectivos o accesibles. En <strong>IKA</strong> nos enfocamos en ofrecer soluciones adaptadas a las necesidades técnicas, al espacio y al presupuesto de cada cliente, sin comprometer la calidad de nuestros productos y materiales.
+                            </p>
+                            <p>
+                                Gracias al monitoreo remoto por internet, nuestros clientes pueden supervisar sus propiedades desde su teléfono móvil o computadora en cualquier momento y lugar. En <strong>IKA</strong>, te asesoramos para que aproveches al máximo la tecnología y garantices la seguridad de lo que más te importa.
+                            </p>
                     </div>
   
                 </div>

@@ -7,7 +7,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   }
 
 
@@ -51,10 +51,38 @@
   
 } */
 
+
+/* Landscape tablets (iPad, etc) */
 @media (orientation: landscape) and (max-width: 768px) {
   .main-content {
-    min-height:70vh;
+    min-height: 70vh;
+    padding: 1rem;
   }
-  
-
 }
+
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .main-content {
+    max-height: 60vh;
+    padding: 1rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .main-content {
+    max-height: 90vh;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .main-content {
+    max-height: 60vh;
+    padding: 0.5rem;
+    margin: 0 1rem;
+  }
+}
+
+
