@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MailerService from '../../../data/services/mailerService';
 import './QuotationModal.css';
 import { Check, LoaderCircle, MailWarning } from 'lucide-react';
@@ -67,8 +67,10 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Formulario enviandose");
     
     const validationErrors = validate();
+    console.log("Errores detectados", validationErrors);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setSubmitStatus({
@@ -107,7 +109,6 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
         service: service,
         quantity: '',
         message: '',
-        urgency: 'normal'
       });
       setErrors({});
       
@@ -131,6 +132,14 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
       onClose();
     }
   };
+
+      useEffect(() => {
+      setFormData(prev => ({
+        ...prev,
+        service: service || ''
+      }));
+    }, [service]);
+
 
   // Componente para el mensaje de estado
   const StatusMessage = () => {
@@ -264,19 +273,6 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
             </div>
 
             <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="service">Producto/Servicio *</label>
-                <input
-                  type="text"
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  placeholder="¿Qué necesitas cotizar?"
-                  disabled={submitStatus.type === 'loading'}
-                />
-                {errors.service && <span className="error-message">{errors.service}</span>}
-              </div>
 
               <div className="form-group">
                 <label htmlFor="quantity">Cantidad *</label>
@@ -293,20 +289,6 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
               </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="urgency">Urgencia</label>
-              <select
-                id="urgency"
-                name="urgency"
-                value={formData.urgency}
-                onChange={handleChange}
-                disabled={submitStatus.type === 'loading'}
-              >
-                <option value="normal">Normal (5-7 días)</option>
-                <option value="urgent">Urgente (1-2 días)</option>
-                <option value="asap">Lo antes posible</option>
-              </select>
-            </div>
 
             <div className="form-group">
               <label htmlFor="message">Detalles Adicionales</label>

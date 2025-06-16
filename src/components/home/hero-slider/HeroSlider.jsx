@@ -59,8 +59,13 @@ const slides = [
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   const goToSlide = (index) => setCurrentSlide(index);
 
-  const openModal = () => setIsModalOpen(true);
+  const [selectedService, setSelectedService] = useState('');
+  const openModal = (serviteTitle) => {
+    setSelectedService(serviteTitle);
+    setIsModalOpen(true);
+  }
   const closeModal = () => setIsModalOpen(false);
+
 
   return (
     <div className="hero-slider">
@@ -89,7 +94,7 @@ const slides = [
                     slide.button.className === 'cot' ? (
                       <button
                         className={`btn primary ${slide.button.className}`}
-                        onClick={openModal}
+                        onClick={() => openModal(slide.title)}
                       >
                         {slide.button.text}
                       </button>
@@ -136,6 +141,7 @@ const slides = [
       isOpen={isModalOpen}
       onClose={closeModal}
       productName="Cotización general"
+      service={selectedService}
       productDetails="Solicitó cotización desde el Hero Slider"
     />
     </div>

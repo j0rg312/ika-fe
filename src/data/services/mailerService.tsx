@@ -15,6 +15,7 @@ export default class MailerService{
 
     async sendCot(payload) {
     try {
+        console.log('📤 Enviando al backend:', payload);
         const response = await axios.post(API_MAILER.SEND_COT, payload);
         return response.data;
     } catch (error) {
