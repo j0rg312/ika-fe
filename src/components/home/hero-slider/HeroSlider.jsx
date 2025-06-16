@@ -16,21 +16,21 @@ const slides = [
   {
     id: 1,
     bgImage: Soporte,
-    subtitle: 'Soluciones tecnológicas innovadoras',
-    title: 'El equipo adecuado para tu empresa',
-    description: 'Más de 20 años de experiencia en consultoría y soporte de TI en Chihuahua',
+    subtitle: 'Bienvenido a IKA',
+    title: 'Transformamos tecnología en soluciones reales',
+    description: 'Somos una empresa con más de 20 años ofreciendo innovación, compromiso y excelencia en servicios de TI, desarrollo web y consultoría.',
     alignment: 'left',
     button: {
-      text: 'Ver servicios',
-      link: '../services/'
+      text: 'Conócenos',
+      link: '../about/'
     }
   },
   {
     id: 2,
     bgImage: Consultoria,
-    subtitle: 'Consultoría especializada',
-    title: 'Capital humano de vanguardia',
-    description: 'Profesionales capacitados en tecnologías libres y desarrollo de proyectos',
+    subtitle: '¿Quiénes somos?',
+    title: 'Aliados estratégicos en tecnología',
+    description: 'En IKA creemos en el poder de la tecnología para hacer crecer a las empresas. Acompañamos a nuestros clientes en cada paso con soluciones personalizadas y un equipo altamente capacitado.',
     alignment: 'right'
   },
   {

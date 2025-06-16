@@ -3,7 +3,8 @@ import { FaTools, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
-import respaldos from '../../../assets/services/soporte.jpeg'
+import respaldos from '../../../assets/services/respaldos.jpg'
+import Recovery from '../../../assets/services/recovery.jpeg';
 const Support = () => {
     return (
         <Section>
@@ -180,7 +181,7 @@ const Support = () => {
                         </div>
                         <div className="column-right">
                             <div  className="service-image" >
-                                   <img src="https://www.ika.mx/wp-content/uploads/2016/11/acronis-570x380.jpg" alt="Acronis"/>
+                                   <img src={respaldos} alt="Acronis"/>
                             </div>
                          
                         </div>
@@ -219,7 +220,7 @@ const Support = () => {
             <div className="row">
                 <div className="column-left">
                     <div className="service-image">
-                          <img src={respaldos} alt="Backup"/>
+                          <img src={Recovery} alt="Backup"/>
                     </div>
                   
                 </div>

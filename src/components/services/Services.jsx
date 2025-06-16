@@ -1,5 +1,5 @@
 import './Services.css';
-import { FaTools, FaNetworkWired, FaPhone, FaDesktop, FaWifi, FaShieldAlt, FaPrint } from 'react-icons/fa';
+import { FaTools, FaNetworkWired, FaDesktop, FaWifi, FaShieldAlt, FaPrint, FaServer} from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
@@ -21,10 +21,10 @@ const Services = () => {
       path: '/services/networks'
     },
     {
-      title: 'Telefonía',
-      description: 'Implementamos sistemas de telefonía modernos y efectivos.',
-      icon: <FaPhone />, 
-      path: '/services/telefonia'
+      title: 'Servidores Linux y Windows',
+      description: 'Especialistas en administración, instalación y configuración de servidores físicos y virtuales.',
+      icon: <FaServer />, 
+      path: '/services/servers'
     },
     {
       title: 'Equipos y Servicios',

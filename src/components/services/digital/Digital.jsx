@@ -2,6 +2,9 @@ import './Digital.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
+import Email from '../../../assets/services/mail.jpeg';
+import Cloud from '../../../assets/services/cloud.jpeg';
+import Ecommers from '../../../assets/services/ecommers.png';
 
 const Digital = () => {
   return (
@@ -24,14 +27,14 @@ const Digital = () => {
             <p>En la actualidad, el uso de la tecnología en los medios de comunicación son indispensables y el correo electrónico se ha convertido en una herramienta imprescindible en la educación, industria, comercio, salud y en el ámbito empresarial. En IKA te asesoramos, resolvemos tus dudas y recorremos junto contigo el camino hacia tu transformación digital implementando una herramienta de gestión de correo electrónico personalizada para tu institución, asociación o empresa, que optimice la productividad, fomente el desarrollo y mejore el contacto con tus clientes.</p>
           </div>
           <div className="service-image">
-            <img src="https://www.ika.mx/wp-content/uploads/2016/11/correo-570x380.jpg" alt="Correo Electrónico" width="570" height="380" />
+            <img src={Email} width="570" height="380" />
           </div>
             </div>
         </ScrollableSection>
         <ScrollableSection className="service-item" index={1}>
           <div className="content">
           <div className="service-image">
-            <img src="https://www.ika.mx/wp-content/uploads/2016/11/estrategia-empresarial-cloud-computing-681x454-1-570x380.jpg" alt="Cloud Computing" width="570" height="380" />
+            <img src={Cloud} alt="Cloud Computing" width="570" height="380" />
           </div>
           <div className="service-text">
             <h2>Administración De Servicios En La Nube</h2>
@@ -64,7 +67,7 @@ const Digital = () => {
           </div>
           </div>
           <div className="service-image">
-            <img src="https://www.ika.mx/wp-content/uploads/2016/11/ecommerce-570x380.webp" alt="E-commerce" width="570" height="380" />
+            <img src={Ecommers} alt="E-commerce" width="570" height="380" />
           </div> 
         </ScrollableSection>
       </Section>

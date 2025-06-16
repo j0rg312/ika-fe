@@ -5,7 +5,7 @@ import Services from './components/services/Services';
 import Support from './components/services/support/Support';
 import Security from './components/services/security/Security';
 import Digital from './components/services/digital/Digital'; 
-import Telefonia from './components/services/telefonia/Telefonia';
+import Servers from './components/services/servers/Servers';
 import Networks from './components/services/networks/Networks';
 import Printer from './components/services/printer/Printer';
 import Contact from './components/contact/Contact';
@@ -43,7 +43,7 @@ const App = () => {
             <Route path="/services/support" element={<Support />} />
             <Route path="/services/security" element={<Security />} />
             <Route path="/services/digital" element={<Digital />} /> *
-            <Route path="/services/telefonia" element={<Telefonia />} />
+            <Route path="/services/servers" element={<Servers/>} />
             <Route path="/services/leasing" element={<Leasing />} />
             <Route path="/services/printer" element={<Printer/>}/>
            {/*  <Route path="/ourWork" element={<OurWork/>} /> */}

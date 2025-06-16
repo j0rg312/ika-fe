@@ -18,6 +18,7 @@
   display: block;
   max-height: 90vh;
   height: 100%;
+  width: 100%;
 }
 
 
@@ -43,20 +44,10 @@
   z-index: 100;
 }
 
-
-/*  @media  (max-width: 1024px) {
-  .main-content {
-    margin: 2rem 2rem ; 
-  }
-  
-} */
-
-
-/* Landscape tablets (iPad, etc) */
 @media (orientation: landscape) and (max-width: 768px) {
   .main-content {
     min-height: 70vh;
-    padding: 1rem;
+
   }
 }
 
@@ -64,7 +55,6 @@
 @media (max-width: 768px) and (orientation: portrait) {
   .main-content {
     max-height: 60vh;
-    padding: 1rem;
   }
 }
 
@@ -72,16 +62,14 @@
 @media (max-width: 480px) {
   .main-content {
     max-height: 90vh;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
+
   }
 }
 
 @media (max-width: 480px) and (orientation: landscape) {
   .main-content {
     max-height: 60vh;
-    padding: 0.5rem;
-    margin: 0 1rem;
+
   }
 }
 

@@ -2,6 +2,9 @@ import './Networks.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
+import Redes from '../../../assets/services/redes.jpeg';
+import Infraestructura from '../../../assets/services/servidores.jpeg';
+import Comunicaion from '../../../assets/services/comunicacion.png';
 
 const Networks = () => {
     return (
@@ -34,7 +37,7 @@ const Networks = () => {
                     </div>
                     <div className="service-image">
                         <img
-                            src="https://www.ika.mx/wp-content/uploads/2016/11/cable-rack-1-570x380.png"
+                            src={Redes}
                             alt="Cableado estructurado"
                             width="570"
                             height="380"
@@ -50,7 +53,7 @@ const Networks = () => {
                 <div className="content">
                     <div className="service-image">
                         <img
-                            src="https://www.ika.mx/wp-content/uploads/2016/11/redes-1140x430-2289575453-570x380.jpeg"
+                            src={Infraestructura}
                             alt="Infraestructura de red"
                             width="570"
                             height="380"
@@ -97,7 +100,7 @@ const Networks = () => {
                     </div>
                     <div className="service-image">
                         <img
-                            src="https://www.ika.mx/wp-content/uploads/2016/11/network-net-ethernet-hub-switch-570x380.webp"
+                            src={Comunicaion}
                             alt="Dispositivos de comunicación"
                             width="570"
                             height="380"

@@ -2,7 +2,9 @@ import './Security.css';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
-import Seguridad from '../../../assets/services/vigilancia.jpeg'
+import Seguridad from '../../../assets/services/vigilancia.jpeg';
+import Perimetral from '../../../assets/services/security.jpg';
+
 
 const Security = () => {
     return (
@@ -26,7 +28,7 @@ const Security = () => {
 
                     <div className="service-image">
                         <img 
-                            src="https://www.ika.mx/wp-content/uploads/2016/11/seguridad-perimetral-570x380.jpg" 
+                            src={Perimetral}
                             alt="Seguridad perimetral" 
                             className="security-img"
                         />
