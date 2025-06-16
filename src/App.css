@@ -59,6 +59,20 @@
 }
 
 
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .main-content {
+    max-height: 100vh;
+  }
+}
+
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .main-content {
+    max-height: 100vh; 
+  }
+}
+
+
 @media (max-width: 480px) {
   .main-content {
     max-height: 90vh;

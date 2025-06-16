@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import MailerService from '../../../data/services/mailerService';
 import './QuotationModal.css';
 import { Check, LoaderCircle, MailWarning } from 'lucide-react';
@@ -14,6 +14,7 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
     message: '',
     urgency: 'normal'
   });
+  const modalRef = useRef(null);
 
   const [errors, setErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState({
@@ -22,6 +23,12 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
   });
 
   const mailerService = new MailerService();
+
+  useEffect(() => {
+  if (submitStatus.type && modalRef.current) {
+    modalRef.current.scrollTop = 0;
+  }
+  }, [submitStatus.type]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -204,7 +211,7 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
 
   return (
     <div className="quotation-modal-overlay" onClick={handleBackdropClick}>
-      <div className="quotation-modal">
+      <div className="quotation-modal" ref={modalRef}>
         <div className="modal-header">
           <h2>Solicitar Cotización</h2>
       
