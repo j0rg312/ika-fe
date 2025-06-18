@@ -12,8 +12,24 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
     service: service,
     quantity: '',
     message: '',
-    urgency: 'normal'
   });
+
+  const serviceFields = {
+    'Arrendamiento de impresoras': [
+     {
+        label: 'Tipo de impresora',
+        name: 'Printer type',
+        type: 'select',
+        options: ['Multifunción', 'Monofunción']       
+      },
+      {
+        label: 'Color o Blanco y Negro',
+        name: 'colorType',
+        type: 'select',
+        options: ['Color', 'Blanco y negro']
+      }
+    ]
+  };
   const modalRef = useRef(null);
 
   const [errors, setErrors] = useState({});
@@ -213,7 +229,9 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
     <div className="quotation-modal-overlay" onClick={handleBackdropClick}>
       <div className="quotation-modal" ref={modalRef}>
         <div className="modal-header">
-          <h2>Solicitar Cotización</h2>
+          {formData.service
+          ? <h2>Cotización de servicio para  <br />{formData.service}</h2>
+        : 'Solicitar cotización'}
       
         </div>
 
@@ -283,8 +301,7 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
 
               <div className="form-group">
                 <label htmlFor="quantity">Cantidad *</label>
-                {/*Combobox impresoras*/}
-                {/*Dinamico*/}
+
                 <input
                   type="text"
                   id="quantity"
@@ -311,7 +328,34 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
                 disabled={submitStatus.type === 'loading'}
               />
             </div>
-
+            {serviceFields[formData.service] && serviceFields[formData.service].map((field,i) => (
+              <div className="form-group" key={i}>
+                <label htmlFor={field.name}>{field.label}</label>
+                {field.type === 'select' ? (
+                  <select
+                  id={field.name}
+                  name={field.name}
+                  value={formData[field.name] || ''}
+                  onChange={handleChange}
+                  disabled={submitStatus.type === 'loading'}
+                  >
+                    <option value="">Selecciona una opción</option>
+                    {field.options.map((option,i) => (
+                      <option key={i} value={option}>{option}</option>
+                    ))}
+                  </select>
+                ) :(
+                  <input
+                    type={field.type}
+                    id={field.name}
+                    name={field.name}
+                    value={formData[field.name] || ''}
+                    onChange={handleChange}
+                    disabled={submitStatus.type === 'loading'}
+                  />
+                )}
+              </div>
+            ))}
             <div className="form-actions">
               <button 
                 type="button" 

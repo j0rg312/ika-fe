@@ -2,9 +2,8 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import './Footer.css';
 import aws from '../../../assets/aws_logo_smile_1200x630.png';
-import cloud from '../../../assets/cloundLoginLogo.png';
-import google from '../../../assets/google-workspace-logo.svg'
-import phone from '../../../assets/net2phone-logo.svg'
+import Huawei from '../../../assets/huawei.png';
+import Sangfor from '../../../assets/sangfor.png'
 import FooterMovil from '../footerMovil/FooterMovil';
 
 
@@ -54,10 +53,8 @@ const Footer = () => {
             <h2 style={{textAlign: 'center', color: '#010a1f'}}>Alianzas Comerciales</h2>
             <ul className='comercial-list'>
               <li><img src={aws} alt="" /></li>
-              <li><img src={cloud} alt="" /></li>
-              <li><img src={google} alt="" /></li>
-              <li><img src={phone} alt="" /></li>
-              {/*Alianzas: AWS, HUEAWEI, SANGFOR */}
+              <li><img src={Huawei} alt="" /></li>
+              <li><img src={Sangfor} alt="" /></li>
             </ul>
             </div>
          
