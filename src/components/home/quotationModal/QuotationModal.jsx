@@ -3,7 +3,7 @@ import MailerService from '../../../data/services/mailerService';
 import './QuotationModal.css';
 import { Check, LoaderCircle, MailWarning } from 'lucide-react';
 
-const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) => {
+const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,13 +18,13 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
     'Arrendamiento de impresoras': [
      {
         label: 'Tipo de impresora',
-        name: 'Printer type',
+        name: 'TIpo de impresora',
         type: 'select',
         options: ['Multifunción', 'Monofunción']       
       },
       {
         label: 'Color o Blanco y Negro',
-        name: 'colorType',
+        name: 'Tipo de impresión',
         type: 'select',
         options: ['Color', 'Blanco y negro']
       }
@@ -111,7 +111,6 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
     try {
       const quotationData = {
         ...formData,
-        productDetails,
         requestDate: new Date().toLocaleDateString('es-MX'),
         requestTime: new Date().toLocaleTimeString('es-MX')
       };
