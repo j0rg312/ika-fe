@@ -32,9 +32,9 @@ const Footer = () => {
         <div className="expanded-content">
           <div className="contact-info">
             <h2 style={{color: '#010a1f'}}>Contáctanos</h2>
-            <p className="footer-text">Antílope y Cebra #3700</p>
-            <p className="footer-text">Col. Lomas del Sol</p>
-            <p className="footer-text">Teléfono: +52 (614) 3880755</p>
+            <p className="footer-text">Calle Getsemani #9113</p>
+            <p className="footer-text">Col. Nuevo Paraiso</p>
+            <p className="footer-text">Teléfono: +52 (614) 484 27 11</p>
             <p className="footer-text">
               Email: <a href="mailto:contacto@ika.mx">contacto@ika.mx</a>
             </p>
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="company-info">
               <h2>Internet Knowledge Applied</h2>
               <p className="footer-text">
-                Nuestra compañía está integrada por un grupo de profesionistas con amplia experiencia en el manejo de información, respaldos, soporte técnico, administración de servidores y venta y renta de equipo de cómputo.
+                En IKA contamos con más de 20 años de experiencia brindando soluciones integrales en sistemas de información, con un enfoque especializado en tecnologías GNU/Linux, redes, firewalls, servidores en la nube, arrendamiento de equipo de cómputo y servicios administrados de impresión. 
               </p>
           </div>
              </div>
@@ -57,6 +57,7 @@ const Footer = () => {
               <li><img src={cloud} alt="" /></li>
               <li><img src={google} alt="" /></li>
               <li><img src={phone} alt="" /></li>
+              {/*Alianzas: AWS, HUEAWEI, SANGFOR */}
             </ul>
             </div>
          

@@ -26,13 +26,13 @@ const Leasing = () => {
                             Al arrendar evitas obsolescencia, mantienes tus equipos actualizados, y evitas un alto desembolso inicial, con la tranquilidad de contar con soporte y mantenimiento incluido.
                         </p>
                         <ul>
-                            <li>Evita obsolescencia de equipos</li>
-                            <li>Es totalmente deducible de impuestos</li>
-                            <li>Evita un alto desembolso inicial</li>
-                            <li>Incluye mantenimientos, reparaciones y actualizaciones</li>
-                            <li>Garantía incluida</li>
-                            <li>Crecimiento a la medida</li>
-                            <li>Proceso fácil y rápido</li>
+                            <li>Evita obsolescencia de equipos.</li>
+                            <li>Es totalmente deducible de impuestos.</li>
+                            <li>Evita un alto desembolso inicial.</li>
+                            <li>Incluye mantenimientos, reparaciones y actualizaciones.</li>
+                            <li>Garantía incluida.</li>
+                            <li>Crecimiento a la medida.</li>
+                            <li>Proceso fácil y rápido.</li>
                         </ul>
                     </div>
 
@@ -51,19 +51,19 @@ const Leasing = () => {
                     <div className="service-text">
                         <h2>Equipos en arrendamiento</h2>
                         <ul>
-                            <li>Computadoras de Escritorio</li>
-                            <li>Laptops</li>
-                            <li>Servidores</li>
-                            <li>Switches</li>
-                            <li>UPS's</li>
-                            <li>Conmutadores</li>
-                            <li>Telefonía IP</li>
-                            <li>Impresoras</li>
-                            <li>Equipo de Videoconferencias</li>
-                            <li>Proyectores</li>
-                            <li>Firewalls</li>
-                            <li>Access Points</li>
-                            <li>Cámaras de Videovigilancia</li>
+                            <li>Computadoras de Escritorio.</li>
+                            <li>Laptops.</li>
+                            <li>Servidores.</li>
+                            <li>Switches.</li>
+                            <li>UPS's.</li>
+                            <li>Conmutadores.</li>
+                            <li>Telefonía IP.</li>
+                            <li>Impresoras.</li>
+                            <li>Equipo de Videoconferencias.</li>
+                            <li>Proyectores.</li>
+                            <li>Firewalls.</li>
+                            <li>Access Points.</li>
+                            <li>Cámaras de Videovigilancia.</li>
                         </ul>
                         <p>
                             En <strong>IKA</strong> trabajamos con las mejores marcas del mercado y te ofrecemos soporte total, mantenimiento preventivo, y cambio de equipo en caso de fallas. 

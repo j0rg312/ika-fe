@@ -1,252 +1,131 @@
 import './Support.css';
-import { FaTools, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
-import respaldos from '../../../assets/services/respaldos.jpg'
-import Recovery from '../../../assets/services/recovery.jpeg';
+
+// Imágenes
+import soporteImage from '../../../assets/services/soporte3.jpeg';
+import soporteImage2 from '../../../assets/services/soporte4.jpeg';
+import soporteImage3 from '../../../assets/services/soporte5.jpeg';
+import soporteImage4 from '../../../assets/services/soporte6.jpeg';
+
 const Support = () => {
     return (
         <Section>
-            <MainTitle text="Soporte Técnico"/>
+            <MainTitle text="Soporte Técnico Empresarial" />
 
-            <ScrollableSection  index={0}>
-                <div className="service-text">
-                <h2 className='text-center'>Soporte técnico empresarial</h2>
-                <p >
-                    En <strong>IKA</strong>, el soporte técnico TI está centrado en generar valor dentro de tu compañía a través de la detección y resolución de cualquier incidente en software o hardware.
-                </p>
-                <p >
-                    Nuestra prioridad es buscar soluciones que le permitan ahorrar, mejorar y optimizar los tiempos de operación sin importar el tamaño de la empresa.
-                </p>
-                <p >
-                    Con más de 20 años de experiencia en el mercado, en <strong>IKA</strong> nos preocupamos por que tu negocio siga creciendo. Por eso ofrecemos un amplio portafolio de infraestructuras y servicios de tecnologías de información.
-                </p>
-                </div>
-              
-            </ScrollableSection>
-
-            <ScrollableSection className="section-videoconferencia " index={1}>
-                <div className="service-text">
-                 <h2 className='text-center'>Sistemas de Videoconferencia</h2>
-                <p >
-                    En la actualidad, los medios y las necesidades de comunicación han cambiado y evolucionado, por lo que la necesidad de estar en constante contacto o realizar reuniones con nuestro personal no siempre es posible lograrlo de manera presencial. Las organizaciones tienen que buscar la manera de seguir con la operativa diaria ya sea presencialmente o remota mediante la tecnología de Internet.
-                </p>
-                <p >
-                    En <strong>IKA</strong>, tenemos los mejores productos para que tus reuniones virtuales evolucionen profesionalmente y tu organización afronte los nuevos retos que la comunicación post-Covid-19 plantea.
-                </p>
-                </div>
-               
-            </ScrollableSection>
-
-            <ScrollableSection className="support-features " index={2}>
-                <div className="feature">
-                    <FaChalkboardTeacher className="feature-icon" />
-                    <h3 className='text-center'>Help Desk</h3>
-                    <p >Proporcionamos asesoría y asistencia de forma eficaz con un apoyo intermedio y seguro.</p>
-                </div>
-
-                <div className="feature">
-                    <FaChalkboardTeacher className="feature-icon" />
-                    <h3 className='text-center'>Coaching TI</h3>
-                    <p >Capacitamos a tu personal para un uso correcto de la tecnología en tu empresa.</p>
-                </div>
-
-                <div className="feature">
-                    <FaTools className="feature-icon" />
-                    <h3 className='text-center'>Mantenimiento</h3>
-                    <p >Realizamos mantenimientos preventivos y correctivos.</p>
-                </div>
-
-                <div className="feature">
-                    <FaShieldAlt className="feature-icon" />
-                    <h3 className='text-center'>Monitoreo</h3>
-                    <p >Monitoreamos tu infraestructura tecnológica, identificando vulnerabilidades y solucionándolas.</p>
-                </div>
-            </ScrollableSection>
-
-            <ScrollableSection index={3}> 
-                <div className="service-text">
-                    <h3 className='text-center'>Póliza de Soporte y Consultoría</h3>
-                <h4>¿Por qué tener una póliza de soporte?</h4>
-                <p >
-                    Tener una Póliza de soporte y mantenimiento con <strong>IKA</strong> es la mejor forma de proteger y extender la vida útil de su infraestructura, ya que gestionamos los tickets personalmente con el fabricante de forma transparente, ágil y rápida.
-                </p>
-                <p >
-                    Tenemos a su disposición diferentes tipos de pólizas, las cuales cuentan con por lo menos dos mantenimientos preventivos al año. Además, incluimos partes y refacciones con su respectiva bitácora de incidentes, de tal forma que mantenemos comunicación clara y una visión concisa de lo que está ocurriendo.
-                </p>
-                </div>
-                <h4>¿Cuáles son los beneficios?</h4>
-                <ul>
-                    <li>Con los SLA`S de IKA podemos proteger su inversión.</li>
-                    <li>IKA se hace cargo de los trámites de garantías con los fabricantes.</li>
-                    <li>Contamos con un grupo de Ingenieros certificados.</li>
-                    <li>Mantenimientos preventivos programados.</li>
-                    <li>Solución a sus problemas a tiempo.</li>
-                </ul>
-            </ScrollableSection>
-{/* 
-            <ScrollableSection index={4}>
-                <table>className="section-respaldos"
-                    <thead>
-                        <tr> 
-                            <th>SERVICIO</th>
-                            <th>PÓLIZA PLATINUM</th>
-                            <th>PÓLIZA GOLD</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Duración</td>
-                            <td>Mínimo 1 año</td>
-                            <td>Mínimo 1 año</td>
-                        </tr>
-                        <tr>
-                            <td>Cobertura</td>
-                            <td>Lun - Dom, 24 Hrs</td>
-                            <td>Lun - Vie, 9:00 - 18:00 Hrs; Sáb, 9:00 - 13:00 Hrs</td>
-                        </tr>
-                        <tr>
-                            <td>Tiempo de respuesta promedio en sitio</td>
-                            <td>2 Horas</td>
-                            <td>4 Horas</td>
-                        </tr>
-                        <tr>
-                            <td>Mantenimientos preventivos en sitio</td>
-                            <td>2 por año</td>
-                            <td>2 por año</td>
-                        </tr>
-                        <tr>
-                            <td>Mantenimiento correctivos en sitio</td>
-                            <td>Todos los necesarios 7x24</td>
-                            <td>Todos los necesarios en días y horarios hábiles</td>
-                        </tr>
-                        <tr>
-                            <td>Soporte telefónico y/o conexión remota</td>
-                            <td>Prioritario 7x24</td>
-                            <td>En días y horarios hábiles</td>
-                        </tr>
-                        <tr>
-                            <td>Reemplazo de partes (mano de obra)</td>
-                            <td>Incluidas</td>
-                            <td>Incluidas</td>
-                        </tr>
-                        <tr>
-                            <td>Equipo de reemplazo</td>
-                            <td>No incluido / Opcional</td>
-                            <td>No incluido / Opcional</td>
-                        </tr>
-                        <tr>
-                            <td>Niveles de servicio (SLAs)</td>
-                            <td>Mejor esfuerzo 7x24</td>
-                            <td>Mejor esfuerzo en días y horarios hábiles</td>
-                        </tr>
-                        <tr>
-                            <td>Ingeniero en sitio en atención a falla</td>
-                            <td>Incluido</td>
-                            <td>Incluido en días y horarios hábiles</td>
-                        </tr>
-                        <tr>
-                            <td>Reporte de actividades</td>
-                            <td>Bitácora en sistema de tickets</td>
-                            <td>Bitácora en sistema de tickets</td>
-                        </tr>
-                        <tr>
-                            <td>Atención de garantías con el fabricante</td>
-                            <td>Incluido si el equipo cuenta con garantía</td>
-                            <td>Incluido si el equipo cuenta con garantía</td>
-                        </tr>
-                        <tr>
-                            <td>Instalación y configuración HW</td>
-                            <td>Incluido</td>
-                            <td>Incluido</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </ScrollableSection> */}
-
-            <ScrollableSection  index={4}>
+            {/* ¿Qué es el Soporte Técnico Empresarial? */}
+            <ScrollableSection index={0}>
                 <div className="section-content">
-                        <div className="service-text">
-                                <h2 >Respaldos</h2>
-                            <div className="row">
+                    <div className="row">
                         <div className="column-left">
-
-                            <p >
-                                En <strong>IKA</strong>, nos preocupamos por que tu información esté segura y a tu alcance. Es por eso que contamos con un servicio de respaldo de información.
-                            </p>
-                            <p >
-                                Contar con un sistema de respaldo de información te puede proteger ante un posible ataque o algún tipo de fallo en tus sistemas de información.
-                            </p>
+                            <div className="service-text">
+                                <h2>¿Qué es el Soporte Técnico Empresarial?</h2>
+                                <p>
+                                    El soporte técnico empresarial es un servicio especializado que garantiza el correcto funcionamiento, mantenimiento y optimización de los sistemas de información, redes, equipos de cómputo, servidores y demás infraestructura tecnológica de una organización.
+                                </p>
+                                <p>
+                                    Este servicio es esencial para prevenir fallos, minimizar interrupciones operativas y resolver de manera oportuna cualquier incidencia técnica que afecte la productividad del negocio.
+                                </p>
+                            </div>
                         </div>
                         <div className="column-right">
-                            <div  className="service-image" >
-                                   <img src={respaldos} alt="Acronis"/>
+                            <div className="service-image">
+                                <img src={soporteImage} alt="Soporte técnico empresarial" />
                             </div>
-                         
                         </div>
                     </div>
-                            </div>
-                    
-                 
-                   
-                    <ScrollableSection index={5}>
-                        <div className="column-full">
-                            <div className="service-text">
-                            <h2 >Beneficios de un sistema de respaldos</h2>
-                            <div className="benefits-list">
-                                <div className="benefit-item">
-                                    <h4 className="benefit-header">Seguridad de los archivos</h4>
-                                    <p >No solo están salvaguardados en todo momento, sino que pueden enviarse de manera segura a los sistemas donde se les requiera.</p>
-                                </div>
-                                <div className="benefit-item">
-                                    <h4 className="benefit-header">Copias de seguridad diarias</h4>
-                                    <p >Asegúrate de que todos tus archivos se guardan diariamente en respaldo. La mejor opción para prevenir pérdida de datos.</p>
-                                </div>
-                                <div className="benefit-item">
-                                    <h4 className="benefit-header">Recuperación en caso de desastre</h4>
-                                    <p >En caso de un desastre informático, recupera rápidamente tu información para seguir operando sin contratiempos.</p>
-                                </div>
-                            </div>
-                            </div>
-
-                        </div>
-                    </ScrollableSection>
-                    <ScrollableSection className="section-recuperacion" index={7}>
-        <div className="section-content">
-        
-                
-
-            <div className="row">
-                <div className="column-left">
-                    <div className="service-image">
-                          <img src={Recovery} alt="Backup"/>
-                    </div>
-                  
                 </div>
+            </ScrollableSection>
+
+            {/* Ventajas y beneficios */}
+            <ScrollableSection index={1}>
                 <div className="service-text">
-                                    <h2>Recuperación de Información</h2>
-                <div className="column-right">
-                    <p >
-                        Somos un grupo de profesionales que realmente se preocupan por la información de sus clientes. Una empresa en la que creemos que la ética y la honestidad son pilares indispensables para ofrecer un trabajo de calidad y responsabilidad.
-                    </p>
-                    <p >
-                        Nuestros servicios de recuperación abarcan diversos medios de almacenamiento, como memorias SD, USB, discos duros externos e internos, NVMe, así como RAID y NAS en servidores. También resolvemos problemas causados por ataques de virus, eliminación accidental o intencional de información, errores en tablas de partición, e incluso daños físicos.
-                    </p>
-                    <p >
-                        Contamos con certificaciones internacionales, como:
-                        <ul>
-                            <li>CDRP – Certified Data Recovery Professional</li>
-                            <li>Diplomados de Seguridad Informática y Análisis de Malware</li>
-                            <li>Líneas de Especialización en Cómputo Forense</li>
-                        </ul>
-                    </p>
+                    <h2 className="text-center">Ventajas y Beneficios</h2>
+                    <ul>
+                        <li>Mayor disponibilidad y continuidad operativa, al contar con atención especializada y oportuna ante cualquier incidente.</li>
+                        <li>Prevención de fallas críticas, mediante mantenimiento proactivo y monitoreo constante.</li>
+                        <li>Optimización de recursos tecnológicos, asegurando que los equipos y sistemas trabajen con eficiencia.</li>
+                        <li>Seguridad de la información, al implementar buenas prácticas y protocolos actualizados.</li>
+                    </ul>
                 </div>
-                </div>
+            </ScrollableSection>
 
-            </div>
-        </div>
-    </ScrollableSection>
+            {/* Póliza IKA */}
+            <ScrollableSection index={2}>
+                <div className="section-content">
+                    <div className="row">
+                        <div className="column-left">
+                            <div className="service-image">
+                                <img src={soporteImage2} alt="óliza de servicio IKA" />
+                            </div>
+                        </div>
+                        <div className="column-right">
+                            <div className="service-text">
+                                <h2>¿Por qué elegir una póliza de servicio con IKA?</h2>
+                                <p>
+                                    Al contratar una póliza de servicio con <strong>IKA</strong>, las empresas acceden a un equipo multidisciplinario de ingenieros altamente capacitados, con más de 20 años de experiencia en el sector.
+                                </p>
+                                <p>
+                                    Esto permite contar con soporte profesional sin asumir los costos y responsabilidades que implica mantener personal técnico en plantilla.
+                                </p>
+                                <p>
+                                    A diferencia de contratar personal interno, una póliza con IKA ofrece:
+                                </p>
+                                <ul>
+                                    <li>Mayor cobertura técnica (diversas especialidades en un solo servicio).</li>
+                                    <li>Reducción en costos operativos y administrativos.</li>
+                                    <li>Beneficios fiscales al deducirse como gastos operativos.</li>
+                                    <li>Flexibilidad y escalabilidad según tus necesidades.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ScrollableSection>
+
+            {/* Servicios incluidos */}
+            <ScrollableSection index={3}>
+                <div className="section-content">
+                    <div className="row">
+                        <div className="column-left">
+                            <div className="service-text">
+                                <h2>Algunos de los servicios que obtendrás con nuestra póliza</h2>
+                                <ul>
+                                    <li>Mantenimientos preventivos y correctivos.</li>
+                                    <li>Respaldo de información.</li>
+                                    <li>Monitoreo de tu infraestructura.</li>
+                                    <li>Consultoría y asesoramiento para tus proyectos de TI.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="column-right">
+                            <div className="service-image">
+                                <img src={soporteImage3} alt="Servicios incluidos" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ScrollableSection>
+
+            {/* Conclusión */}
+            <ScrollableSection index={4}>
+                <div className="section-content">
+                    <div className="row">
+                        <div className="column-left">
+                            <div className="service-image">
+                                <img src={soporteImage4} alt="Conclusión soporte técnico" />
+                            </div>
+                        </div>
+                        <div className="column-right">
+                            <div className="service-text">
+                                <h2>Conclusión</h2>
+                                <p>
+                                    Contar con el respaldo de una empresa especializada como <strong>IKA</strong> no solo garantiza continuidad tecnológica y eficiencia operativa, sino que representa una solución inteligente y rentable para empresas que desean enfocarse en su core business mientras delegan su infraestructura tecnológica en manos expertas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </ScrollableSection>
         </Section>

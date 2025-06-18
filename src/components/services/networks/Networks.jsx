@@ -82,23 +82,25 @@ const Networks = () => {
 
             <ScrollableSection className="network-section" index={2}>  
                 <div className="section-header">
-                    <h2 className='text-center'>Dispositivos de comunicación</h2>
+                    <h2 className='text-center'>Dispositivos de redes y comunicación</h2>
                 </div>
                 <div className="content">
                     <div className="text-content">
                         <p className='service-text'>
-                            Los dispositivos tales como routers, switches, conmutadores, firewalls, acces points, antenas para enlace
-                            inalámbrico punto a punto y multipunto, entre otros, son la pieza clave para contar con una infraestructura
+                          Estos dispositivos son la pieza clave para contar con una infraestructura
                             de red adecuada que permita comunicar y conformar la red de tu organización.
                         </p>
                         <ul>
-                            <li>Cisco, Planet, Allied Telesis y Linksys.</li>
-                            <li>Fortinet, Ubiquiti, Mikrotik, Sinology.</li>
-                            <li>HP, Dell, Lenovo.</li>
-                            <li>Hikvision, Epcom e IDIS.</li>
+                            <li>Routers.</li>
+                            <li>Switches.</li>
+                            <li>Conmutadores.</li>
+                            <li>Firewalls.</li>
+                            <li>Access Points.</li>
+                            <li>Antenas.</li>
                         </ul>
                     </div>
-                    <div className="service-image">
+                    <div className="column-right">
+                        <div className="service-image">
                         <img
                             src={Comunicaion}
                             alt="Dispositivos de comunicación"
@@ -106,6 +108,8 @@ const Networks = () => {
                             height="380"
                         />
                     </div>
+                    </div>
+                   
                 </div>
             </ScrollableSection>
         </Section>

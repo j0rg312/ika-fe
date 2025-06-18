@@ -7,4 +7,9 @@
     justify-content: space-between;
 }
 
-
+.service-list{
+    display: flex;
+}
+.tecnology{
+    margin-left: var(--space-2xl);
+}

@@ -155,6 +155,10 @@ ul {
   font-size: clamp(12px, 1vw, 1rem);
 }
 
+li {
+  margin-bottom: -0.1rem !important;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

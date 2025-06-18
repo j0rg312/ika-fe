@@ -10,18 +10,11 @@ const Printer = () => {
             <MainTitle text="Arrendamiento de Impresoras" />
 
             <ScrollableSection index={0}>
-                <div className="printer-content">
                     <div className="service-text">
                         <h2>Moderniza tu impresión</h2>
-                        <p>
-                            Las impresoras forman parte esencial de la operación diaria en muchas empresas. A través del arrendamiento, puedes contar siempre con equipos modernos, eficientes y en perfecto estado, sin los gastos de mantenimiento o reemplazo.
-                        </p>
-                        <p>
-                            En <strong>IKA</strong> te ofrecemos las mejores marcas de impresoras para renta mensual, con mantenimiento preventivo y correctivo incluido, asesoría especializada y soporte técnico continuo.
-                        </p>
-                        <p>
-                            Disfruta de una solución práctica, deducible de impuestos, sin gastos ocultos y con la tecnología que tu empresa necesita.
-                        </p>
+                       <p>
+                        Un servicio administrado de impresión es una solución integral que se encarga de gestionar, optimizar y dar soporte a todo el entorno de impresión de tu empresa. Incluye el suministro de equipos, mantenimiento, consumibles y monitoreo continuo, lo que reduce costos, mejora la eficiencia y permite a tu negocio enfocarse en lo realmente importante.
+                       </p>
                     </div>
 
                     <div className="service-image">
@@ -30,7 +23,18 @@ const Printer = () => {
                             alt="Arrendamiento de impresoras"
                             className="printer-img"
                         />
-                    </div>
+                </div>
+            </ScrollableSection>
+            <ScrollableSection index={1}>
+                <div className="service-text">
+                    <h2>Beneficios</h2>
+                    <li>Control de costos.</li>
+                    <li>Monitoreo remoto y reportes.</li>
+                    <li>Optimización de consumibles.</li>
+                    <li>Reduce tiempo de inactividad.</li>
+                    <li>Soporte técnico especializado.</li>
+                    <li>Mejora la productividad.</li>
+                    
                 </div>
             </ScrollableSection>
         </Section>

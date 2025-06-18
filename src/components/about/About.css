@@ -66,9 +66,9 @@
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--text-color);
-  text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  text-align: justify !important;
 }
 
 
@@ -128,6 +128,8 @@
   color: var(--text-light);
   line-height: 1.6;
   margin: 0;
+  hyphens: auto !important;
+  text-align: center;
 }
 
 .commitment-text {
@@ -217,6 +219,8 @@
   color: var(--text-light);
   line-height: 1.6;
   margin: 0;
+  text-align: center;
+  hyphens: auto !important;
 }
 
 
@@ -279,7 +283,7 @@
 }
 
 .mission-icon {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-light));
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-light)) !important;
   color: var(--color-white);
 }
 

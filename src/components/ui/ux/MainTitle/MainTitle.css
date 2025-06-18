@@ -8,7 +8,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xxs);
 }
 
 .title-container--centered {

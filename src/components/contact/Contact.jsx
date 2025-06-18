@@ -167,14 +167,14 @@ const Contact = () => {
             <div className="info-box">
               <i className="flaticon-placeholder"></i>
               <h3>Oficinas</h3>
-              <p>C. Cebra #3700 int 26a, Col. Colinas del Sol I y II</p>
-              <p>CP. 31110, Chihuahua, Chihuahua</p>
+              <p>Calle Getsemani #9113</p>
+              <p>Col. Nuevo Paraiso</p>
             </div>
 
             <div className="info-box">
               <i className="flaticon-phone-call"></i>
               <h3>Llámanos</h3>
-              <p>Oficina: (614) 388-0755</p>
+              <p>Oficina: (614) 484-27-11</p>
             </div>
 
             <div className="info-box">

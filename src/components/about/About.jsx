@@ -27,7 +27,7 @@ const About = () => {
           
           <div className="about-content">
             <p className="intro-paragraph">
-              Somos una empresa mexicana fundada en 2001 con la misión de brindar servicios de consultoría y soporte tecnológico de excelencia a las empresas de Chihuahua y más allá.
+                En <strong>IKA</strong> contamos con más de 20 años de experiencia brindando soluciones integrales en sistemas de información, con un enfoque especializado en tecnologías GNU/Linux, redes, firewalls, servidores en la nube, arrendamiento de equipo de cómputo y servicios administrados de impresión. Nuestra trayectoria y compromiso nos han consolidado como aliados estratégicos para empresas del norte del país, a quienes ofrecemos un servicio confiable, personalizado y orientado a la eficiencia tecnológica.
             </p>
             
             <div className="expertise-grid">
@@ -36,7 +36,7 @@ const About = () => {
                     <Wrench size={36}/>
                 </div>
                 <h4>Consultoría Especializada</h4>
-                <p>Servicios informáticos y consultorías técnicas personalizadas</p>
+                <p>Servicios informáticos y consultorías técnicas personalizadas.</p>
               </div>
               
               <div className="expertise-item">
@@ -44,20 +44,20 @@ const About = () => {
                     <Laptop size={36} />
                 </div>
                 <h4>Desarrollo de Proyectos</h4>
-                <p>Soluciones a medida y proyectos especiales</p>
+                <p>Soluciones a medida y proyectos especiales.</p>
               </div>
               
               <div className="expertise-item">
                 <div className="expertise-icon">
                     <Hammer size={36} />
                 </div>
-                <h4>Soporte Integral</h4>
-                <p>Venta, renta y mantenimiento de equipos</p>
+                <h4>Equipamiento Tecnológico</h4>
+                <p>Venta, renta y mantenimiento de equipos. </p>
               </div>
             </div>
             
             <p className="commitment-text">
-              Nuestro equipo de ingenieros especializados cuenta con más de <strong>20 años de experiencia</strong> en diversas áreas de Tecnología de la Información, con un enfoque particular en el fomento de <strong>tecnologías libres</strong> y soluciones sostenibles.
+              Nuestro equipo En <strong>IKA</strong> contamos con un equipo de trabajo altamente calificado y comprometido, conformado por profesionales con amplia experiencia en tecnologías de la información. Nuestro personal se distingue no solo por su preparación técnica, sino también por su integridad, responsabilidad y vocación de servicio. Trabajamos con pasión, ética y dedicación, enfocados siempre en entender y superar las expectativas de nuestros clientes, brindando soluciones eficientes y a la medida de cada necesidad.
             </p>
           </div>
         </div>
@@ -90,15 +90,21 @@ const About = () => {
             <div className="value-icon">
                 <Star color="black" size={36} />
             </div>
-            <h4>Excelencia</h4>
-            <p>Nos esforzamos por superar expectativas en cada entrega, manteniendo los más altos estándares de calidad en todos nuestros servicios.</p>
+            <h4>Profesionalismo</h4>
+            <p>
+              Actuamos con responsabilidad, conocimiento y excelencia, manteniendo los más altos estándares de calidad en todos nuestros servicios.
+            </p>
           </div>
           <div className="value-card">
             <div className="value-icon">
               <ShieldCheck color="black" size={36} />
             </div>
-            <h4>Confianza</h4>
-            <p>Construimos relaciones sólidas y duraderas basadas en la confianza mutua, la responsabilidad y la transparencia.</p>
+            <h4>Integridad</h4>
+            <p>
+              Operamos con ética, transparencia  y respeto, construyendo relaciones solidas y duraderas,
+              basadas en la confianza mutua y la resposabilidad.
+              
+            </p>
           </div>
 
           <div className="value-card">
@@ -114,7 +120,7 @@ const About = () => {
               <TrendingUp color="black" size={36} />
             </div>
             <h4>Crecimiento</h4>
-            <p>Promovemos el desarrollo continuo tanto de nuestro equipo como de nuestros clientes, impulsando el progreso conjunto.</p>
+            <p>Promovemos el desarrollo continuo tanto de nuestro equipo como de nuestros clientes, impulsando el progreso mutuo.</p>
           </div>
         </div>
       </ScrollableSection>
@@ -149,12 +155,12 @@ const About = () => {
           <div className="mission-card">
             <div className="card-header">
               <div className="card-icon mission-icon">
-                <Target color="white" size={28} />
+                <Target  size={40} />
               </div>
               <h3>Nuestra Misión</h3>
             </div>
             <p>
-              Proveer soluciones tecnológicas personalizadas e innovadoras que impulsen el crecimiento, la eficiencia y la competitividad de nuestros clientes, contribuyendo al desarrollo tecnológico de México.
+              Proveer servicios de consultoría y soluciones tecnológicas de alto nivel, con un enfoque en la eficiencia operativa, la seguridad y la continuidad del negocio. Nos comprometemos a acompañar a nuestros clientes en sus procesos de transformación digital, mediante un equipo de expertos altamente calificados y una atención orientada a la excelencia y la satisfacción total.
             </p>
           </div>
           
@@ -165,8 +171,9 @@ const About = () => {
               </div>
               <h3>Nuestra Visión</h3>
             </div>
+
             <p>
-              Ser reconocidos como el socio estratégico líder en innovación tecnológica para empresas de todos los tamaños, expandiendo nuestra presencia a nivel nacional e internacional.
+              Ser la empresa líder en consultoría y servicios tecnológicos en el norte del país, reconocida por nuestra experiencia, innovación, compromiso con la calidad y cercanía con nuestros clientes, contribuyendo activamente a la transformación digital de las organizaciones.
             </p>
           </div>
         </div>

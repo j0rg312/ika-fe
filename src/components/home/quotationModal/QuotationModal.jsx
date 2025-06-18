@@ -283,6 +283,8 @@ const QuotationModal = ({ isOpen, onClose, service = '', productDetails = '' }) 
 
               <div className="form-group">
                 <label htmlFor="quantity">Cantidad *</label>
+                {/*Combobox impresoras*/}
+                {/*Dinamico*/}
                 <input
                   type="text"
                   id="quantity"
