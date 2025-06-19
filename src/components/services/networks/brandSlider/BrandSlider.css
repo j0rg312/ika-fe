@@ -1,4 +1,4 @@
-.client-slider {
+.brand-slider {
   overflow: hidden;
   width: 99vw;
   background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary-color) 100%);
@@ -20,7 +20,7 @@
   );
 }
 
-.client-slider::before {
+.brand-slider::before {
   content: '';
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@
   animation-play-state: paused;
 }
 
-.client-logo-card {
+.brand-logo-card {
   flex: 0 0 auto;
   width: 200px;
   height: 120px;
@@ -62,7 +62,7 @@
   margin: 0 var(--space-lg);
 }
 
-.client-logo-card::before {
+.brand-logo-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -76,16 +76,16 @@
   transition: var(--transition);
 }
 
-.client-logo-card:hover::before {
+.brand-logo-card:hover::before {
   opacity: 0.05;
 }
 
-.client-logo-card:hover {
+.brand-logo-card:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-lg);
 }
 
-.client-logo-image {
+.brand-logo-image {
   height: 80px;
   width: auto;
   max-width: 140px;
@@ -97,7 +97,7 @@
   z-index: 1;
 }
 
-.client-logo-card:hover .client-logo-image {
+.brand-logo-card:hover .brand-logo-image {
   opacity: 1;
   filter: grayscale(0);
   transform: scale(1.1);
@@ -117,7 +117,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .client-slider {
+  .brand-slider {
     padding: var(--space-xl) 0;
   }
   
@@ -126,14 +126,14 @@
     animation: slideInfiniteTablet 25s linear infinite;
   }
   
-  .client-logo-card {
+  .brand-logo-card {
     width: 160px;
     height: 100px;
     padding: var(--space-md);
     margin: 0 var(--space-md);
   }
   
-  .client-logo-image {
+  .brand-logo-image {
     height: 60px;
     max-width: 100px;
   }
@@ -154,14 +154,14 @@
     animation: slideInfiniteMobile 20s linear infinite;
   }
   
-  .client-logo-card {
+  .brand-logo-card {
     width: 120px;
     height: 80px;
     padding: var(--space-sm);
     margin: 0 var(--space-sm);
   }
   
-  .client-logo-image {
+  .brand-logo-image {
     height: 50px;
     max-width: 80px;
   }
@@ -179,7 +179,7 @@
 /* Hover para pausar solo la animación principal */
 
 /* Fade in inicial */
-.client-slider {
+.brand-slider {
   animation: fadeIn 1s ease-out;
 }
 

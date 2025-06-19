@@ -60,8 +60,8 @@ const slides = [
   const goToSlide = (index) => setCurrentSlide(index);
 
   const [selectedService, setSelectedService] = useState('');
-  const openModal = (serviteTitle) => {
-    setSelectedService(serviteTitle);
+  const openModal = (serviceTitle) => {
+    setSelectedService(serviceTitle);
     setIsModalOpen(true);
   }
   const closeModal = () => setIsModalOpen(false);

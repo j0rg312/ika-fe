@@ -5,6 +5,7 @@ import Section from '../../ui/layouts/Section';
 import Redes from '../../../assets/services/redes.jpeg';
 import Infraestructura from '../../../assets/services/servidores.jpeg';
 import Comunicaion from '../../../assets/services/comunicacion.png';
+import BrandSlider from './brandSlider/BrandSlider';
 
 const Networks = () => {
     return (
@@ -112,6 +113,7 @@ const Networks = () => {
                    
                 </div>
             </ScrollableSection>
+            <BrandSlider/>
         </Section>
     );
 }

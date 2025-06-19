@@ -4,10 +4,84 @@ import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
 import { Helmet } from 'react-helmet-async';
 import { Lightbulb, Handshake, Star, Target, Rocket, Wrench, Laptop, Hammer, ShieldCheck, Users, TrendingUp} from 'lucide-react';
-import Security from '../../assets/certificates/Security.png'
-import Data from '../../assets/certificates/Data.png'
+import Security from '../../assets/certificates/Security.png';
+import Data from '../../assets/certificates/Data.png';
+import Fortinet from '../../assets/certificates/fortinet.png';
+import Cisco from '../../assets/certificates/cisco.jpeg';
+import CCNA from '../../assets/certificates/CCNA.jpeg';
+import Dahua from '../../assets/certificates/dahua.jpeg';
+import Dahua2 from '../../assets/certificates/dahua2.jpeg';
+import Intellinet from '../../assets/certificates/intellinet.jpeg';
+import Intellinet2 from '../../assets/certificates/intellinet2.jpeg';
+import GoogleCloud from '../../assets/certificates/googleCloud.png'
+
 
 const About = () => {
+  const certificates = [
+  {
+    image: Data,
+    alt: "Respaldo Profesional y Técnico Especializado",
+    title: "Recuperación Avanzada de Datos",
+    description: "Certified Data Recovery Professional (CDRP) de la Asociación ARDA e IACRB"
+  },
+  {
+    image: Security,
+    alt: "Recuperación Avanzada de Datos",
+    title: "Seguridad en Cómputo",
+    description: "Certificación Práctica Avanzada de Seguridad en Computo (HAURI Latinoamérica)"
+  },
+  {
+    image: Fortinet,
+    alt: "Fortinet Certified Associate in Cybersecurity",
+    title: "Ciberseguridad – Nivel Asociado",
+    description: "Fortinet Certified Associate in Cybersecurity (NSE 1). Fundamentos de ciberseguridad, amenazas comunes y buenas prácticas de protección en redes."  
+  },
+  {
+    image: Cisco,
+    alt: "Introduction to Networks – Cisco",
+    title: "Introducción a Redes",
+    description: "Curso Introduction to Networks (CCNA) de Cisco. Fundamentos de redes, modelos OSI/TCP-IP, direccionamiento IP, y conectividad de red básica."
+  },
+  {
+    image: CCNA,
+    alt: "Switching, Routing and Wireless Essentials – Cisco",
+    title: "Switching, Routing & Wireless",
+    description: "Curso CCNA: Switching, Routing and Wireless Essentials de Cisco. Conceptos de redes LAN, VLAN, routing estático, protocolos y conectividad inalámbrica."
+  },
+  { 
+    image: Dahua,
+    alt: "Dahua Certified Associate – Video Intercom System",
+    title: "Dahua DHCA-VIS",
+    description: "Certificación DHCA-VIS (Dahua Certified Associate) en Sistemas de Videoportero. Instalación, configuración y operación de soluciones de intercomunicación Dahua."
+  },
+  {
+    image: Intellinet,
+    alt: "Certificación Intellinet en Cableado Estructurado",
+    title: "Cableado Estructurado",
+    description: "Certificación en Cableado Estructurado de Intellinet. Principios, instalación y estándares de redes físicas con infraestructura de alto desempeño."
+  },
+  {
+    image: Intellinet2,
+    alt: "Integrador Certificado – Intellinet Network Solutions",
+    title: "Integrador Certificado",
+    description: "Certificación como Integrador Certificado por Intellinet Network Solutions. Competencias en diseño, implementación y soporte de soluciones de conectividad de la marca."
+  },
+   { 
+    image: Dahua2,
+    alt: "Dahua DHSA – Mobile Vehicle System",
+    title: "Dahua DHSA-MOVIE",
+    description: "Certificación DHSA-MOVIE (Dahua High-level Security Associate) en Sistemas de Videovigilancia Móvil. Soluciones para vehículos con cámaras, grabadores móviles y gestión remota de flotas."
+},
+{
+  image: GoogleCloud,
+  alt: "Google Cloud – G Suite Administrator Fundamentals",
+  title: "Administrador G Suite",
+  description: "Certificación de Google Cloud en G Suite Administrator Fundamentals. Fundamentos para la administración de usuarios, servicios, seguridad y configuración de G Suite en organizaciones."
+}
+
+
+
+  ]
   return (
     <Section>
       <Helmet>
@@ -132,21 +206,15 @@ const About = () => {
         </div>
         
         <div className="certifications-grid">
-          <div className="certification-card">
-            <div className="certification-icon">
-                <img src={Data} alt="Respaldo Profesional y Técnico Especializado" />
+          {certificates.map((certificacion, i) => (
+            <div className="certification-card" key={i}>
+              <div className="certification-icon">
+                  <img src={certificacion.image} alt={certificacion.alt} />
+              </div>
+              <h4>{certificacion.title}</h4>
+              <p>{certificacion.description}</p>
             </div>
-            <h4>Recuperación Avanzada de Datos</h4>
-            <p>Certified Data Recovery Professional (CDRP) de la Asociación ARDA e IACRB</p>
-          </div>
-          
-          <div className="certification-card">
-            <div className="certification-icon">
-                <img src={Security} alt="Recuperación Avanzada de Datos" />
-            </div>
-            <h4>Seguridad en Cómputo</h4>
-            <p>Certificación Práctica Avanzada de Seguridad en Computo (HAURI Latinoamérica)</p>
-          </div>
+          ))}
         </div>
       </ScrollableSection>
 
