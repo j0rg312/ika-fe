@@ -53,7 +53,7 @@ const App = () => {
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
       </div>
-          <CallToAction/>
+         {/*  <CallToAction/> */}
           <Footer />
       </div> 
     </Router>
