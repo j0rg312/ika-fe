@@ -29,14 +29,14 @@ const slides = [
     id: 2,
     bgImage: Consultoria,
     subtitle: '¿Quiénes somos?',
-    title: 'Aliados estratégicos en tecnología',
+    title: 'Aliados estratégicos en tecnología.',
     description: 'En IKA creemos en el poder de la tecnología para hacer crecer a las empresas. Acompañamos a nuestros clientes en cada paso con soluciones personalizadas y un equipo altamente capacitado.',
     alignment: 'right'
   },
   {
     id: 3,
     bgImage: Impresora,
-    subtitle: 'Contamos con las mejors marcas para tu empresa',
+    subtitle: 'Contamos con las mejors marcas para tu empresa.',
     title: 'Arrendamiento de impresoras',
     description: 'Desde consultoría hasta venta y renta de equipo de cómputo',
     alignment: 'center',
