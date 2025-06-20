@@ -1,9 +1,9 @@
-// src/data/navLinks.js
+
 
 import { classNames } from "primereact/utils";
 
 export const navLinks = [
-  { name: "Home", path: "/home" },
+  { name: "Inicio", path: "/home" },
   { name: "Nosotros", path: "/about" },
   { name: "Soluciones",
     path: "/services",
