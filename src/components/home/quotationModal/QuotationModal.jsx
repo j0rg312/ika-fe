@@ -20,13 +20,22 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
         label: 'Tipo de impresora',
         name: 'TIpo de impresora',
         type: 'select',
-        options: ['Multifunción', 'Monofunción']       
+        options: ['Multifuncional', 'Impresora']       
       },
       {
         label: 'Color o Blanco y Negro',
         name: 'Tipo de impresión',
         type: 'select',
         options: ['Color', 'Blanco y negro']
+      }
+    ],
+    'Arrendamiento de equipo de cómputo.': [
+      { 
+        label: '¿Quieres Rentar o comprar?',
+        name: 'Tipo de operación',
+        type: 'select',
+        options: ['Rentar', 'Comprar', 'Estamos decidiendo']
+
       }
     ]
   };
@@ -299,7 +308,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
             <div className="form-row">
 
               <div className="form-group">
-                <label htmlFor="quantity">Cantidad *</label>
+                <label htmlFor="quantity">¿Cuántos equipos necesitas?*</label>
 
                 <input
                   type="text"
@@ -314,19 +323,6 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
               </div>
             </div>
 
-
-            <div className="form-group">
-              <label htmlFor="message">Detalles Adicionales</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                placeholder="Especificaciones técnicas, requisitos especiales, etc."
-                disabled={submitStatus.type === 'loading'}
-              />
-            </div>
             {serviceFields[formData.service] && serviceFields[formData.service].map((field,i) => (
               <div className="form-group" key={i}>
                 <label htmlFor={field.name}>{field.label}</label>
@@ -355,6 +351,20 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
                 )}
               </div>
             ))}
+
+            <div className="form-group">
+              <label htmlFor="message">Detalles Adicionales</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                placeholder="Especificaciones técnicas, requisitos especiales, duración del servicio, etc."
+                disabled={submitStatus.type === 'loading'}
+              />
+            </div>
+
             <div className="form-actions">
               <button 
                 type="button" 

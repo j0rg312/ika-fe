@@ -3,9 +3,9 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import './HeroSlider.css';
 import Consultoria from '../../../assets/consultoria.png';
 import StarLink from '../../../assets/starlink.webp';
-import Soporte from '../../../assets/services/soporte2.jpeg';
+import Computo from '../../../assets/services/computo.jpeg';
 import Impresora from '../../../assets/services/impresora.jpeg'
-import Home from '../../../assets/home.jpeg'
+
 import QuotationModal from '../quotationModal/QuotationModal';
 
 const HeroSlider = () => {
@@ -15,14 +15,14 @@ const HeroSlider = () => {
 const slides = [
   {
     id: 1,
-    bgImage: Soporte,
-    subtitle: 'Bienvenido a IKA',
-    title: 'Transformamos tecnología en soluciones reales',
-    description: 'Somos una empresa con más de 20 años ofreciendo innovación, compromiso y excelencia en servicios de TI, desarrollo web y consultoría.',
+    bgImage: Computo,
+    subtitle: 'Renueva tu equipo',
+    title: 'Arrendamiento de equipo de cómputo.',
+    description: 'Ponemos a tu disposición la renta de equipo tecnológico como computadoras, impresoras, servidores, redes, proyectores y todo lo necesario para la infraestructura de tu organización.',
     alignment: 'left',
     button: {
-      text: 'Conócenos',
-      link: '../about/'
+      text: 'Cotiza sin compromiso',
+      className: 'cot'
     }
   },
   {
@@ -106,11 +106,8 @@ const slides = [
                         {slide.button.text}
                       </a>
                     )
-                  ) : (
-                    <a href="#como-trabajamos" className={`btn secondary align-${slide.alignment}`}>
-                      <Play className="icon" /> Cómo trabajamos
-                    </a>
-                  )}
+                  ) : null
+                  }
                 </div>
               </div>
             </div>

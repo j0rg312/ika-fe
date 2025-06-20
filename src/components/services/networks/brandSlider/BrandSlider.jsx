@@ -10,7 +10,7 @@ import Huawei from '../../../../assets/services/networks/huawei.jpeg';
 import Proxmox from '../../../../assets/services/networks/proxmox.jpeg';
 import Starlink from '../../../../assets/services/networks/starlink.jpeg';
 import Tecnology from '../../../../assets/services/networks/tecnology.jpeg';
-import Unifi from '../../../../assets/services/networks/unifi.jpeg';
+import Unifi from '../../../../assets/services/networks/unifi.png';
 import Vb from '../../../../assets/services/networks/vb.jpeg';
 import Vm from '../../../../assets/services/networks/vm.jpeg';
 import Sangfor from '../../../../assets/services/networks/sangfor.jpeg';

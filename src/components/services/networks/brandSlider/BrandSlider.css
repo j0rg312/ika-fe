@@ -1,6 +1,6 @@
 .brand-slider {
   overflow: hidden;
-  width: 99vw;
+  width: 90vw;
   background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary-color) 100%);
   padding: var(--space-2xl) 0;
   position: relative;
