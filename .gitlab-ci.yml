@@ -19,6 +19,8 @@ deploy_job:
   image: alpine:latest
   before_script:
     - apk add --no-cache lftp
+  tags:
+   - deploy-runner-demo
   script:
     - lftp -c "
       open -u $FTP_USER,$FTP_PASSWORD sftp://tu-servidor.dreamhost.com;
