@@ -23,13 +23,14 @@ build_job:
 deploy_job:
   stage: deploy
   script:
+    - mkdir -p ~/.ssh
+    - ssh-keyscan ika.mx >> ~/.ssh/known_hosts
     - echo "Conectando a DreamHost..."
     - lftp -d -c "
-        open -u $FTP_USER,$FTP_PASSWORD sftp://ikamx@ika.mx;
+        open -u $FTP_USER,$FTP_PASSWORD sftp://ika.mx;
         mirror -R --delete --verbose dist /home/ikamx/ika.mx/;
       "
   only:
     - main
   tags:
     - deploy-runner-demo
-
