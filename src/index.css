@@ -139,7 +139,7 @@ p {
   max-width: 800px;
   hyphens: none;
   padding: 10px;
-overflow-wrap: break-word;
+  overflow-wrap: break-word;
 
 }
 
