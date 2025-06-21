@@ -13,16 +13,17 @@ build_job:
       - dist/
   only:
     - main
+  tags:
+    - deploy-runner-demo
 
 deploy_job:
   stage: deploy
   image: alpine:latest
   before_script:
     - apk add --no-cache lftp
-
   script:
     - lftp -c "
-        open -u $FTP_USER,$FTP_PASSWORD sftp://tu-servidor.dreamhost.com;
+        open -u $FTP_USER,$FTP_PASSWORD sftp://ikamx.dreamhost.com;
         mirror -R --delete --verbose dist /home/ikamx/ika.mx/;
       "
   only: 
