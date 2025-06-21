@@ -25,7 +25,7 @@ deploy_job:
   script:
     - echo "Conectando a DreamHost..."
     - lftp -d -c "
-        open -u $FTP_USER,$FTP_PASSWORD sftp://edward-rutledge.dreamhost.com;
+        open -u $FTP_USER,$FTP_PASSWORD sftp://ikamx@ika.mx;
         mirror -R --delete --verbose dist /home/ikamx/ika.mx/;
       "
   only:
