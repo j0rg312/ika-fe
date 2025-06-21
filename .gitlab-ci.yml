@@ -27,7 +27,7 @@ deploy_job:
     - apk add --no-cache lftp
   script:
     - lftp -c "
-        open -u $FTP_USER,$FTP_PASSWORD sftp://ikamx.dreamhost.com;
+        open -u $FTP_USER,$FTP_PASSWORD sftp://ikamx@ika.mx;
         mirror -R --delete --verbose dist /home/ikamx/ika.mx/;
       "
   only: 
