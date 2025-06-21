@@ -131,7 +131,7 @@ const About = () => {
             </div>
             
             <p className="commitment-text">
-              Nuestro equipo En <strong>IKA</strong> contamos con un equipo de trabajo altamente calificado y comprometido, conformado por profesionales con amplia experiencia en tecnologías de la información. Nuestro personal se distingue no solo por su preparación técnica, sino también por su integridad, responsabilidad y vocación de servicio. Trabajamos con pasión, ética y dedicación, enfocados siempre en entender y superar las expectativas de nuestros clientes, brindando soluciones eficientes y a la medida de cada necesidad.
+              En <strong>IKA</strong> contamos con un equipo de trabajo altamente calificado y comprometido, conformado por profesionales con amplia experiencia en tecnologías de la información. Nuestro personal se distingue no solo por su preparación técnica, sino también por su integridad, responsabilidad y vocación de servicio. Trabajamos con pasión, ética y dedicación, enfocados siempre en entender y superar las expectativas de nuestros clientes, brindando soluciones eficientes y a la medida de cada necesidad.
             </p>
           </div>
         </div>
