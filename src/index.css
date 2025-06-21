@@ -137,8 +137,10 @@ p {
   text-align: justify;
   margin-bottom: clamp(12px, 1vw, 22px);
   max-width: 800px;
-  hyphens: auto;
+  hyphens: none;
   padding: 10px;
+overflow-wrap: break-word;
+
 }
 
 
