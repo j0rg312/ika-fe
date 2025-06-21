@@ -28,7 +28,8 @@ deploy_job:
     - echo "Conectando a DreamHost..."
     - lftp -d -c "
         open -u $FTP_USER,$FTP_PASSWORD sftp://ika.mx;
-        mirror -R --delete --verbose dist /home/ikamx/ika.mx/
+        mirror -R --delete --verbose dist/ /home/ikamx/ika.mx/
+
 
       "
   only:
