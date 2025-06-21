@@ -6,6 +6,10 @@ build_job:
   stage: build
   image: node:22
   script: 
+    - export NVM_DIR="$HOME/.nvm"
+    - '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' 
+    - nvm use 22                                           
+    - node -v                                             
     - npm ci
     - npm run build -- --mode production 
   artifacts: 
