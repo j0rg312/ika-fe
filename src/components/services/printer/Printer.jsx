@@ -30,9 +30,8 @@ const Printer = () => {
             </ScrollableSection>
 
             <ScrollableSection index={1}>
-               
-            </ScrollableSection>
-                <div className="service-text">
+                <div className="content">
+                 <div className="service-text">
                     <h2>Beneficios</h2>
                     <li>Control de costos.</li>
                     <li>Monitoreo remoto y reportes.</li>
@@ -41,6 +40,8 @@ const Printer = () => {
                     <li>Soporte técnico especializado.</li>
                     <li>Mejora la productividad.</li> 
                 </div>
+                </div>
+            </ScrollableSection>
             <ScrollableSection index={2}>
                 <div className="content">
                 <div className="service-text">
