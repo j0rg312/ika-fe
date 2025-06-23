@@ -18,7 +18,7 @@ const ClientSlider = () => {  const triplicatedLogos = [...logos, ...logos, ...l
   return (
     <Section>
       <ScrollableSection>
-        <MainTitle text='Nuestros Clientes.'/>
+        <MainTitle text='Nuestros Clientes'/>
         <div className="client-slider">
           <div className="slider-track">
             {triplicatedLogos.map((logo, i) => (
