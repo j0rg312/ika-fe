@@ -9,6 +9,7 @@ import Palmore from '../../../assets/costumers/Palmore.png';
 import SierraAlta from '../../../assets/costumers/sierraAlta.png';
 import Ahinco from '../../../assets/costumers/ahinco.png';
 import HospiSoft from '../../../assets/costumers/hospisoft.png'
+import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 
 const logos = [Endobariatric, Esparza, Kalish, Metro, Palmore, SierraAlta, Ahinco, HospiSoft];
 
@@ -17,6 +18,7 @@ const ClientSlider = () => {  const triplicatedLogos = [...logos, ...logos, ...l
   return (
     <Section>
       <ScrollableSection>
+        <MainTitle text='Nuestros Clientes'/>
         <div className="client-slider">
           <div className="slider-track">
             {triplicatedLogos.map((logo, i) => (
