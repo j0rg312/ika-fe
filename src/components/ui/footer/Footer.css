@@ -72,7 +72,7 @@ footer:hover .expanded-content {
   line-height: 1.5;
   color: var(--primary-color) !important;
   padding: clamp(2px, 1vw, 6px) 0;
-  text-align: left;
+  text-align: justify;
 }
 
 /* Estilo del contenido compacto */
@@ -108,18 +108,18 @@ footer:hover .expanded-content {
   transform: scale(1.1);
 }
 
-/* Horarios */
+
 .schedule {
   text-align: right;
   font-size: clamp(10px, 2vw, 14px);
   color: white;
 }
 
-/* Imágenes de alianzas comerciales */
+
 .comercial-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: end;
   gap: var(--space-2xl);
   padding: 0;
   margin: 0;
@@ -128,8 +128,19 @@ footer:hover .expanded-content {
 
 .comercial-list li img {
   width: clamp(30px, 5vw, 60px);
-  height: auto;
+  height: 50px;
   object-fit: contain;
+}
+
+.ika-title{
+  display: flex;
+  justify-content: center;
+}
+
+.aliance-title{
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 
 /* En pantallas menores a 1000px se desactiva el hover */

@@ -43,14 +43,14 @@ const Footer = () => {
             </div>
             <div className="container-info">
             <div className="company-info">
-              <h2>Internet Knowledge Applied</h2>
+              <h2 className='ika-title'>Internet Knowledge Applied</h2>
               <p className="footer-text">
                 En IKA contamos con más de 20 años de experiencia brindando soluciones integrales en sistemas de información, con un enfoque especializado en tecnologías GNU/Linux, redes, firewalls, servidores en la nube, arrendamiento de equipo de cómputo y servicios administrados de impresión. 
               </p>
           </div>
              </div>
           <div className="comercial-aliance">
-            <h2 style={{textAlign: 'center', color: '#010a1f'}}>Alianzas Comerciales</h2>
+            <h2 style={{textAlign: 'center', color: '#010a1f'}} className='aliance-title'>Alianzas Comerciales</h2>
             <ul className='comercial-list'>
               <li><img src={aws} alt="" /></li>
               <li><img src={Huawei} alt="" /></li>
