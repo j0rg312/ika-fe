@@ -7,7 +7,7 @@
     "dev": "vite",
     "movil": "vite --host",
     "build": "vite build --mode production",
-    "postbuild": "react-snap --source dist",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
