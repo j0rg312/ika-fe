@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import './Footer.css';
 import aws from '../../../assets/aws_logo_smile_1200x630.png';
 import Huawei from '../../../assets/huawei.png';
-import Sangfor from '../../../assets/sangfor.png'
+import Sangfor from '../../../assets/sangfor.png';
+import GoogleCloud from '../../../assets/google-cloud.png';
 import FooterMovil from '../footerMovil/FooterMovil';
 
 
@@ -55,6 +56,7 @@ const Footer = () => {
               <li><img src={aws} alt="" /></li>
               <li><img src={Huawei} alt="" /></li>
               <li><img src={Sangfor} alt="" /></li>
+               <li><img src={GoogleCloud} alt="" /></li>
             </ul>
             </div>
          
