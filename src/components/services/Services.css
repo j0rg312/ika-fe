@@ -82,15 +82,18 @@
   margin-bottom: var(--space-sm);
 }
 
-.service-text p {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
+.service-text  {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--text-color);
   line-height: 1.7;
   margin-bottom: var(--space-md);
   text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
   padding: 0;
   transition: var(--transition-fast);
-  overflow-wrap: break-word;
+
 }
 
 .service-text p:hover {

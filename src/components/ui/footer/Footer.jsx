@@ -5,6 +5,7 @@ import aws from '../../../assets/aws_logo_smile_1200x630.png';
 import Huawei from '../../../assets/huawei.png';
 import Sangfor from '../../../assets/sangfor.png'
 import FooterMovil from '../footerMovil/FooterMovil';
+import GoogleCloud from '../../../assets/google-cloud.png';
 
 
 
@@ -55,6 +56,7 @@ const Footer = () => {
               <li><img src={aws} alt="" /></li>
               <li><img src={Huawei} alt="" /></li>
               <li><img src={Sangfor} alt="" /></li>
+              <li><img src={GoogleCloud} alt="Google Cloud" /></li>
             </ul>
             </div>
          

@@ -21,7 +21,7 @@ const Services = () => {
       path: '/services/networks'
     },
     {
-      title: 'Servidores GNU/Linux y Windows',
+      title: 'Servidores Linux y Windows',
       description: 'Especialistas en administración, instalación y configuración de servidores físicos y virtuales.',
       icon: <FaServer />, 
       path: '/services/servers'

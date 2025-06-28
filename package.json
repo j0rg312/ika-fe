@@ -13,23 +13,6 @@
     "deploy": "gh-pages -d dist",
     "homepages": "https://github.com/j0rg312/ika-fe"
   },
-  "reactSnap": {
-    "inlineCss": true,
-    "puppeteerArgs": ["--no-sandbox"],
-    "include": [
-      "/home",
-      "/about",
-      "/services",
-      "/services/servers",
-      "/services/networks",
-      "/services/support",
-      "/services/security",
-      "/services/digital",
-      "/services/leasing",
-      "/services/printer",
-      "/contact"
-    ]
-  },
   "dependencies": {
     "@stripe/react-stripe-js": "^3.4.0",
     "@stripe/stripe-js": "^6.0.0",
