@@ -1,26 +1,27 @@
 // AgenteChat.jsx
 import { useState, useEffect } from 'react';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:3000');
+// Socket.io deshabilitado temporalmente - habilitar cuando el backend tenga WebSocket server
+// const socket = io('http://localhost:3000');
 
 const AgenteChat = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    socket.on('mensaje', (msg) => {
-      setMessages((prev) => [...prev, { sender: 'cliente', text: msg }]);
-    });
+    // socket.on('mensaje', (msg) => {
+    //   setMessages((prev) => [...prev, { sender: 'cliente', text: msg }]);
+    // });
 
-    return () => {
-      socket.off('mensaje');
-    };
+    // return () => {
+    //   socket.off('mensaje');
+    // };
   }, []);
 
   const sendMessage = () => {
     if (input.trim() === '') return;
-    socket.emit('mensaje', input);
+    // socket.emit('mensaje', input);
     setMessages((prev) => [...prev, { sender: 'agente', text: input }]);
     setInput('');
   };

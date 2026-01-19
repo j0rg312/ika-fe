@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import './CallToAction.css';
 import { IoChatbubbleSharp } from 'react-icons/io5';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:3000'); // Ajusta el puerto si es necesario
+// Socket.io deshabilitado temporalmente - habilitar cuando el backend tenga WebSocket server
+// const socket = io('http://localhost:3000');
 
 const CallToAction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,19 +17,27 @@ const CallToAction = () => {
   const sendMessage = () => {
     if (input.trim() === '') return;
 
-    socket.emit('mensaje', input); 
+    // socket.emit('mensaje', input);
     setMessages((prev) => [...prev, { sender: 'yo', text: input }]);
     setInput('');
+
+    // Simulación de respuesta (remover cuando se implemente el backend)
+    setTimeout(() => {
+      setMessages((prev) => [...prev, {
+        sender: 'agente',
+        text: 'Gracias por tu mensaje. Un agente te contactará pronto.'
+      }]);
+    }, 1000);
   };
 
   useEffect(() => {
-    socket.on('mensaje', (msg) => {
-      setMessages((prev) => [...prev, { sender: 'agente', text: msg }]);
-    });
+    // socket.on('mensaje', (msg) => {
+    //   setMessages((prev) => [...prev, { sender: 'agente', text: msg }]);
+    // });
 
-    return () => {
-      socket.off('mensaje');
-    };
+    // return () => {
+    //   socket.off('mensaje');
+    // };
   }, []);
 
   return (

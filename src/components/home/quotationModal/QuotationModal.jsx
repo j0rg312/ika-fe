@@ -178,32 +178,29 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   }, [service]);
 
 
-  // Componente para el mensaje de estado
-  const StatusMessage = () => {
+  // Componente para toast notification
+  const StatusToast = () => {
     if (!submitStatus.type) return null;
 
     const getStatusStyles = () => {
       switch (submitStatus.type) {
         case 'success':
           return {
-            backgroundColor: '#d4edda',
-            borderColor: '#c3e6cb',
-            color: '#155724',
+            backgroundColor: '#10b981',
+            color: '#ffffff',
             icon: <Check />
           };
         case 'error':
           return {
-            backgroundColor: '#f8d7da',
-            borderColor: '#f5c6cb',
-            color: '#721c24',
+            backgroundColor: '#ef4444',
+            color: '#ffffff',
             icon: <MailWarning />
           };
         case 'loading':
           return {
-            backgroundColor: '#d1ecf1',
-            borderColor: '#bee5eb',
-            color: '#0c5460',
-            icon: <LoaderCircle />
+            backgroundColor: '#3b82f6',
+            color: '#ffffff',
+            icon: <LoaderCircle className="spinner" />
           };
         default:
           return {};
@@ -214,25 +211,28 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
 
     return (
       <div
-        className="status-message"
+        className="toast-notification"
         style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          zIndex: 10000,
           backgroundColor: styles.backgroundColor,
-          borderColor: styles.borderColor,
           color: styles.color,
-          border: '1px solid',
-          borderRadius: 'var(--border-radius-md)',
-          padding: 'var(--space-md)',
-          marginBottom: 'var(--space-lg)',
+          borderRadius: '12px',
+          padding: '16px 20px',
           display: 'flex',
           alignItems: 'flex-start',
-          gap: 'var(--space-sm)',
-          fontSize: '0.95rem',
-          fontWeight: '500',
-          animation: 'slideIn 0.3s ease-out'
+          gap: '12px',
+          minWidth: '300px',
+          maxWidth: '400px',
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
+          animation: 'slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+          backdropFilter: 'blur(10px)'
         }}
       >
-        <span style={{ fontSize: '1.1rem', marginTop: '2px' }}>{styles.icon}</span>
-        <span style={{ whiteSpace: 'pre-line', flex: 1 }}>{submitStatus.message}</span>
+        <span style={{ fontSize: '1.25rem', marginTop: '2px' }}>{styles.icon}</span>
+        <span style={{ whiteSpace: 'pre-line', flex: 1, lineHeight: 1.5 }}>{submitStatus.message}</span>
       </div>
     );
   };
@@ -240,162 +240,164 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="quotation-modal-overlay" onClick={handleBackdropClick}>
-      <div className="quotation-modal" ref={modalRef}>
-        <div className="modal-header">
-          {formData.service
-            ? <h2>Cotización de servicio para  <br />{formData.service}</h2>
-            : 'Solicitar cotización'}
+    <>
+      <StatusToast />
+      <div className="quotation-modal-overlay" onClick={handleBackdropClick}>
+        <div className="quotation-modal" ref={modalRef}>
+          <div className="modal-header">
+            {formData.service
+              ? <h2>Cotización de servicio para  <br />{formData.service}</h2>
+              : 'Solicitar cotización'}
 
-        </div>
+          </div>
 
-        <div className="modal-body">
-          <StatusMessage />
+          <div className="modal-body">
 
-          <form onSubmit={handleSubmit} className="quotation-form">
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="name">Nombre Completo *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Tu nombre completo"
-                  disabled={submitStatus.type === 'loading'}
-                />
-                {errors.name && <span className="error-message">{errors.name}</span>}
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Correo Electrónico *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="ejemplo@correo.com"
-                  disabled={submitStatus.type === 'loading'}
-                />
-                {errors.email && <span className="error-message">{errors.email}</span>}
-              </div>
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="number">Teléfono </label>
-                <input
-                  type="tel"
-                  id="number"
-                  name="number"
-                  value={formData.number}
-                  onChange={handleChange}
-                  placeholder="6141234567"
-                  disabled={submitStatus.type === 'loading'}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="company">Empresa (Opcional)</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Nombre de tu empresa"
-                  disabled={submitStatus.type === 'loading'}
-                />
-              </div>
-            </div>
-
-            <div className="form-row">
-
-              <div className="form-group">
-                <label htmlFor="quantity">¿Cuántos equipos necesitas?*</label>
-
-                <input
-                  type="text"
-                  id="quantity"
-                  name="quantity"
-                  value={formData.quantity}
-                  onChange={handleChange}
-                  placeholder="Ej: 5 equipos, 1 servicio"
-                  disabled={submitStatus.type === 'loading'}
-                />
-                {errors.quantity && <span className="error-message">{errors.quantity}</span>}
-              </div>
-            </div>
-
-            {serviceFields[formData.service] && serviceFields[formData.service].map((field, i) => (
-              <div className="form-group" key={i}>
-                <label htmlFor={field.name}>{field.label}</label>
-                {field.type === 'select' ? (
-                  <select
-                    id={field.name}
-                    name={field.name}
-                    value={formData[field.name] || ''}
-                    onChange={handleChange}
-                    disabled={submitStatus.type === 'loading'}
-                  >
-                    <option value="">Selecciona una opción</option>
-                    {field.options.map((option, i) => (
-                      <option key={i} value={option}>{option}</option>
-                    ))}
-                  </select>
-                ) : (
+            <form onSubmit={handleSubmit} className="quotation-form">
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="name">Nombre Completo *</label>
                   <input
-                    type={field.type}
-                    id={field.name}
-                    name={field.name}
-                    value={formData[field.name] || ''}
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
+                    placeholder="Tu nombre completo"
                     disabled={submitStatus.type === 'loading'}
                   />
-                )}
+                  {errors.name && <span className="error-message">{errors.name}</span>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">Correo Electrónico *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="ejemplo@correo.com"
+                    disabled={submitStatus.type === 'loading'}
+                  />
+                  {errors.email && <span className="error-message">{errors.email}</span>}
+                </div>
               </div>
-            ))}
 
-            <div className="form-group">
-              <label htmlFor="message">Detalles Adicionales</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="4"
-                placeholder="Especificaciones técnicas, requisitos especiales, duración del servicio, etc."
-                disabled={submitStatus.type === 'loading'}
-              />
-            </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="number">Teléfono </label>
+                  <input
+                    type="tel"
+                    id="number"
+                    name="number"
+                    value={formData.number}
+                    onChange={handleChange}
+                    placeholder="6141234567"
+                    disabled={submitStatus.type === 'loading'}
+                  />
+                </div>
 
-            <div className="form-actions">
-              <button
-                type="button"
-                className="cancel-button"
-                onClick={onClose}
-                disabled={submitStatus.type === 'loading'}
-              >
-                Cancelar
-              </button>
-              <button
-                type="submit"
-                className="submit-button"
-                disabled={submitStatus.type === 'loading'}
-              >
-                {submitStatus.type === 'loading' ? (
-                  <>⏳ Enviando...</>
-                ) : (
-                  <>📧 Solicitar Cotización</>
-                )}
-              </button>
-            </div>
-          </form>
+                <div className="form-group">
+                  <label htmlFor="company">Empresa (Opcional)</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Nombre de tu empresa"
+                    disabled={submitStatus.type === 'loading'}
+                  />
+                </div>
+              </div>
+
+              <div className="form-row">
+
+                <div className="form-group">
+                  <label htmlFor="quantity">¿Cuántos equipos necesitas?*</label>
+
+                  <input
+                    type="text"
+                    id="quantity"
+                    name="quantity"
+                    value={formData.quantity}
+                    onChange={handleChange}
+                    placeholder="Ej: 5 equipos, 1 servicio"
+                    disabled={submitStatus.type === 'loading'}
+                  />
+                  {errors.quantity && <span className="error-message">{errors.quantity}</span>}
+                </div>
+              </div>
+
+              {serviceFields[formData.service] && serviceFields[formData.service].map((field, i) => (
+                <div className="form-group" key={i}>
+                  <label htmlFor={field.name}>{field.label}</label>
+                  {field.type === 'select' ? (
+                    <select
+                      id={field.name}
+                      name={field.name}
+                      value={formData[field.name] || ''}
+                      onChange={handleChange}
+                      disabled={submitStatus.type === 'loading'}
+                    >
+                      <option value="">Selecciona una opción</option>
+                      {field.options.map((option, i) => (
+                        <option key={i} value={option}>{option}</option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type={field.type}
+                      id={field.name}
+                      name={field.name}
+                      value={formData[field.name] || ''}
+                      onChange={handleChange}
+                      disabled={submitStatus.type === 'loading'}
+                    />
+                  )}
+                </div>
+              ))}
+
+              <div className="form-group">
+                <label htmlFor="message">Detalles Adicionales</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="4"
+                  placeholder="Especificaciones técnicas, requisitos especiales, duración del servicio, etc."
+                  disabled={submitStatus.type === 'loading'}
+                />
+              </div>
+
+              <div className="form-actions">
+                <button
+                  type="button"
+                  className="cancel-button"
+                  onClick={onClose}
+                  disabled={submitStatus.type === 'loading'}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="submit-button"
+                  disabled={submitStatus.type === 'loading'}
+                >
+                  {submitStatus.type === 'loading' ? (
+                    <>⏳ Enviando...</>
+                  ) : (
+                    <>📧 Solicitar Cotización</>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
