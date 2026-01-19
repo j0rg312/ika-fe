@@ -16,11 +16,11 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
 
   const serviceFields = {
     'Arrendamiento de impresoras': [
-     {
+      {
         label: 'Tipo de impresora',
         name: 'TIpo de impresora',
         type: 'select',
-        options: ['Multifuncional', 'Impresora']       
+        options: ['Multifuncional', 'Impresora']
       },
       {
         label: 'Color o Blanco y Negro',
@@ -30,7 +30,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
       }
     ],
     'Arrendamiento de equipo de cómputo.': [
-      { 
+      {
         label: '¿Quieres Rentar o comprar?',
         name: 'Tipo de operación',
         type: 'select',
@@ -50,20 +50,20 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   const mailerService = new MailerService();
 
   useEffect(() => {
-  if (submitStatus.type && modalRef.current) {
-    modalRef.current.scrollTop = 0;
-  }
+    if (submitStatus.type && modalRef.current) {
+      modalRef.current.scrollTop = 0;
+    }
   }, [submitStatus.type]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Limpiar error específico cuando el usuario empiece a escribir
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
-    
+
     // Limpiar mensaje de estado
     if (submitStatus.type) {
       setSubmitStatus({ type: '', message: '' });
@@ -75,21 +75,21 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
     const numberRegex = /^[0-9]{7,15}$/;
 
     if (!formData.name.trim()) newErrors.name = 'El nombre es obligatorio';
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'El correo electrónico es obligatorio';
-    } 
-    
-   if (formData.number.trim()) {
-    if (!numberRegex.test(formData.number)) {
-      newErrors.number = 'Ingresa un número válido (7-15 dígitos)';
     }
-   }
-    
+
+    if (formData.number.trim()) {
+      if (!numberRegex.test(formData.number)) {
+        newErrors.number = 'Ingresa un número válido (7-15 dígitos)';
+      }
+    }
+
     if (!formData.service.trim()) {
       newErrors.service = 'El producto/servicio es obligatorio';
     }
-    
+
     if (!formData.quantity.trim()) {
       newErrors.quantity = 'La cantidad es obligatoria';
     }
@@ -100,14 +100,20 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Formulario enviandose");
-    
+
     const validationErrors = validate();
     console.log("Errores detectados", validationErrors);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+
+      // Crear mensaje específico con todos los errores
+      const errorList = Object.entries(validationErrors)
+        .map(([field, message]) => `• ${message}`)
+        .join('\n');
+
       setSubmitStatus({
         type: 'error',
-        message: 'Por favor corrige los errores en el formulario'
+        message: `Por favor corrige los siguientes errores:\n${errorList}`
       });
       return;
     }
@@ -125,12 +131,12 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
       };
 
       await mailerService.sendCot(quotationData);
-      
+
       setSubmitStatus({
         type: 'success',
         message: '¡Cotización enviada exitosamente! Te contactaremos pronto con la información solicitada.'
       });
-      
+
       // Limpiar formulario
       setFormData({
         name: '',
@@ -142,13 +148,13 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
         message: '',
       });
       setErrors({});
-      
+
 
       setTimeout(() => {
         onClose();
         setSubmitStatus({ type: '', message: '' });
       }, 2000);
-      
+
     } catch (error) {
       console.error('Error al enviar cotización:', error);
       setSubmitStatus({
@@ -164,12 +170,12 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
     }
   };
 
-      useEffect(() => {
-      setFormData(prev => ({
-        ...prev,
-        service: service || ''
-      }));
-    }, [service]);
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      service: service || ''
+    }));
+  }, [service]);
 
 
   // Componente para el mensaje de estado
@@ -183,21 +189,21 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
             backgroundColor: '#d4edda',
             borderColor: '#c3e6cb',
             color: '#155724',
-            icon: <Check/>
+            icon: <Check />
           };
         case 'error':
           return {
             backgroundColor: '#f8d7da',
             borderColor: '#f5c6cb',
             color: '#721c24',
-            icon: <MailWarning/>
+            icon: <MailWarning />
           };
         case 'loading':
           return {
             backgroundColor: '#d1ecf1',
             borderColor: '#bee5eb',
             color: '#0c5460',
-            icon: <LoaderCircle/>
+            icon: <LoaderCircle />
           };
         default:
           return {};
@@ -207,7 +213,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
     const styles = getStatusStyles();
 
     return (
-      <div 
+      <div
         className="status-message"
         style={{
           backgroundColor: styles.backgroundColor,
@@ -218,15 +224,15 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
           padding: 'var(--space-md)',
           marginBottom: 'var(--space-lg)',
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           gap: 'var(--space-sm)',
           fontSize: '0.95rem',
           fontWeight: '500',
           animation: 'slideIn 0.3s ease-out'
         }}
       >
-        <span style={{ fontSize: '1.1rem' }}>{styles.icon}</span>
-        <span>{submitStatus.message}</span>
+        <span style={{ fontSize: '1.1rem', marginTop: '2px' }}>{styles.icon}</span>
+        <span style={{ whiteSpace: 'pre-line', flex: 1 }}>{submitStatus.message}</span>
       </div>
     );
   };
@@ -238,14 +244,14 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
       <div className="quotation-modal" ref={modalRef}>
         <div className="modal-header">
           {formData.service
-          ? <h2>Cotización de servicio para  <br />{formData.service}</h2>
-        : 'Solicitar cotización'}
-      
+            ? <h2>Cotización de servicio para  <br />{formData.service}</h2>
+            : 'Solicitar cotización'}
+
         </div>
 
         <div className="modal-body">
           <StatusMessage />
-          
+
           <form onSubmit={handleSubmit} className="quotation-form">
             <div className="form-row">
               <div className="form-group">
@@ -323,23 +329,23 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
               </div>
             </div>
 
-            {serviceFields[formData.service] && serviceFields[formData.service].map((field,i) => (
+            {serviceFields[formData.service] && serviceFields[formData.service].map((field, i) => (
               <div className="form-group" key={i}>
                 <label htmlFor={field.name}>{field.label}</label>
                 {field.type === 'select' ? (
                   <select
-                  id={field.name}
-                  name={field.name}
-                  value={formData[field.name] || ''}
-                  onChange={handleChange}
-                  disabled={submitStatus.type === 'loading'}
+                    id={field.name}
+                    name={field.name}
+                    value={formData[field.name] || ''}
+                    onChange={handleChange}
+                    disabled={submitStatus.type === 'loading'}
                   >
                     <option value="">Selecciona una opción</option>
-                    {field.options.map((option,i) => (
+                    {field.options.map((option, i) => (
                       <option key={i} value={option}>{option}</option>
                     ))}
                   </select>
-                ) :(
+                ) : (
                   <input
                     type={field.type}
                     id={field.name}
@@ -366,16 +372,16 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
             </div>
 
             <div className="form-actions">
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="cancel-button"
                 onClick={onClose}
                 disabled={submitStatus.type === 'loading'}
               >
                 Cancelar
               </button>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="submit-button"
                 disabled={submitStatus.type === 'loading'}
               >
