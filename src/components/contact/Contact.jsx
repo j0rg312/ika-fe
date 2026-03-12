@@ -11,7 +11,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({ 
      name: '',
      email: '',
-     number: '',
+     phone: '',
      message: '' 
   });
     
@@ -47,8 +47,8 @@ const Contact = () => {
    
     if(!formData.message.trim()) newErrors.message = 'El mensaje es obligatorio';
 
-    if(formData.number && !/^[0-9]{7,15}$/.test(formData.number)) {
-      newErrors.number = 'Sólo números (7 a 15 dígitos)';
+    if(formData.phone && !/^[0-9]{7,15}$/.test(formData.phone)) {
+      newErrors.phone = 'Sólo números (7 a 15 dígitos)';
     }
 
     return newErrors;
@@ -224,12 +224,12 @@ const Contact = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="number">Teléfono:</label>
+                <label htmlFor="phone">Teléfono:</label>
                 <input 
                   type="tel"
-                  id="number"
-                  name="number"
-                  value={formData.number}
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
                   pattern="^[0-9]{7,15}$"
                   placeholder='Proporcione un número de teléfono'
@@ -237,7 +237,7 @@ const Contact = () => {
                   title="Solo números, sin espacios ni símbolos (mínimo 7 dígitos)"
                   disabled={submitStatus.type === 'loading'}
                 />
-                {errors.number && <p className='error'>{errors.number}</p>}
+                {errors.phone && <p className='error'>{errors.phone}</p>}
               </div>
 
               <div className="form-group">

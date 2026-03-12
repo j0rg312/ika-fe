@@ -7,7 +7,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    number: '',
+    phone: '',
     company: '',
     service: service,
     quantity: '',
@@ -72,7 +72,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
 
   const validate = () => {
     const newErrors = {};
-    const numberRegex = /^[0-9]{7,15}$/;
+    const phoneRegex = /^[0-9]{7,15}$/;
 
     if (!formData.name.trim()) newErrors.name = 'El nombre es obligatorio';
 
@@ -80,9 +80,9 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
       newErrors.email = 'El correo electrónico es obligatorio';
     }
 
-    if (formData.number.trim()) {
-      if (!numberRegex.test(formData.number)) {
-        newErrors.number = 'Ingresa un número válido (7-15 dígitos)';
+    if (formData.phone.trim()) {
+      if (!phoneRegex.test(formData.phone)) {
+        newErrors.phone = 'Ingresa un número válido (7-15 dígitos)';
       }
     }
 
@@ -141,7 +141,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
       setFormData({
         name: '',
         email: '',
-        number: '',
+        phone: '',
         company: '',
         service: service,
         quantity: '',
@@ -286,12 +286,12 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="number">Teléfono </label>
+                  <label htmlFor="phone">Teléfono </label>
                   <input
                     type="tel"
-                    id="number"
-                    name="number"
-                    value={formData.number}
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
                     placeholder="6141234567"
                     disabled={submitStatus.type === 'loading'}
