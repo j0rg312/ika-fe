@@ -16,9 +16,6 @@ import ECommers from './components/e-commers/E-commers';
 import Administrator from './components/administrator/Administrator';
 import CallToAction from './components/calltoaction/CallToAction';
 import AdminPanel from './components/adminPanel/AdminPanel';
-import { HelmetProvider } from 'react-helmet-async';
-
-import './App.css';
 import ScrollToTop from './components/ui/ux/scrollToTop/SccrollTop';
 import Leasing from './components/services/leasing/Leasing';
 
@@ -26,7 +23,6 @@ const App = () => {
 
   return (
 
-<HelmetProvider>
 <Router>
   <ScrollToTop/>
       <div className="app-container">
@@ -57,7 +53,6 @@ const App = () => {
           <Footer />
       </div> 
     </Router>
-</HelmetProvider>
   );
 };
 

@@ -1,9 +1,9 @@
-
-import './Testimonials.css';
+"use client";
+import Section from '../ui/layouts/Section';
 
 const Testimonials = () => {
   return (
-    <section className="slider">
+    <Section className="slider bg-gray-50">
       <input type="radio" name="testimonial" id="t-1" />
       <input type="radio" name="testimonial" id="t-2" />
       <input type="radio" name="testimonial" id="t-3" defaultChecked />
@@ -45,7 +45,7 @@ const Testimonials = () => {
         <label htmlFor="t-4"></label>
         <label htmlFor="t-5"></label>
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -1,3 +1,4 @@
+"use client";
 
 
 import { FaFacebook, FaInstagram } from "react-icons/fa";
@@ -5,7 +6,6 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import cloud from '../../../assets/cloundLoginLogo.png';
 import google from '../../../assets/google-workspace-logo.svg'
 import phone from '../../../assets/net2phone-logo.svg' */
-import './FooterMovil.css'
 const FooterMovil = () => {
 
    const currentYear = new Date().getFullYear();

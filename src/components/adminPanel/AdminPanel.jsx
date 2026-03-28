@@ -1,8 +1,8 @@
+"use client";
 import { useRef, useEffect, useState } from "react";
 import ProductService from "../../data/services/productService";
 import { logout } from "../../data/services/authService";
-import { useNavigate } from "react-router-dom";
-import "./AdminPanel.css";
+import { useRouter } from 'next/navigation';
 
 const AdminPanel = () => {
   const [products, setProducts] = useState([]);
@@ -19,7 +19,7 @@ const AdminPanel = () => {
   const amountRef = useRef();
   const descriptionRef = useRef();
   const imageRef = useRef();
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
   useEffect(() => {
     fetchProducts();

@@ -1,9 +1,8 @@
+"use client";
 import { useState, useEffect } from 'react';
-import './E-commers.css';
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import ProductService from '../../data/services/productService';
 import Section from '../ui/layouts/Section';
-import { Helmet } from 'react-helmet-async';
 import { FaPlus } from "react-icons/fa";
 import { Dialog } from 'primereact/dialog';
 import { InputNumber } from 'primereact/inputnumber';
@@ -80,10 +79,7 @@ const ECommers = () => {
 
   return (
     <Section className="ecommers">
-      <Helmet>
-        <title>IKA - Tienda</title>
-        <meta name="description" content="IKA es una empresa mexicana especializada en consultoría y soporte de TI." />
-      </Helmet>
+
       <div className="ecommers-header">
         <MainTitle text="Nuestra Tienda" className="typing-title" speed={100} />
         <p>Compra los mejores equipos de cómputo a precios competitivos.</p>

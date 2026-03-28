@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  /* Corporative Colors for Tailwind v4 */
+  --color-primary-light: var(--primary-color-light);
+  --color-primary: var(--primary-color);
+  --color-primary-dark: var(--primary-color-dark);
+  
+  --color-secondary: var(--secondary-color);
+  --color-accent: var(--accent-color);
+
+  --animate-marquee: marquee 30s linear infinite;
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+:root {
+  /* Tipografía base */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Accesibilidad y suavizado */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Colores base */
+  --primary-color: #3e4194;
+  --primary-color-light: #5e61b0;
+  --primary-color-dark: #2a2c7a;
+
+  --secondary-color: #ece4f3;
+  --accent-color: #ff9900;
+
+  --text-color: #333;
+  --text-light: #666;
+  --bg-color: #ffffff;
+  --bg-light: #f4f4f4;
+  --bg-dark: #1a1a1a;
+
+  /* Neutrales */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-100: #f4f4f4;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #cccccc;
+  --color-gray-400: #999999;
+
+  /* Espaciado */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Bordes y radios */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* Modo de color: claro por defecto */
+  color-scheme: light;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  /*Gradiantes*/
+  --primary-gradient-start: #3e4194;
+  --primary-gradient-end:  #5a58d1;
+  --progress-gradient-start: #60a5fa;
+  --progress-gradient-end: #46479f;
+
+    /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Transiciones */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+  
+  /* Bordes */
+  --border-color: var(--color-gray-200);
+  --border-color-focus: var(--primary-color);
+
+  /* Iconos */
+  --icon-size-md: 2rem;
+  --icon-size-lg: 2.5rem;
+  --icon-color-light: #ffffff;
+  --icon-color-dark: var(--primary-color);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  background: var(--bg-color) !important;
+}
+
+
+/* Global tags stripped down for Tailwind compatibility */
+

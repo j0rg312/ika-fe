@@ -1,4 +1,5 @@
-import './Digital.css';
+"use client";
+import { CheckCircle } from 'lucide-react';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 import Section from '../../ui/layouts/Section';
@@ -10,140 +11,155 @@ import Hosting from '../../../assets/services/hosting.jpeg';
 import Domain from '../../../assets/services/domain.jpeg';
 
 const Digital = () => {
-  return (
-    <Section>
-      <MainTitle text="Internet" />
+    return (
+        <Section className="bg-white" innerClassName="py-8">
+            <MainTitle text="Soluciones Digitales" subtitle="Transforma tu presencia en línea y optimiza la comunicación de tu empresa." />
 
-      <ScrollableSection index={0}>
-        <div className="section-header">
-          <h2>Correo Electrónico</h2>
-        </div>
-        <div className="content">
-          <div className="text-content">
-            <p>
-              El correo electrónico se ha convertido en un canal de comunicación muy utilizado y con una gran aceptación general. Estas son algunas de las utilidades más destacadas que tiene:
-            </p>
-            <ul>
-              <li>Medio de Comunicación.</li>
-              <li>Envío de Información General.</li>
-              <li>Método de Autenticación.</li>
-              <li>Enviar y Compartir Fotos y Archivos.</li>
-              <li>Gestiones Comerciales y/o Marketing.</li>
-              <li>Registro en Blogs y Redes Sociales.</li>
-            </ul>
-            <p>
-              En la actualidad, el uso de la tecnología en los medios de comunicación son indispensables y el correo electrónico se ha convertido en una herramienta imprescindible en la educación, industria, comercio, salud y en el ámbito empresarial.
-              En <strong>IKA</strong> te asesoramos, resolvemos tus dudas y recorremos contigo el camino hacia tu transformación digital implementando una herramienta de gestión de correo electrónico personalizada para tu institución, asociación o empresa.
-            </p>
-          </div>
-          <div className="service-image">
-            <img src={Email} alt="Correo Electrónico" />
-          </div>
-        </div>
-      </ScrollableSection>
+            <div className="flex flex-col gap-12 lg:gap-24 w-full mt-12">
+                
+                {/* Section 1: Correo Electrónico (Image Right) */}
+                <ScrollableSection className="w-full" index={0}>
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
+                        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+                            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Correo Electrónico Corporativo</h2>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                El correo electrónico se ha convertido en una herramienta imprescindible en el ámbito empresarial para proyectar profesionalismo y consolidar la confianza de los clientes.
+                            </p>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                En <strong>IKA</strong> te asesoramos e implementamos una herramienta de gestión de correo electrónico personalizada para tu institución, dotada de calendarios compartidos y alta seguridad.
+                            </p>
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                                {[
+                                    "Identidad corporativa formal",
+                                    "Comunicaciones encriptadas",
+                                    "Gestión comercial y Marketing",
+                                    "Protección antispam avanzada"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-gray-700">
+                                        <CheckCircle className="text-primary shrink-0 mt-0.5" size={16} />
+                                        <span className="text-sm font-medium">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 group">
+                                <img
+                                    src={Email.src || Email}
+                                    alt="Correo Electrónico"
+                                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </ScrollableSection>
 
-      <ScrollableSection index={1}>
-        <div className="section-header">
-          <h2>Administración De Servicios En La Nube</h2>
-        </div>
-        <div className="content">
-          <div className="service-image">
-            <img src={Cloud} alt="Cloud Computing" />
-          </div>
-          <div className="text-content">
-            <p>
-              La computación en la nube es atractiva por su escalabilidad, seguridad, facilidad de administración y bajos costos.
-              La migración a la nube optimiza procesos y servicios de manera flexible.
-            </p>
-            <p>
-              En IKA nos preocupamos por la seguridad, integridad y disponibilidad de la información y servicios digitales de tu organización.
-              Te ofrecemos estrategias efectivas con los mejores proveedores para tu transición a la nube: privada, pública o híbrida.
-            </p>
-          </div>
-        </div>
-      </ScrollableSection>
+                {/* Section 2: Cloud Computing (Image Left) */}
+                <ScrollableSection className="w-full" index={1}>
+                    <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16 w-full">
+                        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+                            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Administración Dde Servicios en la Nube</h2>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                La computación en la nube es atractiva por su excepcional escalabilidad, seguridad rigurosa, facilidad de administración remota y reducción dramática de costos operativos.
+                            </p>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                En <strong>IKA</strong> nos preocupamos por la integridad y disponibilidad de tu información. Te ofrecemos estrategias efectivas con los mejores proveedores para tu transición segura hacia una nube privada, pública o híbrida.
+                            </p>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 group">
+                                <img
+                                    src={Cloud.src || Cloud}
+                                    alt="Cloud Computing"
+                                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </ScrollableSection>
 
-      <ScrollableSection index={2}>
-        <div className="section-header">
-          <h2>Diseño E-commerce</h2>
-        </div>
-        <div className="content">
-          <div className="text-content">
-            <p>
-              El comercio electrónico permite comprar y vender productos a través de medios digitales como páginas web y redes sociales.
-            </p>
-            <p>Ventajas:</p>
-            <ul>
-              <li>Cobertura y atención a múltiples clientes simultáneamente.</li>
-              <li>Mayor visibilidad para tu marca y productos.</li>
-              <li>Operación 24/7 sin límite geográfico.</li>
-              <li>No necesitas un local físico costoso.</li>
-              <li>Ofreces distintos métodos de pago.</li>
-              <li>Ventas locales e internacionales.</li>
-              <li>Estrategias de marketing con promociones, descuentos y cupones.</li>
-            </ul>
-            <p>
-              <strong>IKA</strong> te asesora para lanzar tu tienda en línea de forma profesional, eficiente y escalable.
-            </p>
-          </div>
-          <div className="service-image">
-            <img src={Ecommers} alt="E-commerce" />
-          </div>
-        </div>
-      </ScrollableSection>
+                {/* Section 3: E-commerce (Image Right) */}
+                <ScrollableSection className="w-full" index={2}>
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
+                        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+                            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Diseño de E-commerce</h2>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                El comercio electrónico expande las fronteras de tu negocio, permitiendo comprar y vender productos 24/7 de forma automatizada y sin limitaciones geográficas.
+                            </p>
+                            <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 mt-2">
+                                <h3 className="text-lg font-bold text-gray-900 mb-4">Ventajas de vender en línea:</h3>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {[
+                                        "Operación 24/7 ininterrumpida",
+                                        "Cobertura local e internacional",
+                                        "Múltiples pasarelas de pago",
+                                        "Reducción de costos fijos",
+                                        "Visibilidad masiva de marca",
+                                        "Estrategias de cupones y SEO"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-gray-700">
+                                            <CheckCircle className="text-primary shrink-0 mt-0.5" size={16} />
+                                            <span className="text-xs font-semibold">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <p className="text-gray-600 text-sm italic font-medium">
+                                En IKA te asesoramos para lanzar tu tienda en línea de forma profesional, segura y altamente escalable.
+                            </p>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 group">
+                                <img
+                                    src={Ecommers.src || Ecommers}
+                                    alt="E-commerce"
+                                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 bg-gray-50 p-4"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </ScrollableSection>
 
-      <ScrollableSection index={3}>
-        <div className="section-header">
-          <h2>Hosting</h2>
-        </div>
-        <div className="content">
-          <div className="service-image">
-            <img src={Hosting} alt="Hosting Web" />
-          </div>
-          <div className="text-content">
-            <p>
-              El servicio de <strong>hosting</strong> permite que tu sitio esté disponible 24/7. Consiste en alojar todos tus archivos, base de datos e imágenes en un servidor seguro.
-            </p>
-            <p>
-              En <strong>IKA</strong> ofrecemos hosting seguro, escalable y con soporte técnico.
-            </p>
-            <ul>
-              <li>Alta disponibilidad y velocidad.</li>
-              <li>Copias de seguridad automáticas.</li>
-              <li>Certificados SSL incluidos.</li>
-              <li>Soporte técnico especializado.</li>
-              <li>Compatibilidad con CMS, e-commerce y más.</li>
-            </ul>
-          </div>
-        </div>
-      </ScrollableSection>
-
-      <ScrollableSection index={4}>
-        <div className="section-header">
-          <h2>Dominios web</h2>
-        </div>
-        <div className="content">
-          <div className="text-content">
-            <p>
-              El <strong>dominio web</strong> es la dirección única de tu sitio, como <em>www.tunegocio.com</em>. Es esencial para posicionar tu marca.
-            </p>
-            <p>
-              En <strong>IKA</strong> te ayudamos con el registro, renovación y configuración de dominios.
-            </p>
-            <ul>
-              <li>Dominios nacionales e internacionales (.com, .mx, .org...)</li>
-              <li>Protección contra robo de dominios.</li>
-              <li>Configuración de DNS y redirecciones.</li>
-              <li>Asesoría para elegir tu dominio ideal.</li>
-            </ul>
-          </div>
-          <div className="service-image">
-            <img src={Domain} alt="Dominios web" />
-          </div>
-        </div>
-      </ScrollableSection>
-    </Section>
-  );
+                {/* Section 4: Hosting y Dominios (Combine for better structure) */}
+                <ScrollableSection className="w-full" index={3}>
+                    <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16 w-full">
+                        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+                            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Hosting Web y Dominios</h2>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                El servicio de <strong>hosting</strong> permite que tu sitio esté disponible 24/7 en un servidor veloz y seguro. El <strong>dominio</strong> es tu identificador único en internet, esencial para posicionar tu marca.
+                            </p>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                En <strong>IKA</strong> ofrecemos infraestructura de alto rendimiento y te ayudamos con el registro, protección y configuración de tus dominios.
+                            </p>
+                            <ul className="flex flex-col gap-3 mt-2">
+                                {[
+                                    "Alta velocidad y disponibilidad garantizada (SLA).",
+                                    "Certificados SSL incluidos y copias automáticas.",
+                                    "Dominios nacionales (.mx) e internacionales (.com).",
+                                    "Protección contra robo de dominios y privacidad WHOIS."
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-gray-700">
+                                        <CheckCircle className="text-primary shrink-0 mt-1" size={18} />
+                                        <span className="text-sm font-medium">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="w-full lg:w-1/2 flex flex-col gap-8">
+                            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 group">
+                                <img
+                                    src={Hosting.src || Hosting}
+                                    alt="Hosting Web"
+                                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </ScrollableSection>
+                
+            </div>
+        </Section>
+    );
 };
 
 export default Digital;

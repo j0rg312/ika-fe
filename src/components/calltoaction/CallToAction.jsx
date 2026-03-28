@@ -1,5 +1,5 @@
+"use client";
 import { useState, useEffect } from 'react';
-import './CallToAction.css';
 import { IoChatbubbleSharp } from 'react-icons/io5';
 // import { io } from 'socket.io-client';
 

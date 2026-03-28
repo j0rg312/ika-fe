@@ -1,10 +1,11 @@
+"use client";
 import { useEffect, useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation';
 import AdminModal from "./adminModal/AdminLogin";
 
 const Administrator = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const navigate = useNavigate();
+    const navigate = useRouter();
 
     const handleKeyDown = useCallback((event) => {
         if (event.ctrlKey && event.key === "ñ") {

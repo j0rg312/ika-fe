@@ -1,5 +1,5 @@
+"use client";
 import { useState, useEffect, useRef } from 'react';
-import './OurWork.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -9,13 +9,13 @@ import { allServices } from '../../data/our-work.data';
 import ScrollableSection from '../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../ui/ux/MainTitle/MainTitle';
 import Section from '../ui/layouts/Section';
-import { Helmet } from 'react-helmet-async';
 
 const OurWork = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const swiperRef = useRef(null);
 
   const getSlidePerView = () => {
+    if (typeof window === 'undefined') return 3;
     if (window.innerWidth < 768) return 1;
     if (window.innerWidth < 1024) return 2;
     if (window.innerWidth < 1300) return 3;
@@ -53,17 +53,11 @@ const OurWork = () => {
 
   return (
     <Section>
-      <Helmet>
-        <title>IKA - Nuestro Trabajo</title>
-        <meta
-          name="description"
-          content="IKA es una empresa mexicana especializada en consultoría y soporte de TI."
-        />
-      </Helmet>
+
 
       <MainTitle text="Nuestro Trabajo" />
 
-      <section className="slider-container">
+      <div className="slider-container w-full mt-12">
         {allServices.map((service, i) => (
           <ScrollableSection className="slider" key={i} index={i}>
             <h3 className="area-title">{service.name}</h3>
@@ -88,7 +82,7 @@ const OurWork = () => {
             </Swiper>
           </ScrollableSection>
         ))}
-      </section>
+      </div>
 
       {selectedImage && (
         <div className="overlay" onClick={closeOverlay}>

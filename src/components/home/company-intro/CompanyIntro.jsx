@@ -1,89 +1,101 @@
+"use client";
 
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Section from '../../ui/layouts/Section';
-import { History, Monitor, Users, CheckCircle } from 'lucide-react';
-import './CompanyIntro.css';
+import { History, Monitor, Users, CheckCircle, ChevronRight, Check } from 'lucide-react';
 import ScrollableSection from '../../ui/ux/scrollableSection/ScrollableSection';
 import MainTitle from '../../ui/ux/MainTitle/MainTitle';
 
 const CompanyIntro = () => {
+  const serviciosList = [
+    "Consultoría IT", "Soporte Empresarial", "Cableado Estructurado",
+    "Ciberseguridad", "Videovigilancia", "Arrendamiento de Equipo",
+    "Servicios de Impresión", "Servidores en la Nube",
+    "Respaldo de Información", "Administración IT"
+  ];
+
   return (
-    <Section>
+    <Section className="bg-white">
       <ScrollableSection index={0}>
-    <MainTitle text='Bienvenido a Ika' className='home-title'/>
-      <div className="intro-content">
-        <div className="intro-card historia-card">
-          <div className="card-icon-header">
-            <Link to="../about">
-{/*               <div className="icon-wrapper history-icon">
-              <History className='icons'/>
-            </div> */}
-            </Link>
-
-            
-          </div>
-          <p className="intro-paragraph history-paragraph">
-           En <strong>IKA</strong> contamos con más de 20 años de experiencia brindando soluciones integrales en sistemas de información, con un enfoque especializado en tecnologías GNU/Linux, redes, firewalls, servidores en la nube, arrendamiento de equipo de cómputo y servicios administrados de impresión. Nuestra trayectoria y compromiso nos han consolidado como aliados estratégicos para empresas del norte del país, a quienes ofrecemos un servicio confiable, personalizado y orientado a la eficiencia tecnológica.
-          </p>
+        <div className="text-center w-full mb-20">
+          <MainTitle 
+            text='Bienvenido a IKA' 
+            subtitle="Conocimiento, innovación y tecnología aplicados al crecimiento de tu empresa."
+          />
         </div>
 
-        <div className="intro-grid">
-          <div className="grid-card blue">
-            <div className="card-header">
-              <Link to="../services">
-                <div className="icon blue-bg">
-                 <Monitor className='icons'/>
-              </div>
-              </Link>
-              <h4 className="card-title blue-text">Nuestros Servicios</h4>
-            </div>
-            <p className="card-description">
-             <ul>
-              <li>Consultoría en Sistemas de Información</li>
-              <li>Soporte Técnico Empresarial</li>
-              <li>Cableado Estructurado</li>
-              <li>Ciberseguridad</li>
-              <li>Cámaras de Videovigilancia</li>
-              <li>Arrendamiento de Equipo de Cómputo</li>
-              <li>Servicios Administrados de Impresión</li>
-              <li>Arrendamiento de Servidores en la Nube</li>
-              <li>Respaldo de Información</li>
-              <li>Administración de Infraestructura</li>
-             </ul>
-            </p>
-          </div>
-
-          <div className="grid-card green">
-            <div className="card-header">
-              <div className="icon green-bg">
-                <Users className='icons'/>
-              </div>
-              <h4 className="card-title green-text">Nuestro Equipo</h4>
-            </div>
-            <p className="card-description">
-              En <strong>IKA</strong> contamos con un equipo de trabajo altamente calificado y comprometido, conformado por profesionales con amplia experiencia en tecnologías de la información. Nuestro personal se distingue no solo por su preparación técnica, sino también por su integridad, responsabilidad y vocación de servicio. Trabajamos con pasión, ética y dedicación, enfocados siempre en entender y superar las expectativas de nuestros clientes, brindando soluciones eficientes y a la medida de cada necesidad.
-            </p>
-          </div>
-        </div>
-
-        <div className="mission-statement">
-          <div className="mission-icon-wrapper">
-            <div className="mission-icon">
-              <CheckCircle className='icons' />
-            </div>
-
-              <h3 className='filosofia-title'>Nuestra Filosofía</h3>
-          </div>
-          <div className="mission-content">
+        <div className="flex flex-col lg:flex-row gap-16 w-full items-start">
           
-            <p>
-             IKA se basa en la excelencia técnica, el compromiso con nuestros clientes y una firme orientación hacia la mejora continua. Creemos que la tecnología debe ser una herramienta para potenciar el crecimiento y la eficiencia de las empresas, por eso trabajamos con profesionalismo, ética y cercanía, ofreciendo soluciones personalizadas que realmente marcan la diferencia. Nos guiamos por valores sólidos como la honestidad, la responsabilidad y el respeto, y fomentamos un ambiente de colaboración donde el conocimiento, la innovación y la satisfacción del cliente son siempre nuestra prioridad.
-            </p>
+          {/* Columna Izquierda: Trayectoria y Filosofía (Textos B2B Limpios) */}
+          <div className="lg:w-[55%] flex flex-col gap-12">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <History className="text-primary" size={28}/> Nuestra Trayectoria
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                En <strong className="text-primary font-bold">IKA</strong> contamos con más de 20 años de experiencia brindando soluciones integrales en sistemas de información, con un enfoque especializado en tecnologías GNU/Linux, redes, firewalls, servidores en la nube, arrendamiento de equipo de cómputo y servicios administrados de impresión.
+                <br/><br/>
+                Nuestra trayectoria y compromiso nos han consolidado como aliados estratégicos para empresas del norte del país, a quienes ofrecemos un servicio confiable, personalizado y orientado a la eficiencia tecnológica.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-2 mt-6 text-primary font-bold hover:text-primary-dark transition-colors group/link w-max">
+                Conoce el corporativo <ChevronRight size={20} className="group-hover/link:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            <hr className="border-gray-100" />
+
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <CheckCircle className="text-primary" size={28}/> Nuestra Filosofía
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                IKA se basa en la excelencia técnica, el compromiso con nuestros clientes y una firme orientación hacia la mejora continua. Trabajamos ofreciendo soluciones que marcan la diferencia. 
+                <br/><br/>
+                Nos guiamos por <strong className="text-gray-900">la honestidad, la responsabilidad y el respeto</strong>, priorizando en todo momento la plena satisfacción y escalabilidad del cliente.
+              </p>
+            </div>
           </div>
+
+          {/* Columna Derecha: Equipo y Portafolio (Banners Limpios) */}
+          <div className="lg:w-[45%] flex flex-col gap-8">
+            
+            {/* Banner Nuestro Equipo */}
+            <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 flex flex-col">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                <Users className="text-primary" size={24}/> Nuestro Equipo
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6 flex-grow">
+                Conformado por profesionales técnicos con amplia experiencia. Nuestro personal se distingue por su preparación oficial, integridad y verdadera vocación de servicio.
+              </p>
+              <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl text-sm font-bold text-gray-800 border border-gray-200 w-max shadow-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span> Equipo Certificado Nivel 3
+              </div>
+            </div>
+
+            {/* Banner Portafolio IT */}
+            <div className="bg-white border-2 border-primary/10 rounded-3xl p-8 shadow-sm flex flex-col">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Monitor className="text-primary" size={24}/> Portafolio IT
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-4 mb-8 flex-grow">
+                {serviciosList.map((servicio, idx) => (
+                  <div key={idx} className="flex items-start gap-2 text-gray-700 font-medium text-base">
+                    <Check size={18} strokeWidth={3} className="text-primary mt-0.5 shrink-0" />
+                    <span>{servicio}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <Link href="/services" className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl transition-colors text-base mt-2 shadow-md">
+                Explorar Catálogo de Servicios
+              </Link>
+            </div>
+
+          </div>
+
         </div>
-      </div>
       </ScrollableSection>
-      
     </Section>
   );
 };

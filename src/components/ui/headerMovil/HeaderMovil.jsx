@@ -1,7 +1,8 @@
+"use client";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { navLinks, services } from "../../../data/header.data";
-import "./HeaderMovil.css";
 import logo from "../../../assets/logo.png";
 
 
@@ -9,7 +10,7 @@ const HeaderMovil = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDropdownOpen, mainContent] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const location = { pathname: usePathname() };
 
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const HeaderMovil = () => {
   return (
     <div className={`header-movil ${isScrolled ? 'scrolled' : ''}`}>
       {/* Logo */}
-      <Link to="/home" className="logo-container">
+      <Link href="/home" className="logo-container">
         <img src={logo} alt="IKA logo" className="logo" />
       </Link>
       <button
@@ -54,7 +55,7 @@ const HeaderMovil = () => {
         <ul className="mobile-nav-list">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link to={link.path} className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
+              <Link href={link.path} className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
                 {link.name}
               </Link>
             </li>
@@ -70,7 +71,7 @@ const HeaderMovil = () => {
             <ul className={`mobile-dropdown-menu ${isDropdownOpen ? "open" : ""}`}>
               {services.map((service, index) => (
                 <li key={index}>
-                  <Link to={service.path} className="mobile-dropdown-link" onClick={() => setMobileMenuOpen(false)}>
+                  <Link href={service.path} className="mobile-dropdown-link" onClick={() => setMobileMenuOpen(false)}>
                     {service.name}
                   </Link>
                 </li>

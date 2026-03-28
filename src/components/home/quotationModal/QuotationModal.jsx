@@ -1,7 +1,8 @@
+"use client";
 import { useEffect, useState, useRef } from 'react';
 import MailerService from '../../../data/services/mailerService';
-import './QuotationModal.css';
-import { Check, LoaderCircle, MailWarning } from 'lucide-react';
+import { Loader2, X, Send } from 'lucide-react';
+import { toast } from 'sonner';
 
 const QuotationModal = ({ isOpen, onClose, service = '' }) => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
     'Arrendamiento de impresoras': [
       {
         label: 'Tipo de impresora',
-        name: 'TIpo de impresora',
+        name: 'Tipo de impresora', // Fixed capitalization of 'Tipo'
         type: 'select',
         options: ['Multifuncional', 'Impresora']
       },
@@ -35,38 +36,22 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
         name: 'Tipo de operación',
         type: 'select',
         options: ['Rentar', 'Comprar', 'Estamos decidiendo']
-
       }
     ]
   };
-  const modalRef = useRef(null);
 
+  const modalRef = useRef(null);
   const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState({
-    type: '', // 'success', 'error', 'loading'
-    message: ''
-  });
+  const [isLoading, setIsLoading] = useState(false);
 
   const mailerService = new MailerService();
-
-  useEffect(() => {
-    if (submitStatus.type && modalRef.current) {
-      modalRef.current.scrollTop = 0;
-    }
-  }, [submitStatus.type]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
 
-    // Limpiar error específico cuando el usuario empiece a escribir
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-
-    // Limpiar mensaje de estado
-    if (submitStatus.type) {
-      setSubmitStatus({ type: '', message: '' });
     }
   };
 
@@ -99,29 +84,16 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Formulario enviandose");
 
     const validationErrors = validate();
-    console.log("Errores detectados", validationErrors);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-
-      // Crear mensaje específico con todos los errores
-      const errorList = Object.entries(validationErrors)
-        .map(([field, message]) => `• ${message}`)
-        .join('\n');
-
-      setSubmitStatus({
-        type: 'error',
-        message: `Por favor corrige los siguientes errores:\n${errorList}`
-      });
+      toast.error('Por favor corrige los campos remarcados en rojo.');
       return;
     }
 
-    setSubmitStatus({
-      type: 'loading',
-      message: 'Enviando cotización...'
-    });
+    setIsLoading(true);
+    const loadingToast = toast.loading('Enviando cotización...');
 
     try {
       const quotationData = {
@@ -132,9 +104,9 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
 
       await mailerService.sendCot(quotationData);
 
-      setSubmitStatus({
-        type: 'success',
-        message: '¡Cotización enviada exitosamente! Te contactaremos pronto con la información solicitada.'
+      toast.success('¡Cotización enviada exitosamente!', {
+        id: loadingToast,
+        description: 'Te contactaremos pronto con la información solicitada.'
       });
 
       // Limpiar formulario
@@ -149,18 +121,18 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
       });
       setErrors({});
 
-
       setTimeout(() => {
         onClose();
-        setSubmitStatus({ type: '', message: '' });
-      }, 2000);
+      }, 1000);
 
     } catch (error) {
       console.error('Error al enviar cotización:', error);
-      setSubmitStatus({
-        type: 'error',
-        message: error.message || 'Error al enviar la cotización. Por favor intenta nuevamente.'
+      toast.error('Error al enviar la cotización.', {
+        id: loadingToast,
+        description: error.message || 'Por favor verifica la conexión e intenta nuevamente.'
       });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -177,227 +149,226 @@ const QuotationModal = ({ isOpen, onClose, service = '' }) => {
     }));
   }, [service]);
 
-
-  // Componente para toast notification
-  const StatusToast = () => {
-    if (!submitStatus.type) return null;
-
-    const getStatusStyles = () => {
-      switch (submitStatus.type) {
-        case 'success':
-          return {
-            backgroundColor: '#10b981',
-            color: '#ffffff',
-            icon: <Check />
-          };
-        case 'error':
-          return {
-            backgroundColor: '#ef4444',
-            color: '#ffffff',
-            icon: <MailWarning />
-          };
-        case 'loading':
-          return {
-            backgroundColor: '#3b82f6',
-            color: '#ffffff',
-            icon: <LoaderCircle className="spinner" />
-          };
-        default:
-          return {};
-      }
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
     };
-
-    const styles = getStatusStyles();
-
-    return (
-      <div
-        className="toast-notification"
-        style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
-          zIndex: 10000,
-          backgroundColor: styles.backgroundColor,
-          color: styles.color,
-          borderRadius: '12px',
-          padding: '16px 20px',
-          display: 'flex',
-          alignItems: 'flex-start',
-          gap: '12px',
-          minWidth: '300px',
-          maxWidth: '400px',
-          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)',
-          animation: 'slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-          backdropFilter: 'blur(10px)'
-        }}
-      >
-        <span style={{ fontSize: '1.25rem', marginTop: '2px' }}>{styles.icon}</span>
-        <span style={{ whiteSpace: 'pre-line', flex: 1, lineHeight: 1.5 }}>{submitStatus.message}</span>
-      </div>
-    );
-  };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
-    <>
-      <StatusToast />
-      <div className="quotation-modal-overlay" onClick={handleBackdropClick}>
-        <div className="quotation-modal" ref={modalRef}>
-          <div className="modal-header">
-            {formData.service
-              ? <h2>Cotización de servicio para  <br />{formData.service}</h2>
-              : 'Solicitar cotización'}
+    <div 
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4 sm:p-6"
+      onClick={handleBackdropClick}
+    >
+      <div 
+        ref={modalRef}
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-[fadeIn_0.3s_ease-out_forwards] border border-gray-100"
+      >
+        {/* Modal Header */}
+        <div className="bg-gray-50/80 px-6 py-5 border-b border-gray-100 flex justify-between items-center shrink-0">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
+            {formData.service ? (
+              <>Cotización de servicio para <span className="text-primary block mt-1">{formData.service}</span></>
+            ) : (
+              'Solicitar cotización'
+            )}
+          </h2>
+          <button 
+            type="button" 
+            onClick={onClose}
+            className="p-2 rounded-full hover:bg-gray-200 transition-colors text-gray-500 hover:text-gray-900"
+            disabled={isLoading}
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
 
-          </div>
-
-          <div className="modal-body">
-
-            <form onSubmit={handleSubmit} className="quotation-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="name">Nombre Completo *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Tu nombre completo"
-                    disabled={submitStatus.type === 'loading'}
-                  />
-                  {errors.name && <span className="error-message">{errors.name}</span>}
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">Correo Electrónico *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="ejemplo@correo.com"
-                    disabled={submitStatus.type === 'loading'}
-                  />
-                  {errors.email && <span className="error-message">{errors.email}</span>}
-                </div>
-              </div>
-
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="phone">Teléfono </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="6141234567"
-                    disabled={submitStatus.type === 'loading'}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="company">Empresa (Opcional)</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="Nombre de tu empresa"
-                    disabled={submitStatus.type === 'loading'}
-                  />
-                </div>
-              </div>
-
-              <div className="form-row">
-
-                <div className="form-group">
-                  <label htmlFor="quantity">¿Cuántos equipos necesitas?*</label>
-
-                  <input
-                    type="text"
-                    id="quantity"
-                    name="quantity"
-                    value={formData.quantity}
-                    onChange={handleChange}
-                    placeholder="Ej: 5 equipos, 1 servicio"
-                    disabled={submitStatus.type === 'loading'}
-                  />
-                  {errors.quantity && <span className="error-message">{errors.quantity}</span>}
-                </div>
-              </div>
-
-              {serviceFields[formData.service] && serviceFields[formData.service].map((field, i) => (
-                <div className="form-group" key={i}>
-                  <label htmlFor={field.name}>{field.label}</label>
-                  {field.type === 'select' ? (
-                    <select
-                      id={field.name}
-                      name={field.name}
-                      value={formData[field.name] || ''}
-                      onChange={handleChange}
-                      disabled={submitStatus.type === 'loading'}
-                    >
-                      <option value="">Selecciona una opción</option>
-                      {field.options.map((option, i) => (
-                        <option key={i} value={option}>{option}</option>
-                      ))}
-                    </select>
-                  ) : (
-                    <input
-                      type={field.type}
-                      id={field.name}
-                      name={field.name}
-                      value={formData[field.name] || ''}
-                      onChange={handleChange}
-                      disabled={submitStatus.type === 'loading'}
-                    />
-                  )}
-                </div>
-              ))}
-
-              <div className="form-group">
-                <label htmlFor="message">Detalles Adicionales</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+        {/* Modal Body (Scrollable) */}
+        <div className="px-6 py-8 overflow-y-auto">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 ml-1">
+                  Nombre Completo <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
-                  rows="4"
-                  placeholder="Especificaciones técnicas, requisitos especiales, duración del servicio, etc."
-                  disabled={submitStatus.type === 'loading'}
+                  placeholder="Tu nombre completo"
+                  disabled={isLoading}
+                  className={`w-full px-4 py-3 rounded-xl border ${errors.name ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'} focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors`}
+                />
+                {errors.name && <p className="text-sm text-red-500 ml-1 mt-1">{errors.name}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 ml-1">
+                  Correo Electrónico <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="ejemplo@correo.com"
+                  disabled={isLoading}
+                  className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'} focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors`}
+                />
+                {errors.email && <p className="text-sm text-red-500 ml-1 mt-1">{errors.email}</p>}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 ml-1">
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="6141234567"
+                  disabled={isLoading}
+                   className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'} focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors`}
+                />
+                {errors.phone && <p className="text-sm text-red-500 ml-1 mt-1">{errors.phone}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="company" className="block text-sm font-medium text-gray-700 ml-1">
+                  Empresa (Opcional)
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Nombre de tu empresa"
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                 />
               </div>
+            </div>
 
-              <div className="form-actions">
-                <button
-                  type="button"
-                  className="cancel-button"
-                  onClick={onClose}
-                  disabled={submitStatus.type === 'loading'}
-                >
-                  Cancelar
-                </button>
-                <button
-                  type="submit"
-                  className="submit-button"
-                  disabled={submitStatus.type === 'loading'}
-                >
-                  {submitStatus.type === 'loading' ? (
-                    <>⏳ Enviando...</>
-                  ) : (
-                    <>📧 Solicitar Cotización</>
-                  )}
-                </button>
+            <div className="space-y-2">
+              <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 ml-1">
+                ¿Cuántos equipos o servicios necesitas? <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="quantity"
+                name="quantity"
+                value={formData.quantity}
+                onChange={handleChange}
+                placeholder="Ej: 5 equipos, 1 integración, etc."
+                disabled={isLoading}
+                className={`w-full px-4 py-3 rounded-xl border ${errors.quantity ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50 focus:bg-white'} focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors`}
+              />
+              {errors.quantity && <p className="text-sm text-red-500 ml-1 mt-1">{errors.quantity}</p>}
+            </div>
+
+            {/* Dynamic Service Fields */}
+            {serviceFields[formData.service] && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-primary/5 p-4 rounded-2xl border border-primary/10">
+                {serviceFields[formData.service].map((field, i) => (
+                  <div className="space-y-2" key={i}>
+                    <label htmlFor={field.name} className="block text-sm font-medium text-primary ml-1">
+                      {field.label}
+                    </label>
+                    {field.type === 'select' ? (
+                      <select
+                        id={field.name}
+                        name={field.name}
+                        value={formData[field.name] || ''}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                      >
+                        <option value="">Selecciona una opción</option>
+                        {field.options.map((option, idx) => (
+                          <option key={idx} value={option}>{option}</option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type}
+                        id={field.name}
+                        name={field.name}
+                        value={formData[field.name] || ''}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
+                      />
+                    )}
+                  </div>
+                ))}
               </div>
-            </form>
-          </div>
+            )}
+
+            <div className="space-y-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 ml-1">
+                Detalles Adicionales
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="3"
+                placeholder="Especificaciones técnicas, requisitos especiales..."
+                disabled={isLoading}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-y min-h-[100px]"
+              />
+            </div>
+
+            {/* Form Actions */}
+            <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-end border-t border-gray-100">
+              <button
+                type="button"
+                onClick={onClose}
+                disabled={isLoading}
+                className="w-full sm:w-auto px-6 py-3 text-gray-600 font-medium hover:bg-gray-100 rounded-xl transition-colors disabled:opacity-50"
+              >
+                Cancelar
+              </button>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-primary hover:bg-primary-light text-white rounded-xl font-medium transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>Enviando...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Solicitar Cotización</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
